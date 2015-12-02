@@ -48,7 +48,7 @@ namespace Managament_Library_v2._0
             if (delete == DialogResult.No)
                 return;
 
-           if (tcdocgia.SelectedTabIndex == 0)//tab độc giả
+           if (tcdocgia.SelectedTabIndex == 0)//xóa theo tab độc giả
            {
                if (dgvdocgia.SelectedRows.Count == 0)
                    return;
@@ -63,7 +63,7 @@ namespace Managament_Library_v2._0
                dataDocGia.xoaDocGia(dg);
                update();
            }
-           else if (tcdocgia.SelectedTabIndex == 1)//tab học sinh
+           else if (tcdocgia.SelectedTabIndex == 1)//xóa theo tab học sinh
            {
                if (dgvhocsinh.SelectedRows.Count == 0)
                    return;
@@ -76,7 +76,7 @@ namespace Managament_Library_v2._0
                update();
 
            }
-           else if (tcdocgia.SelectedTabIndex == 2)//tab nhân viên
+           else if (tcdocgia.SelectedTabIndex == 2)//xóa theo tab nhân viên
            {
                if (dgvnhanvien.SelectedRows.Count == 0)
                    return;
@@ -92,7 +92,7 @@ namespace Managament_Library_v2._0
 
         private void btnsuadg_Click(object sender, EventArgs e)
         {
-            if (tcdocgia.SelectedTabIndex == 0)//tab độc giả
+            if (tcdocgia.SelectedTabIndex == 0)//sửa theo tab độc giả
             {
                 if (dgvdocgia.SelectedRows.Count == 0)
                     return;
@@ -101,7 +101,7 @@ namespace Managament_Library_v2._0
                 SuaDocGia.mdg = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();              
                 formSuaDG.ShowDialog();
             }
-            else if (tcdocgia.SelectedTabIndex == 1)//tab học sinh
+            else if (tcdocgia.SelectedTabIndex == 1)//sửa theo tab học sinh
             {
                 if (dgvhocsinh.SelectedRows.Count == 0)
                     return;
@@ -111,7 +111,7 @@ namespace Managament_Library_v2._0
                 formSuaDG.ShowDialog();
 
             }
-            else if (tcdocgia.SelectedTabIndex == 2)//tab nhân viên
+            else if (tcdocgia.SelectedTabIndex == 2)//sửa theo tab nhân viên
             {
                 if (dgvnhanvien.SelectedRows.Count == 0)
                     return;

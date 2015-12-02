@@ -39,12 +39,12 @@
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tcdocgia = new DevComponents.DotNetBar.TabControl();
-            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvnhanvien = new System.Windows.Forms.DataGridView();
-            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.dgvdocgia = new System.Windows.Forms.DataGridView();
             this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvnhanvien = new System.Windows.Forms.DataGridView();
+            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.dgvhocsinh = new System.Windows.Forms.DataGridView();
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
@@ -59,18 +59,18 @@
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.btnthemdg = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
-            this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tidocgia = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tabControl3 = new DevComponents.DotNetBar.TabControl();
+            this.tcsach = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvtuasach = new System.Windows.Forms.DataGridView();
             this.tabItem6 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel7 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dgvdausach = new System.Windows.Forms.DataGridView();
             this.tabItem7 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel8 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvcuonsach = new System.Windows.Forms.DataGridView();
             this.tabItem8 = new DevComponents.DotNetBar.TabItem(this.components);
             this.ribbonControl2 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
@@ -83,7 +83,7 @@
             this.ribbonBar8 = new DevComponents.DotNetBar.RibbonBar();
             this.btnthemsach = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
-            this.tabItem5 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tisach = new DevComponents.DotNetBar.TabItem(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,24 +94,24 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcdocgia)).BeginInit();
             this.tcdocgia.SuspendLayout();
-            this.tabControlPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvnhanvien)).BeginInit();
             this.tabControlPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdocgia)).BeginInit();
+            this.tabControlPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvnhanvien)).BeginInit();
             this.tabControlPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhocsinh)).BeginInit();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.tabControlPanel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl3)).BeginInit();
-            this.tabControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tcsach)).BeginInit();
+            this.tcsach.SuspendLayout();
             this.tabControlPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvtuasach)).BeginInit();
             this.tabControlPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvdausach)).BeginInit();
             this.tabControlPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvcuonsach)).BeginInit();
             this.ribbonControl2.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -178,8 +178,8 @@
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel5);
+            this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -188,8 +188,8 @@
             this.tabControl1.Size = new System.Drawing.Size(778, 455);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
-            this.tabControl1.Tabs.Add(this.tabItem1);
-            this.tabControl1.Tabs.Add(this.tabItem5);
+            this.tabControl1.Tabs.Add(this.tidocgia);
+            this.tabControl1.Tabs.Add(this.tisach);
             this.tabControl1.Text = "tabControl1";
             // 
             // tabControlPanel1
@@ -209,7 +209,7 @@
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel1.Style.GradientAngle = 90;
             this.tabControlPanel1.TabIndex = 1;
-            this.tabControlPanel1.TabItem = this.tabItem1;
+            this.tabControlPanel1.TabItem = this.tidocgia;
             // 
             // panel3
             // 
@@ -238,42 +238,6 @@
             this.tcdocgia.Tabs.Add(this.tabItem3);
             this.tcdocgia.Tabs.Add(this.tabItem4);
             this.tcdocgia.Text = "tabControl2";
-            // 
-            // tabControlPanel4
-            // 
-            this.tabControlPanel4.Controls.Add(this.dgvnhanvien);
-            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel4.Name = "tabControlPanel4";
-            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(776, 260);
-            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel4.Style.GradientAngle = 90;
-            this.tabControlPanel4.TabIndex = 3;
-            this.tabControlPanel4.TabItem = this.tabItem4;
-            // 
-            // dgvnhanvien
-            // 
-            this.dgvnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvnhanvien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvnhanvien.Location = new System.Drawing.Point(1, 1);
-            this.dgvnhanvien.MultiSelect = false;
-            this.dgvnhanvien.Name = "dgvnhanvien";
-            this.dgvnhanvien.ReadOnly = true;
-            this.dgvnhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvnhanvien.Size = new System.Drawing.Size(774, 258);
-            this.dgvnhanvien.TabIndex = 0;
-            // 
-            // tabItem4
-            // 
-            this.tabItem4.AttachedControl = this.tabControlPanel4;
-            this.tabItem4.Name = "tabItem4";
-            this.tabItem4.Text = "Nhân viên";
             // 
             // tabControlPanel2
             // 
@@ -310,6 +274,42 @@
             this.tabItem2.AttachedControl = this.tabControlPanel2;
             this.tabItem2.Name = "tabItem2";
             this.tabItem2.Text = "Độc giả";
+            // 
+            // tabControlPanel4
+            // 
+            this.tabControlPanel4.Controls.Add(this.dgvnhanvien);
+            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel4.Name = "tabControlPanel4";
+            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel4.Size = new System.Drawing.Size(776, 260);
+            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel4.Style.GradientAngle = 90;
+            this.tabControlPanel4.TabIndex = 3;
+            this.tabControlPanel4.TabItem = this.tabItem4;
+            // 
+            // dgvnhanvien
+            // 
+            this.dgvnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvnhanvien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvnhanvien.Location = new System.Drawing.Point(1, 1);
+            this.dgvnhanvien.MultiSelect = false;
+            this.dgvnhanvien.Name = "dgvnhanvien";
+            this.dgvnhanvien.ReadOnly = true;
+            this.dgvnhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvnhanvien.Size = new System.Drawing.Size(774, 258);
+            this.dgvnhanvien.TabIndex = 0;
+            // 
+            // tabItem4
+            // 
+            this.tabItem4.AttachedControl = this.tabControlPanel4;
+            this.tabItem4.Name = "tabItem4";
+            this.tabItem4.Text = "Nhân viên";
             // 
             // tabControlPanel3
             // 
@@ -590,11 +590,11 @@
             this.ribbonTabItem1.Panel = this.ribbonPanel1;
             this.ribbonTabItem1.Text = "Thao tác";
             // 
-            // tabItem1
+            // tidocgia
             // 
-            this.tabItem1.AttachedControl = this.tabControlPanel1;
-            this.tabItem1.Name = "tabItem1";
-            this.tabItem1.Text = "Độc giả";
+            this.tidocgia.AttachedControl = this.tabControlPanel1;
+            this.tidocgia.Name = "tidocgia";
+            this.tidocgia.Text = "Độc giả";
             // 
             // tabControlPanel5
             // 
@@ -613,38 +613,38 @@
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel5.Style.GradientAngle = 90;
             this.tabControlPanel5.TabIndex = 2;
-            this.tabControlPanel5.TabItem = this.tabItem5;
+            this.tabControlPanel5.TabItem = this.tisach;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.tabControl3);
+            this.panel4.Controls.Add(this.tcsach);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(1, 142);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(776, 286);
             this.panel4.TabIndex = 3;
             // 
-            // tabControl3
+            // tcsach
             // 
-            this.tabControl3.CanReorderTabs = true;
-            this.tabControl3.Controls.Add(this.tabControlPanel6);
-            this.tabControl3.Controls.Add(this.tabControlPanel7);
-            this.tabControl3.Controls.Add(this.tabControlPanel8);
-            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl3.Location = new System.Drawing.Point(0, 0);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tabControl3.SelectedTabIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(776, 286);
-            this.tabControl3.TabIndex = 0;
-            this.tabControl3.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
-            this.tabControl3.Tabs.Add(this.tabItem6);
-            this.tabControl3.Tabs.Add(this.tabItem7);
-            this.tabControl3.Tabs.Add(this.tabItem8);
+            this.tcsach.CanReorderTabs = true;
+            this.tcsach.Controls.Add(this.tabControlPanel7);
+            this.tcsach.Controls.Add(this.tabControlPanel8);
+            this.tcsach.Controls.Add(this.tabControlPanel6);
+            this.tcsach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcsach.Location = new System.Drawing.Point(0, 0);
+            this.tcsach.Name = "tcsach";
+            this.tcsach.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.tcsach.SelectedTabIndex = 0;
+            this.tcsach.Size = new System.Drawing.Size(776, 286);
+            this.tcsach.TabIndex = 0;
+            this.tcsach.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
+            this.tcsach.Tabs.Add(this.tabItem6);
+            this.tcsach.Tabs.Add(this.tabItem7);
+            this.tcsach.Tabs.Add(this.tabItem8);
             // 
             // tabControlPanel6
             // 
-            this.tabControlPanel6.Controls.Add(this.dataGridView2);
+            this.tabControlPanel6.Controls.Add(this.dgvtuasach);
             this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel6.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel6.Name = "tabControlPanel6";
@@ -660,14 +660,17 @@
             this.tabControlPanel6.TabIndex = 1;
             this.tabControlPanel6.TabItem = this.tabItem6;
             // 
-            // dataGridView2
+            // dgvtuasach
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(1, 1);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(774, 258);
-            this.dataGridView2.TabIndex = 0;
+            this.dgvtuasach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvtuasach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvtuasach.Location = new System.Drawing.Point(1, 1);
+            this.dgvtuasach.MultiSelect = false;
+            this.dgvtuasach.Name = "dgvtuasach";
+            this.dgvtuasach.ReadOnly = true;
+            this.dgvtuasach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvtuasach.Size = new System.Drawing.Size(774, 258);
+            this.dgvtuasach.TabIndex = 0;
             // 
             // tabItem6
             // 
@@ -677,7 +680,7 @@
             // 
             // tabControlPanel7
             // 
-            this.tabControlPanel7.Controls.Add(this.dataGridView3);
+            this.tabControlPanel7.Controls.Add(this.dgvdausach);
             this.tabControlPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel7.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel7.Name = "tabControlPanel7";
@@ -693,14 +696,17 @@
             this.tabControlPanel7.TabIndex = 2;
             this.tabControlPanel7.TabItem = this.tabItem7;
             // 
-            // dataGridView3
+            // dgvdausach
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(1, 1);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(774, 258);
-            this.dataGridView3.TabIndex = 0;
+            this.dgvdausach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvdausach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvdausach.Location = new System.Drawing.Point(1, 1);
+            this.dgvdausach.MultiSelect = false;
+            this.dgvdausach.Name = "dgvdausach";
+            this.dgvdausach.ReadOnly = true;
+            this.dgvdausach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvdausach.Size = new System.Drawing.Size(774, 258);
+            this.dgvdausach.TabIndex = 0;
             // 
             // tabItem7
             // 
@@ -710,7 +716,7 @@
             // 
             // tabControlPanel8
             // 
-            this.tabControlPanel8.Controls.Add(this.dataGridView1);
+            this.tabControlPanel8.Controls.Add(this.dgvcuonsach);
             this.tabControlPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlPanel8.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel8.Name = "tabControlPanel8";
@@ -726,14 +732,17 @@
             this.tabControlPanel8.TabIndex = 3;
             this.tabControlPanel8.TabItem = this.tabItem8;
             // 
-            // dataGridView1
+            // dgvcuonsach
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(774, 258);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvcuonsach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvcuonsach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvcuonsach.Location = new System.Drawing.Point(1, 1);
+            this.dgvcuonsach.MultiSelect = false;
+            this.dgvcuonsach.Name = "dgvcuonsach";
+            this.dgvcuonsach.ReadOnly = true;
+            this.dgvcuonsach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvcuonsach.Size = new System.Drawing.Size(774, 258);
+            this.dgvcuonsach.TabIndex = 0;
             // 
             // tabItem8
             // 
@@ -980,11 +989,11 @@
             this.ribbonTabItem2.Panel = this.ribbonPanel2;
             this.ribbonTabItem2.Text = "Thao tác";
             // 
-            // tabItem5
+            // tisach
             // 
-            this.tabItem5.AttachedControl = this.tabControlPanel5;
-            this.tabItem5.Name = "tabItem5";
-            this.tabItem5.Text = "Sách";
+            this.tisach.AttachedControl = this.tabControlPanel5;
+            this.tisach.Name = "tisach";
+            this.tisach.Text = "Sách";
             // 
             // Form1
             // 
@@ -1007,10 +1016,10 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tcdocgia)).EndInit();
             this.tcdocgia.ResumeLayout(false);
-            this.tabControlPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvnhanvien)).EndInit();
             this.tabControlPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdocgia)).EndInit();
+            this.tabControlPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvnhanvien)).EndInit();
             this.tabControlPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvhocsinh)).EndInit();
             this.ribbonControl1.ResumeLayout(false);
@@ -1018,14 +1027,14 @@
             this.ribbonPanel1.ResumeLayout(false);
             this.tabControlPanel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tabControl3)).EndInit();
-            this.tabControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tcsach)).EndInit();
+            this.tcsach.ResumeLayout(false);
             this.tabControlPanel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvtuasach)).EndInit();
             this.tabControlPanel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvdausach)).EndInit();
             this.tabControlPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvcuonsach)).EndInit();
             this.ribbonControl2.ResumeLayout(false);
             this.ribbonControl2.PerformLayout();
             this.ribbonPanel2.ResumeLayout(false);
@@ -1057,7 +1066,7 @@
         private DevComponents.DotNetBar.RibbonBar ribbonBar1;
         private DevComponents.DotNetBar.ButtonItem btnthemdg;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem1;
-        private DevComponents.DotNetBar.TabItem tabItem1;
+        private DevComponents.DotNetBar.TabItem tidocgia;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel4;
         private System.Windows.Forms.DataGridView dgvnhanvien;
         private DevComponents.DotNetBar.TabItem tabItem4;
@@ -1077,17 +1086,17 @@
         private DevComponents.DotNetBar.RibbonBar ribbonBar8;
         private DevComponents.DotNetBar.ButtonItem btnthemsach;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem2;
-        private DevComponents.DotNetBar.TabItem tabItem5;
+        private DevComponents.DotNetBar.TabItem tisach;
         private System.Windows.Forms.Panel panel4;
-        private DevComponents.DotNetBar.TabControl tabControl3;
+        private DevComponents.DotNetBar.TabControl tcsach;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel6;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvtuasach;
         private DevComponents.DotNetBar.TabItem tabItem6;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel7;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dgvdausach;
         private DevComponents.DotNetBar.TabItem tabItem7;
         private DevComponents.DotNetBar.TabControlPanel tabControlPanel8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvcuonsach;
         private DevComponents.DotNetBar.TabItem tabItem8;
     }
 }

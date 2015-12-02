@@ -35,6 +35,7 @@ namespace Managament_Library_v2._0
             dtDocGia = data.timDocGia(dg, 1);
             dtHocSinh = data.timHocSinh(hs, 1);
 
+            //ghép cột lớp vào bảng Độc giả tìm được
             dtDocGia.Columns.Add("lop");
             if (dtHocSinh.Rows.Count != 0)
                 dtDocGia.Rows[0]["lop"] = dtHocSinh.Rows[0]["lop"];
@@ -50,10 +51,10 @@ namespace Managament_Library_v2._0
             DataTable dtDocGia = new DataTable();
             DataTable dtHocSinh;
 
-            dtDocGia = data.timDocGia(dg, 2);
+            dtDocGia = data.timDocGia(dg, 2);//tìm độc giả theo tên
             dtDocGia.Columns.Add("lop");
 
-            for (int i = 0; i < dtDocGia.Rows.Count; i++)
+            for (int i = 0; i < dtDocGia.Rows.Count; i++)//tra cứu lớp đối với mỗi độc giả tìm được
             {
                 hs = new HocSinhDTO();
                 hs.MaDocGia = dtDocGia.Rows[i]["madocgia"].ToString();
@@ -62,7 +63,7 @@ namespace Managament_Library_v2._0
                 if (dtHocSinh.Rows.Count != 0)
                     dtDocGia.Rows[i]["lop"] = dtHocSinh.Rows[0]["lop"];
                 else
-                    dtDocGia.Rows[i]["lop"] = "null";
+                    dtDocGia.Rows[i]["lop"] = "null";//độc giả không thuộc lớp nào
             }
 
             dgvdocgia.DataSource = dtDocGia;
@@ -77,9 +78,9 @@ namespace Managament_Library_v2._0
             DataTable temp;
             DataTable dtHocSinh = new DataTable();
 
-            dtHocSinh = data.timHocSinh(hs, 2);
+            dtHocSinh = data.timHocSinh(hs, 2);//tìm mã độc giả theo lớp
 
-            for (int i = 0; i < dtHocSinh.Rows.Count; i++)
+            for (int i = 0; i < dtHocSinh.Rows.Count; i++)//tìm thông tin độc giả dựa trên mã độc giả tìm được
             {
                 dg = new DocGiaDTO();
                 dg.MaDocGia = dtHocSinh.Rows[i]["madocgia"].ToString();

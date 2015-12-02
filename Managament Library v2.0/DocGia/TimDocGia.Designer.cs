@@ -34,6 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnlop = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtlop = new System.Windows.Forms.TextBox();
             this.btnten = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtten = new System.Windows.Forms.TextBox();
@@ -41,9 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtmdg = new System.Windows.Forms.TextBox();
             this.dgvdocgia = new System.Windows.Forms.DataGridView();
-            this.btnlop = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtlop = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,6 +94,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(9, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -118,6 +119,36 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(778, 94);
             this.panel2.TabIndex = 2;
+            // 
+            // btnlop
+            // 
+            this.btnlop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnlop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlop.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnlop.Location = new System.Drawing.Point(299, 59);
+            this.btnlop.Name = "btnlop";
+            this.btnlop.Size = new System.Drawing.Size(50, 25);
+            this.btnlop.TabIndex = 32;
+            this.btnlop.Text = "Tìm";
+            this.btnlop.UseVisualStyleBackColor = false;
+            this.btnlop.Click += new System.EventHandler(this.btnlop_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(205, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Lớp";
+            // 
+            // txtlop
+            // 
+            this.txtlop.Location = new System.Drawing.Point(246, 62);
+            this.txtlop.Name = "txtlop";
+            this.txtlop.Size = new System.Drawing.Size(35, 20);
+            this.txtlop.TabIndex = 30;
             // 
             // btnten
             // 
@@ -187,36 +218,6 @@
             this.dgvdocgia.Name = "dgvdocgia";
             this.dgvdocgia.Size = new System.Drawing.Size(778, 305);
             this.dgvdocgia.TabIndex = 3;
-            // 
-            // btnlop
-            // 
-            this.btnlop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
-            this.btnlop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlop.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnlop.Location = new System.Drawing.Point(299, 59);
-            this.btnlop.Name = "btnlop";
-            this.btnlop.Size = new System.Drawing.Size(50, 25);
-            this.btnlop.TabIndex = 32;
-            this.btnlop.Text = "Tìm";
-            this.btnlop.UseVisualStyleBackColor = false;
-            this.btnlop.Click += new System.EventHandler(this.btnlop_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(205, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Lớp";
-            // 
-            // txtlop
-            // 
-            this.txtlop.Location = new System.Drawing.Point(246, 62);
-            this.txtlop.Name = "txtlop";
-            this.txtlop.Size = new System.Drawing.Size(35, 20);
-            this.txtlop.TabIndex = 30;
             // 
             // TimDocGia
             // 

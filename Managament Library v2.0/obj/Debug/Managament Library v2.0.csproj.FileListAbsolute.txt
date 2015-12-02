@@ -11,3 +11,16 @@ D:\Save VS_2013\C#\Managament Library v2.0\Managament Library v2.0\obj\Debug\Man
 D:\Save VS_2013\C#\Managament Library v2.0\Managament Library v2.0\obj\Debug\Managament_Library_v2._0.ThemDocGia.resources
 D:\Save VS_2013\C#\Managament Library v2.0\Managament Library v2.0\obj\Debug\Managament_Library_v2._0.SuaDocGia.resources
 D:\Save VS_2013\C#\Managament Library v2.0\Managament Library v2.0\obj\Debug\Managament_Library_v2._0.TimDocGia.resources
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\bin\Debug\Managament Library v2.0.exe.config
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\obj\Debug\Managament Library v2.0.exe
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\obj\Debug\Managament Library v2.0.pdb
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\bin\Debug\Managament Library v2.0.exe
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\bin\Debug\Managament Library v2.0.pdb
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\obj\Debug\Managament Library v2.0.csprojResolveAssemblyReference.cache
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\obj\Debug\Managament Library v2.0.g.resources
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\obj\Debug\Managament_Library_v2._0.Form1.resources
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\obj\Debug\Managament_Library_v2._0.Properties.Resources.resources
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\obj\Debug\Managament_Library_v2._0.SuaDocGia.resources
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\obj\Debug\Managament_Library_v2._0.ThemDocGia.resources
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\obj\Debug\Managament_Library_v2._0.TimDocGia.resources
+D:\SaveVS\GitHub\managementlibrary\Managament Library v2.0\obj\Debug\Managament Library v2.0.csproj.GenerateResource.Cache
