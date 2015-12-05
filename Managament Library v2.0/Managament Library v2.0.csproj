@@ -77,6 +77,27 @@
     <Compile Include="DocGia\TimDocGia.Designer.cs">
       <DependentUpon>TimDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sach\SachCTL.cs" />
+    <Compile Include="Sach\SachDAO.cs" />
+    <Compile Include="Sach\SachDTO.cs" />
+    <Compile Include="Sach\SuaSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sach\SuaSach.Designer.cs">
+      <DependentUpon>SuaSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\ThemSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sach\ThemSach.Designer.cs">
+      <DependentUpon>ThemSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach\TimSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sach\TimSach.Designer.cs">
+      <DependentUpon>TimSach.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +118,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DocGia\TimDocGia.resx">
       <DependentUpon>TimDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\SuaSach.resx">
+      <DependentUpon>SuaSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\ThemSach.resx">
+      <DependentUpon>ThemSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach\TimSach.resx">
+      <DependentUpon>TimSach.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -129,6 +159,7 @@
   <ItemGroup>
     <Resource Include="images\Tooschee-Misc-Book.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
