@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Managament_Library_v2._0.CTL;
+using Managament_Library_v2._0.EF;
 
 namespace Managament_Library_v2._0
 {
@@ -26,49 +28,53 @@ namespace Managament_Library_v2._0
                 OnUpdate();
         }
 
-        DocGiaCTL data = new DocGiaCTL();
+        DocGia data = new DocGia();
         
         public static String mdg = String.Empty;
         private void SuaDocGia_Load(object sender, EventArgs e)
         {
-            DataTable dtDocGia = new DataTable();
-            DataTable dtHocSinh = new DataTable();
-            DataTable dtNhanVien = new DataTable();
-            DocGiaDTO dg = new DocGiaDTO();
-            HocSinhDTO hs = new HocSinhDTO();
-            NhanVienDTO nv = new NhanVienDTO();
-            dg.MaDocGia = mdg;
-            hs.MaDocGia = mdg;
-            nv.MaDocGia = mdg;
+            DOCGIA temp1 = new DOCGIA();
+            HOCSINH temp2 = new HOCSINH();
+            NHANVIEN temp3 = new NHANVIEN();
 
-            dtDocGia = data.timDocGia(dg, 1);
-            dtHocSinh = data.timHocSinh(hs, 1);
-            dtNhanVien = data.timNhanVien(nv);
+            temp1.madocgia = mdg;
+            temp2.madocgia = mdg;
+            temp3.madocgia = mdg;
 
-            txtmdg.Text = dtDocGia.Rows[0]["madocgia"].ToString();
-            txtten.Text = dtDocGia.Rows[0]["hoten"].ToString();
-            if (cbxgioitinh.Items[0].ToString() == dtDocGia.Rows[0]["gioitinh"].ToString())
-            {
-                cbxgioitinh.SelectedIndex = 0;
-            }
-            else if (cbxgioitinh.Items[1].ToString() == dtDocGia.Rows[0]["gioitinh"].ToString())
-            {
-                cbxgioitinh.SelectedIndex = 1;
-            }
+            DOCGIA dg = data.timDocGia(temp1);
+            HOCSINH hs = data.timHocSinh(temp2);
+            NHANVIEN nv = data.timNhanVien(temp3);
+
+
+
+            txtmdg.Text = dg.madocgia;
+            txtten.Text = dg.hoten;
+            txtvipham.Text = dg.vipham.ToString();
+
+            if (dg.tinhtrang == true)
+                cbtinhtrang.Checked = true;
             else
-            {
-                cbxgioitinh.SelectedIndex = 2;
-            }
-            dngaysinh.Value = (DateTime)dtDocGia.Rows[0]["ngaysinh"];
-            dngaylap.Value = (DateTime)dtDocGia.Rows[0]["ngaylap"];
+                cbtinhtrang.Checked = false;
 
-            if (dtHocSinh.Rows.Count > 0)
+            for (int i = 0; i < cbxgioitinh.Items.Count; i++)
+            {
+                if (cbxgioitinh.Items[i].ToString() == dg.gioitinh)
+                {
+                    cbxgioitinh.SelectedIndex = i;
+                    return;
+                }
+            }
+            
+            dngaysinh.Value = (DateTime)dg.ngaysinh;
+            dngaylap.Value = (DateTime)dg.ngaylap;
+
+            if (hs != null)
             {
                 lbllop.Enabled = true;
                 txtlop.Enabled = true;
-                txtlop.Text = dtHocSinh.Rows[0]["lop"].ToString();
+                txtlop.Text = hs.lop;
             }
-            else if (dtNhanVien.Rows.Count > 0)
+            else if (nv != null)
             {
                 lbllop.Enabled = false;
                 txtlop.Enabled = false;
@@ -77,27 +83,38 @@ namespace Managament_Library_v2._0
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-            DocGiaDTO dg = new DocGiaDTO();
-            HocSinhDTO hs;
-
-            if (lbllop.Enabled == true)
+            try
             {
-                hs = new HocSinhDTO();
-                hs.MaDocGia = txtmdg.Text;
-                hs.Lop = txtlop.Text;
-                data.suaHocSinh(hs);
-            }
+                int vipham = Convert.ToInt32(txtvipham.Text);
+                DOCGIA dg = new DOCGIA();
+                HOCSINH hs;
 
-            dg.MaDocGia = txtmdg.Text;
-            dg.HoTen = txtten.Text;
-            dg.GioiTinh = cbxgioitinh.SelectedItem.ToString();
-            dg.NgaySinh = dngaysinh.Value.Date;
-            dg.NgayLap = dngaylap.Value.Date;
-            data.suaDocGia(dg);
+                if (lbllop.Enabled == true)
+                {
+                    hs = new HOCSINH();
+                    hs.madocgia = txtmdg.Text;
+                    hs.lop = txtlop.Text;
+                    data.suaHocSinh(hs);
+                }
+
+                dg.madocgia = txtmdg.Text;
+                dg.hoten = txtten.Text;
+                dg.gioitinh = cbxgioitinh.SelectedItem.ToString();
+                dg.ngaysinh = dngaysinh.Value.Date;
+                dg.ngaylap = dngaylap.Value.Date;
+                dg.vipham = vipham;
+                dg.tinhtrang = cbtinhtrang.Checked;
+                data.suaDocGia(dg);
+
+                UpdateNotice();
+                MessageBox.Show("Hoàn thành!");
+                Close();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid input!");
+            }
             
-            UpdateNotice();
-            MessageBox.Show("Hoàn thành!");
-            Close();
         }
     }
 }

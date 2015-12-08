@@ -126,7 +126,7 @@
             this.btnlop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlop.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnlop.Location = new System.Drawing.Point(299, 59);
+            this.btnlop.Location = new System.Drawing.Point(310, 59);
             this.btnlop.Name = "btnlop";
             this.btnlop.Size = new System.Drawing.Size(50, 25);
             this.btnlop.TabIndex = 32;
@@ -147,7 +147,7 @@
             // 
             this.txtlop.Location = new System.Drawing.Point(246, 62);
             this.txtlop.Name = "txtlop";
-            this.txtlop.Size = new System.Drawing.Size(35, 20);
+            this.txtlop.Size = new System.Drawing.Size(48, 20);
             this.txtlop.TabIndex = 30;
             // 
             // btnten
@@ -186,7 +186,7 @@
             this.btnmdg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmdg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmdg.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnmdg.Location = new System.Drawing.Point(299, 14);
+            this.btnmdg.Location = new System.Drawing.Point(310, 14);
             this.btnmdg.Name = "btnmdg";
             this.btnmdg.Size = new System.Drawing.Size(50, 25);
             this.btnmdg.TabIndex = 26;
@@ -207,7 +207,7 @@
             // 
             this.txtmdg.Location = new System.Drawing.Point(246, 17);
             this.txtmdg.Name = "txtmdg";
-            this.txtmdg.Size = new System.Drawing.Size(35, 20);
+            this.txtmdg.Size = new System.Drawing.Size(48, 20);
             this.txtmdg.TabIndex = 0;
             // 
             // dgvdocgia
@@ -215,7 +215,10 @@
             this.dgvdocgia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdocgia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvdocgia.Location = new System.Drawing.Point(3, 153);
+            this.dgvdocgia.MultiSelect = false;
             this.dgvdocgia.Name = "dgvdocgia";
+            this.dgvdocgia.ReadOnly = true;
+            this.dgvdocgia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvdocgia.Size = new System.Drawing.Size(778, 305);
             this.dgvdocgia.TabIndex = 3;
             // 

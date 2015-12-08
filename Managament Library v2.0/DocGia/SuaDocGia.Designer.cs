@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtvipham = new System.Windows.Forms.TextBox();
             this.btnsua = new System.Windows.Forms.Button();
             this.lbllop = new System.Windows.Forms.Label();
             this.txtlop = new System.Windows.Forms.TextBox();
@@ -47,6 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtten = new System.Windows.Forms.TextBox();
             this.txtmdg = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbtinhtrang = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,7 +70,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(484, 311);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(519, 313);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
@@ -77,7 +81,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(478, 44);
+            this.panel1.Size = new System.Drawing.Size(513, 44);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -104,6 +108,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cbtinhtrang);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.txtvipham);
             this.panel3.Controls.Add(this.btnsua);
             this.panel3.Controls.Add(this.lbllop);
             this.panel3.Controls.Add(this.txtlop);
@@ -120,8 +128,25 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 53);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(478, 255);
+            this.panel3.Size = new System.Drawing.Size(513, 257);
             this.panel3.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(117, 125);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Vi phạm";
+            // 
+            // txtvipham
+            // 
+            this.txtvipham.Location = new System.Drawing.Point(181, 125);
+            this.txtvipham.Name = "txtvipham";
+            this.txtvipham.Size = new System.Drawing.Size(100, 20);
+            this.txtvipham.TabIndex = 26;
             // 
             // btnsua
             // 
@@ -141,7 +166,7 @@
             // 
             this.lbllop.AutoSize = true;
             this.lbllop.BackColor = System.Drawing.Color.Transparent;
-            this.lbllop.Location = new System.Drawing.Point(347, 54);
+            this.lbllop.Location = new System.Drawing.Point(405, 17);
             this.lbllop.Name = "lbllop";
             this.lbllop.Size = new System.Drawing.Size(25, 13);
             this.lbllop.TabIndex = 24;
@@ -149,7 +174,7 @@
             // 
             // txtlop
             // 
-            this.txtlop.Location = new System.Drawing.Point(378, 51);
+            this.txtlop.Location = new System.Drawing.Point(436, 14);
             this.txtlop.Name = "txtlop";
             this.txtlop.Size = new System.Drawing.Size(33, 20);
             this.txtlop.TabIndex = 23;
@@ -157,7 +182,7 @@
             // dngaysinh
             // 
             this.dngaysinh.Checked = false;
-            this.dngaysinh.Location = new System.Drawing.Point(181, 124);
+            this.dngaysinh.Location = new System.Drawing.Point(181, 161);
             this.dngaysinh.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dngaysinh.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dngaysinh.Name = "dngaysinh";
@@ -169,7 +194,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(113, 159);
+            this.label9.Location = new System.Drawing.Point(113, 196);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 13);
             this.label9.TabIndex = 21;
@@ -178,7 +203,7 @@
             // dngaylap
             // 
             this.dngaylap.Checked = false;
-            this.dngaylap.Location = new System.Drawing.Point(181, 159);
+            this.dngaylap.Location = new System.Drawing.Point(181, 196);
             this.dngaylap.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dngaylap.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dngaylap.Name = "dngaylap";
@@ -204,7 +229,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(108, 124);
+            this.label5.Location = new System.Drawing.Point(108, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 9;
@@ -255,11 +280,29 @@
             this.txtmdg.Size = new System.Drawing.Size(100, 20);
             this.txtmdg.TabIndex = 0;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(375, 51);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Tình trạng";
+            // 
+            // cbtinhtrang
+            // 
+            this.cbtinhtrang.AutoSize = true;
+            this.cbtinhtrang.Location = new System.Drawing.Point(454, 51);
+            this.cbtinhtrang.Name = "cbtinhtrang";
+            this.cbtinhtrang.Size = new System.Drawing.Size(15, 14);
+            this.cbtinhtrang.TabIndex = 29;
+            this.cbtinhtrang.UseVisualStyleBackColor = true;
+            // 
             // SuaDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 311);
+            this.ClientSize = new System.Drawing.Size(519, 313);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SuaDocGia";
@@ -295,5 +338,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtten;
         private System.Windows.Forms.TextBox txtmdg;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtvipham;
+        private System.Windows.Forms.CheckBox cbtinhtrang;
+        private System.Windows.Forms.Label label7;
     }
 }

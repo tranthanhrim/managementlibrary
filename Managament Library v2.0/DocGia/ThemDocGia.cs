@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Managament_Library_v2._0.DAO;
+using Managament_Library_v2._0.EF;
 
 namespace Managament_Library_v2._0
 {
@@ -18,12 +20,13 @@ namespace Managament_Library_v2._0
             InitializeComponent();
         }
 
-        DocGiaDTO dg = new DocGiaDTO();
-        HocSinhDTO hs;
-        NhanVienDTO nv;
-        DocGiaDAO data = new DocGiaDAO();
         DataTable dt = new DataTable();
 
+        DocGia data = new DocGia();
+        DOCGIA dg;
+        HOCSINH hs;
+        NHANVIEN nv;
+        
         public delegate void OnAddHandler();
         public event OnAddHandler OnAdd;
 
@@ -61,26 +64,27 @@ namespace Managament_Library_v2._0
                 if (txtmdg.Text != "")
                 {
                     int x = Convert.ToInt32(txtmdg.Text);
-
-                    dg.MaDocGia = txtmdg.Text;
-                    dg.HoTen = txtten.Text;
-                    dg.GioiTinh = cbxgioitinh.SelectedItem.ToString();
-                    dg.NgaySinh = dngaysinh.Value.Date;
-                    dg.NgayLap = dngaylap.Value.Date;
-                    dg.TinhTrang = true;
+                    dg = new DOCGIA();
+                    dg.madocgia = txtmdg.Text;
+                    dg.hoten = txtten.Text;
+                    dg.gioitinh = cbxgioitinh.SelectedItem.ToString();
+                    dg.ngaysinh = dngaysinh.Value.Date;
+                    dg.ngaylap = dngaylap.Value.Date;
+                    dg.tinhtrang = true;
+                    dg.vipham = 0;
                     data.themDocGia(dg);
 
                     if (rbhocsinh.Checked == true)
                     {
-                        hs = new HocSinhDTO();
-                        hs.MaDocGia = txtmdg.Text;
-                        hs.Lop = txtlop.Text;
+                        hs = new HOCSINH();
+                        hs.madocgia = txtmdg.Text;
+                        hs.lop = txtlop.Text;
                         data.themHocSinh(hs);
                     }
                     else if (rbnhanvien.Checked == true)
                     {
-                        nv = new NhanVienDTO();
-                        nv.MaDocGia = txtmdg.Text;
+                        nv = new NHANVIEN();
+                        nv.madocgia = txtmdg.Text;
                         data.themNhanVien(nv);
                     }
 
