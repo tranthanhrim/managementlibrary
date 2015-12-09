@@ -19,20 +19,69 @@ namespace Managament_Library_v2._0
             InitializeComponent();
         }
 
+        public static List<THAMSO> thamSo;
+
         DocGia dataDocGia = new DocGia();
         Sach dataSach = new Sach();
         MuonTraSach dataMuonTraSach = new MuonTraSach();
-        DOCGIA dg;
+        ThamSo dataThamSo = new ThamSo();
+        ViPham dataViPham = new ViPham();
+        
+        /*DOCGIA dg;
         HOCSINH hs;
         NHANVIEN nv;
         CUONSACH cs;
-        DAUSACH ds;
+        DAUSACH ds;*/
 
         void updateDocGia()
         {
             dgvdocgia.DataSource = dataDocGia.loadDocGia();
             dgvhocsinh.DataSource = dataDocGia.loadHocSinh();
             dgvnhanvien.DataSource = dataDocGia.loadNhanVien();
+        }
+
+        void updateDataViPham()
+        {
+            dgvvipham.DataSource = dataViPham.loadViPham();
+        }
+
+        void updateViPham(string madocgia)
+        {
+            VIPHAM inf = new VIPHAM();
+            THAMSO songaykhoathe;
+            THAMSO solantrehen = new THAMSO();
+            inf.madocgia = madocgia;
+            inf = dataViPham.timViPham(inf);
+
+            for (int i = 0; i < thamSo.Count; i++)
+            {
+                if (thamSo[i].tenthamso == "solantrehen")
+                {
+                    solantrehen = thamSo[i];
+                    break;
+                }
+            }
+
+            if (inf.vipham1 < Convert.ToInt32(solantrehen.giatri))
+                inf.vipham1++;
+            else //khóa thẻ
+            {
+                khoaThe(madocgia);
+                inf.vipham1 = 0;
+
+                songaykhoathe = new THAMSO();
+                for(int i = 0; i < thamSo.Count; i++)
+                {
+                    if (thamSo[i].tenthamso == "songaykhoathe")
+                    {
+                        songaykhoathe = thamSo[i];
+                        break;
+                    }
+                }
+
+                inf.ngayhethan = DateTime.Now.Date.AddDays(Convert.ToInt32(songaykhoathe.giatri));
+            }
+            dataViPham.suaViPham(inf);
         }
 
         void updateSach()
@@ -49,7 +98,7 @@ namespace Managament_Library_v2._0
 
         void updateTinhTrangCuonSach(string macuonsach)
         {
-            cs = new CUONSACH();
+            CUONSACH cs = new CUONSACH();
             cs.macuonsach = macuonsach;
             cs = dataSach.timCuonSach(cs);
             if (cs.tinhtrang == true)
@@ -62,21 +111,10 @@ namespace Managament_Library_v2._0
             updateSach();
         }
 
-        /*DataTable dtCuonSach = dataSach.loadCuonSach();
-            bool isBlank = true;
-            for (int i = 0; i < dtCuonSach.Rows.Count; i++)
-            {
-                if (dtCuonSach.Rows[i]["Tình trạng"].ToString() != String.Empty && (bool)dtCuonSach.Rows[i]["Tình trạng"] == true)
-                {
-                    isBlank = false;
-                    break;
-                }
-            }*/
-
         void updateTinhTrangDauSach(string madausach)
         {
             
-            ds = new DAUSACH();
+            DAUSACH ds = new DAUSACH();
             ds.madausach = madausach;
             ds = dataSach.timDauSach(ds);
             if (ds.tinhtrang == true)
@@ -87,6 +125,14 @@ namespace Managament_Library_v2._0
             updateSach();
         }
 
+        void khoaThe(string madocgia)
+        {
+            DOCGIA dg = new DOCGIA();
+            dg.madocgia = madocgia;
+            dg = dataDocGia.timDocGia(dg);
+            dg.tinhtrang = false;
+            dataDocGia.suaDocGia(dg);
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -94,6 +140,9 @@ namespace Managament_Library_v2._0
             updateDocGia();
             updateSach();
             updateMuonTraSach();
+            updateDataViPham();
+            thamSo = dataThamSo.loadThamSo();
+            
         }
 
         #region Độc giả
@@ -114,9 +163,9 @@ namespace Managament_Library_v2._0
            {
                if (dgvdocgia.SelectedRows.Count == 0)
                    return;
-               dg = new DOCGIA();
-               hs = new HOCSINH();
-               nv = new NHANVIEN();
+               DOCGIA dg = new DOCGIA();
+               HOCSINH hs = new HOCSINH();
+               NHANVIEN nv = new NHANVIEN();
                dg.madocgia = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();
                hs.madocgia = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();
                nv.madocgia = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();
@@ -129,8 +178,8 @@ namespace Managament_Library_v2._0
            {
                if (dgvhocsinh.SelectedRows.Count == 0)
                    return;
-               dg = new DOCGIA();
-               hs = new HOCSINH();
+               DOCGIA dg = new DOCGIA();
+               HOCSINH hs = new HOCSINH();
                dg.madocgia = dgvhocsinh.SelectedRows[0].Cells[0].Value.ToString();
                hs.madocgia = dgvhocsinh.SelectedRows[0].Cells[0].Value.ToString();
                dataDocGia.xoaHocSinh(hs);
@@ -142,8 +191,8 @@ namespace Managament_Library_v2._0
            {
                if (dgvnhanvien.SelectedRows.Count == 0)
                    return;
-               dg = new DOCGIA();              
-               nv = new NHANVIEN();
+               DOCGIA dg = new DOCGIA();              
+               NHANVIEN nv = new NHANVIEN();
                dg.madocgia = dgvnhanvien.SelectedRows[0].Cells[0].Value.ToString();
                nv.madocgia = dgvnhanvien.SelectedRows[0].Cells[0].Value.ToString();
                dataDocGia.xoaNhanVien(nv);
@@ -182,6 +231,16 @@ namespace Managament_Library_v2._0
                 SuaDocGia.mdg = dgvnhanvien.SelectedRows[0].Cells[0].Value.ToString();
                 formSuaDG.ShowDialog();
             }
+            else if (tcdocgia.SelectedTabIndex == 3)
+            {
+                if (dgvvipham.SelectedRows.Count == 0)
+                    return;
+                SuaViPham formSuaVP = new SuaViPham();
+                SuaViPham.madocgia = dgvvipham.SelectedRows[0].Cells[0].Value.ToString();
+                formSuaVP.OnUpdate += new SuaViPham.OnUpdateHandler(updateDataViPham);
+                formSuaVP.ShowDialog();
+            }
+            
         }
 
         private void btntimdg_Click(object sender, EventArgs e)
@@ -207,11 +266,18 @@ namespace Managament_Library_v2._0
 
         private void btntrasach_Click(object sender, EventArgs e)
         {
+            if (dgvmuontrasach.SelectedRows[0].Cells[4].Value != DBNull.Value)
+            {
+                MessageBox.Show("Invalid!");
+                return;
+            }
+
             TraSach formTraSach = new TraSach();
             TraSach.inf.madocgia = dgvmuontrasach.SelectedRows[0].Cells[0].Value.ToString();
             TraSach.inf.macuonsach = dgvmuontrasach.SelectedRows[0].Cells[1].Value.ToString();
             TraSach.inf.ngaygiomuon = (DateTime)dgvmuontrasach.SelectedRows[0].Cells[2].Value;
-            formTraSach.OnBackBook += new TraSach.OnBackBookHanlder(updateTinhTrangCuonSach);
+            formTraSach.OnBackBook += new TraSach.OnBackBookHandler(updateTinhTrangCuonSach);
+            formTraSach.OnIllegal += new TraSach.OnIllegalHandler(updateViPham);
             formTraSach.ShowDialog();
         }
 

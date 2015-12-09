@@ -49,7 +49,6 @@ namespace Managament_Library_v2._0
 
             txtmdg.Text = dg.madocgia;
             txtten.Text = dg.hoten;
-            txtvipham.Text = dg.vipham.ToString();
 
             if (dg.tinhtrang == true)
                 cbtinhtrang.Checked = true;
@@ -85,7 +84,6 @@ namespace Managament_Library_v2._0
         {
             try
             {
-                int vipham = Convert.ToInt32(txtvipham.Text);
                 DOCGIA dg = new DOCGIA();
                 HOCSINH hs;
 
@@ -102,7 +100,6 @@ namespace Managament_Library_v2._0
                 dg.gioitinh = cbxgioitinh.SelectedItem.ToString();
                 dg.ngaysinh = dngaysinh.Value.Date;
                 dg.ngaylap = dngaylap.Value.Date;
-                dg.vipham = vipham;
                 dg.tinhtrang = cbtinhtrang.Checked;
                 data.suaDocGia(dg);
 

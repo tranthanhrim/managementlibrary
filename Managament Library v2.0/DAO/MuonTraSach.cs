@@ -27,10 +27,48 @@ namespace Managament_Library_v2._0.DAO
             return dt;
         }
 
-        public void themMuonTraSach(MUONSACH inf)
+        public int themMuonTraSach(MUONSACH inf)
         {
+            DataTable phieuMuon = timMuonTraSach(inf, 1);
+            int chuaTra = 0;
+            for (int i = 0; i < phieuMuon.Rows.Count; i++)
+            {
+                if (phieuMuon.Rows[i]["ngaygiotra"].ToString() == String.Empty)
+                    chuaTra++;
+            }
+
+            THAMSO sosachmuon = new THAMSO();
+            THAMSO songaymuon = new THAMSO();
+            for (int i = 0; i < Form1.thamSo.Count; i++)
+            {
+                if (Form1.thamSo[i].tenthamso == "sosachmuon")
+                {
+                    sosachmuon = Form1.thamSo[i];
+                    break;
+                }
+            }
+
+            for (int i = 0; i < Form1.thamSo.Count; i++)
+            {
+                if (Form1.thamSo[i].tenthamso == "songaymuon")
+                {
+                    songaymuon = Form1.thamSo[i];
+                    break;
+                }
+            }
+
+            if (sosachmuon.tinhtrang == true)
+            {
+                if (chuaTra > Convert.ToInt32(sosachmuon.giatri))
+                {
+                    return 0;
+                }
+            }
+
+            inf.ngayhethan = inf.ngaygiomuon.AddDays(Convert.ToInt32(songaymuon.giatri));
             data.MUONSACHes.Add(inf);
             data.SaveChanges();
+            return 1;
         }
 
         public void suaMuonTraSach(MUONSACH before, MUONSACH after)

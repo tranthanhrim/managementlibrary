@@ -19,7 +19,9 @@ namespace Managament_Library_v2._0.EF
         public virtual DbSet<HOCSINH> HOCSINHs { get; set; }
         public virtual DbSet<MUONSACH> MUONSACHes { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
+        public virtual DbSet<THAMSO> THAMSOes { get; set; }
         public virtual DbSet<TUASACH> TUASACHes { get; set; }
+        public virtual DbSet<VIPHAM> VIPHAMs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -79,6 +81,10 @@ namespace Managament_Library_v2._0.EF
                 .HasOptional(e => e.NHANVIEN)
                 .WithRequired(e => e.DOCGIA);
 
+            modelBuilder.Entity<DOCGIA>()
+                .HasOptional(e => e.VIPHAM)
+                .WithRequired(e => e.DOCGIA);
+
             modelBuilder.Entity<HOCSINH>()
                 .Property(e => e.madocgia)
                 .IsUnicode(false);
@@ -99,8 +105,24 @@ namespace Managament_Library_v2._0.EF
                 .Property(e => e.madocgia)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<THAMSO>()
+                .Property(e => e.tenthamso)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<THAMSO>()
+                .Property(e => e.kieu)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<THAMSO>()
+                .Property(e => e.giatri)
+                .IsUnicode(false);
+
             modelBuilder.Entity<TUASACH>()
                 .Property(e => e.matuasach)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<VIPHAM>()
+                .Property(e => e.madocgia)
                 .IsUnicode(false);
         }
     }

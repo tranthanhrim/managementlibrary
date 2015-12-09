@@ -19,13 +19,22 @@ namespace Managament_Library_v2._0
             InitializeComponent();
         }
 
-        public delegate void OnBackBookHanlder(string macuonsach);
-        public event OnBackBookHanlder OnBackBook;
+        public delegate void OnBackBookHandler(string macuonsach);
+        public event OnBackBookHandler OnBackBook;
+
+        public delegate void OnIllegalHandler(string madocgia);
+        public event OnIllegalHandler OnIllegal;
 
         void notiveBackBook(string macuonsach)
         {
             if (OnBackBook != null)
                 OnBackBook(macuonsach);
+        }
+
+        void noticeIllegal(string madocgia)
+        {
+            if (OnIllegal != null)
+                OnIllegal(madocgia);
         }
 
         public static MUONSACH inf = new MUONSACH();
@@ -45,6 +54,12 @@ namespace Managament_Library_v2._0
         {
             temp.ngaygiotra = dtngaygiotra.Value.Date;
             data.suaMuonTraSach(temp, temp);
+
+            if (temp.ngaygiotra > temp.ngaygiomuon)
+            {
+                noticeIllegal(temp.madocgia);
+            }
+
             OnBackBook(temp.macuonsach);
         }
     }

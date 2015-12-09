@@ -60,10 +60,14 @@
     <Compile Include="CTL\DocGia.cs" />
     <Compile Include="CTL\MuonTraSach.cs" />
     <Compile Include="CTL\Sach.cs" />
+    <Compile Include="CTL\ThamSo.cs" />
+    <Compile Include="CTL\ViPham.cs" />
     <Compile Include="DAO\DangKyCho.cs" />
     <Compile Include="DAO\DocGia.cs" />
     <Compile Include="DAO\MuonTraSach.cs" />
     <Compile Include="DAO\Sach.cs" />
+    <Compile Include="DAO\ThamSo.cs" />
+    <Compile Include="DAO\ViPham.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="EF\CUONSACH.cs" />
     <Compile Include="EF\DAUSACH.cs" />
@@ -73,7 +77,9 @@
     <Compile Include="EF\LibraryDataContext.cs" />
     <Compile Include="EF\MUONSACH.cs" />
     <Compile Include="EF\NHANVIEN.cs" />
+    <Compile Include="EF\THAMSO.cs" />
     <Compile Include="EF\TUASACH.cs" />
+    <Compile Include="EF\VIPHAM.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,12 @@
     <Compile Include="DangKyCho\ThemDangKyCho.Designer.cs">
       <DependentUpon>ThemDangKyCho.cs</DependentUpon>
     </Compile>
+    <Compile Include="DocGia\SuaViPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocGia\SuaViPham.Designer.cs">
+      <DependentUpon>SuaViPham.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangKyCho\SuaDangKyCho.resx">
       <DependentUpon>SuaDangKyCho.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MuonTraSach\SuaMuonTraSach.resx">
       <DependentUpon>SuaMuonTraSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocGia\SuaViPham.resx">
+      <DependentUpon>SuaViPham.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

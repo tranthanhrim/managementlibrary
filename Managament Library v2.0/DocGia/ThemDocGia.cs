@@ -71,7 +71,6 @@ namespace Managament_Library_v2._0
                     dg.ngaysinh = dngaysinh.Value.Date;
                     dg.ngaylap = dngaylap.Value.Date;
                     dg.tinhtrang = true;
-                    dg.vipham = 0;
                     data.themDocGia(dg);
 
                     if (rbhocsinh.Checked == true)

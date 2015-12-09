@@ -32,8 +32,6 @@ namespace Managament_Library_v2._0.EF
 
         public bool? tinhtrang { get; set; }
 
-        public int? vipham { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DKCHOMUON> DKCHOMUONs { get; set; }
 
@@ -43,5 +41,7 @@ namespace Managament_Library_v2._0.EF
         public virtual ICollection<MUONSACH> MUONSACHes { get; set; }
 
         public virtual NHANVIEN NHANVIEN { get; set; }
+
+        public virtual VIPHAM VIPHAM { get; set; }
     }
 }

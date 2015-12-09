@@ -18,9 +18,9 @@ namespace Managament_Library_v2._0.CTL
             return data.loadMuonTraSach();
         }
 
-        public void themMuonTraSach(MUONSACH inf)
+        public int themMuonTraSach(MUONSACH inf)
         {
-            data.themMuonTraSach(inf);
+            return data.themMuonTraSach(inf);
         }
 
         public void suaMuonTraSach(MUONSACH before, MUONSACH after)

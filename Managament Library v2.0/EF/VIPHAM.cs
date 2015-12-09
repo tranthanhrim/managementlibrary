@@ -6,26 +6,17 @@ namespace Managament_Library_v2._0.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("DKCHOMUON")]
-    public partial class DKCHOMUON
+    [Table("VIPHAM")]
+    public partial class VIPHAM
     {
         [Key]
-        [Column(Order = 0)]
         [StringLength(10)]
         public string madocgia { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [StringLength(10)]
-        public string madausach { get; set; }
+        [Column("vipham")]
+        public int? vipham1 { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        public DateTime ngaygiodk { get; set; }
-
-        public bool? tinhtrang { get; set; }
-
-        public virtual DAUSACH DAUSACH { get; set; }
+        public DateTime? ngayhethan { get; set; }
 
         public virtual DOCGIA DOCGIA { get; set; }
     }

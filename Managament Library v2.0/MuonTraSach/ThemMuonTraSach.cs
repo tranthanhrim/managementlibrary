@@ -45,9 +45,16 @@ namespace Managament_Library_v2._0
             inf.madocgia = cbxmdg.SelectedItem.ToString();
             inf.macuonsach = cbxmacuonsach.SelectedItem.ToString();
             inf.ngaygiomuon = dtngaygiomuon.Value.Date;
-            inf.ngayhethan = inf.ngaygiomuon.AddDays(7);
-            data.themMuonTraSach(inf);
-            noticeBorrowBook(inf.macuonsach);
+            
+            int result = data.themMuonTraSach(inf);
+            if (result == 0)
+            {
+                MessageBox.Show("Mượn sách vượt quá số lượng cho phép!");
+            }
+            else
+            {
+                noticeBorrowBook(inf.macuonsach);
+            }          
         }
 
         private void ThemMuonTraSach_Load(object sender, EventArgs e)
