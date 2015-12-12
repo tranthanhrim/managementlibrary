@@ -56,15 +56,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboboxItem.cs" />
     <Compile Include="CTL\DangKyCho.cs" />
     <Compile Include="CTL\DocGia.cs" />
     <Compile Include="CTL\MuonTraSach.cs" />
+    <Compile Include="CTL\NgonNgu.cs" />
     <Compile Include="CTL\Sach.cs" />
     <Compile Include="CTL\ThamSo.cs" />
     <Compile Include="CTL\ViPham.cs" />
     <Compile Include="DAO\DangKyCho.cs" />
     <Compile Include="DAO\DocGia.cs" />
     <Compile Include="DAO\MuonTraSach.cs" />
+    <Compile Include="DAO\NgonNgu.cs" />
     <Compile Include="DAO\Sach.cs" />
     <Compile Include="DAO\ThamSo.cs" />
     <Compile Include="DAO\ViPham.cs" />
@@ -76,6 +79,7 @@
     <Compile Include="EF\HOCSINH.cs" />
     <Compile Include="EF\LibraryDataContext.cs" />
     <Compile Include="EF\MUONSACH.cs" />
+    <Compile Include="EF\NGONNGU.cs" />
     <Compile Include="EF\NHANVIEN.cs" />
     <Compile Include="EF\THAMSO.cs" />
     <Compile Include="EF\TUASACH.cs" />
@@ -85,6 +89,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NgonNgu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NgonNgu.Designer.cs">
+      <DependentUpon>NgonNgu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,6 +176,18 @@
     <Compile Include="DocGia\SuaViPham.Designer.cs">
       <DependentUpon>SuaViPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangKyCho\SuaDangKyCho.resx">
       <DependentUpon>SuaDangKyCho.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NgonNgu.resx">
+      <DependentUpon>NgonNgu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -217,6 +242,12 @@
     <EmbeddedResource Include="DocGia\SuaViPham.resx">
       <DependentUpon>SuaViPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -250,8 +281,12 @@
     <Resource Include="images\Tooschee-Misc-Book.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\add-icon.png" />
+    <Content Include="images\add-icon1.png" />
     <Content Include="images\go-back.png" />
     <Content Include="images\go-back2.png" />
+    <Content Include="images\List1.png" />
+    <Content Include="images\setting2.png" />
     <Content Include="images\tick.png" />
     <Content Include="images\tick2.png" />
   </ItemGroup>

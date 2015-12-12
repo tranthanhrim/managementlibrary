@@ -38,5 +38,21 @@ namespace Managament_Library_v2._0.DAO
             }
             return thamSo;
         }
+
+        public THAMSO timThamSo(THAMSO inf)
+        {
+            return data.THAMSOes.Find(inf.tenthamso);
+        }
+
+        public void suaThamSo(THAMSO inf)
+        {
+            var temp = data.THAMSOes.Find(inf.tenthamso);
+
+            if (temp != null)
+            {
+                data.Entry(temp).CurrentValues.SetValues(inf);
+                data.SaveChanges();
+            }
+        }
     }
 }

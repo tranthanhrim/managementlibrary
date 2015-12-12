@@ -33,7 +33,7 @@ namespace Managament_Library_v2._0
         MUONSACH temp;
 
         MuonTraSach data = new MuonTraSach();
-
+        ThamSo dataThamSo = new ThamSo();
         private void SuaMuonTraSach_Load(object sender, EventArgs e)
         {
             temp = data.timMuonTraSach(inf);
@@ -51,25 +51,24 @@ namespace Managament_Library_v2._0
             }
         }
 
-        private void btnthem_Click(object sender, EventArgs e)
+
+        private void btnluu_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MUONSACH after = new MUONSACH();
-                after.madocgia = txtmdg.Text.ToString();
-                after.macuonsach = txtmacuonsach.Text.ToString();
-                after.ngaygiomuon = dtngaygiomuon.Value.Date;
-                after.ngayhethan = after.ngaygiomuon.AddDays(7);
-                if (dtngaygiotra.Enabled == true)
-                    after.ngaygiotra = dtngaygiotra.Value.Date;
-                data.suaMuonTraSach(temp, after);
-                noticeUpdateBackBook();
-                Close();
-            }
-            catch(SqlException)
-            {
-                MessageBox.Show("Invalid input!");
-            }
+            THAMSO songaymuon = new THAMSO();
+            songaymuon.tenthamso = "songaymuon";
+            songaymuon = dataThamSo.timThamSo(songaymuon);
+
+            MUONSACH after = new MUONSACH();
+            after.madocgia = txtmdg.Text.ToString();
+            after.macuonsach = txtmacuonsach.Text.ToString();
+            after.ngaygiomuon = dtngaygiomuon.Value.Date;
+            after.ngayhethan = after.ngaygiomuon.AddDays(Convert.ToInt32(songaymuon.giatri));
+            if (dtngaygiotra.Enabled == true)
+                after.ngaygiotra = dtngaygiotra.Value.Date;
+            data.suaMuonTraSach(temp, after);
+            MessageBox.Show("Đã lưu!");
+            noticeUpdateBackBook();
+            Close();
         }
     }
 }

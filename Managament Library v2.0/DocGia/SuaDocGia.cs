@@ -60,7 +60,7 @@ namespace Managament_Library_v2._0
                 if (cbxgioitinh.Items[i].ToString() == dg.gioitinh)
                 {
                     cbxgioitinh.SelectedIndex = i;
-                    return;
+                    break;
                 }
             }
             

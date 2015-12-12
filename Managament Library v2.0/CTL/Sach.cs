@@ -28,14 +28,33 @@ namespace Managament_Library_v2._0.CTL
             return data.loadCuonSach();
         }
 
+        public DataTable loadDauSachTuaSach()
+        {
+            return data.loadDauSachTuaSach();
+        }
+
+        public void themTuaSach(TUASACH ts)
+        {
+            data.themTuaSach(ts);
+        }
+        public void themDauSach(DAUSACH ds)
+        {
+            data.themDauSach(ds);
+        }
+
+        public void themCuonSach(CUONSACH cs)
+        {
+            data.themCuonSach(cs);
+        }
+
+        public void suaTuaSach(TUASACH ts)
+        {
+            data.suaTuaSach(ts);
+        }
+
         public void suaDauSach(DAUSACH ds)
         {
             data.suaDauSach(ds);
-        }
-
-        public DAUSACH timDauSach(DAUSACH ds)
-        {
-            return data.timDauSach(ds);
         }
 
         public void suaCuonSach(CUONSACH cs)
@@ -43,6 +62,16 @@ namespace Managament_Library_v2._0.CTL
             data.suaCuonSach(cs);
         }
 
+        public TUASACH timTuaSach(TUASACH ts)
+        {
+            return data.timTuaSach(ts);
+        }
+
+        public DAUSACH timDauSach(DAUSACH ds)
+        {
+            return data.timDauSach(ds);
+        }
+   
         public CUONSACH timCuonSach(CUONSACH cs)
         {
             return data.timCuonSach(cs);

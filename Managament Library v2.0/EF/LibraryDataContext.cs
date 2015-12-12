@@ -18,6 +18,7 @@ namespace Managament_Library_v2._0.EF
         public virtual DbSet<DOCGIA> DOCGIAs { get; set; }
         public virtual DbSet<HOCSINH> HOCSINHs { get; set; }
         public virtual DbSet<MUONSACH> MUONSACHes { get; set; }
+        public virtual DbSet<NGONNGU> NGONNGUs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<THAMSO> THAMSOes { get; set; }
         public virtual DbSet<TUASACH> TUASACHes { get; set; }

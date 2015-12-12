@@ -15,5 +15,15 @@ namespace Managament_Library_v2._0.CTL
         {
             return data.loadThamSo();
         }
+
+        public THAMSO timThamSo(THAMSO inf)
+        {
+            return data.timThamSo(inf);
+        }
+
+        public void suaThamSo(THAMSO inf)
+        {
+            data.suaThamSo(inf);
+        }
     }
 }

@@ -35,15 +35,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnthem = new System.Windows.Forms.Button();
+            this.txtmacuonsach = new System.Windows.Forms.TextBox();
+            this.txtmdg = new System.Windows.Forms.TextBox();
+            this.dtngaygiotra = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnluu = new System.Windows.Forms.Button();
             this.dtngaygiomuon = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtngaygiotra = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtmdg = new System.Windows.Forms.TextBox();
-            this.txtmacuonsach = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -115,7 +115,7 @@
             this.panel3.Controls.Add(this.txtmdg);
             this.panel3.Controls.Add(this.dtngaygiotra);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.btnthem);
+            this.panel3.Controls.Add(this.btnluu);
             this.panel3.Controls.Add(this.dtngaygiomuon);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label3);
@@ -126,19 +126,54 @@
             this.panel3.Size = new System.Drawing.Size(428, 255);
             this.panel3.TabIndex = 1;
             // 
-            // btnthem
+            // txtmacuonsach
             // 
-            this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
-            this.btnthem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnthem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnthem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnthem.Location = new System.Drawing.Point(345, 206);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(74, 30);
-            this.btnthem.TabIndex = 38;
-            this.btnthem.Text = "Thêm";
-            this.btnthem.UseVisualStyleBackColor = false;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
+            this.txtmacuonsach.Location = new System.Drawing.Point(151, 65);
+            this.txtmacuonsach.Name = "txtmacuonsach";
+            this.txtmacuonsach.Size = new System.Drawing.Size(100, 20);
+            this.txtmacuonsach.TabIndex = 44;
+            // 
+            // txtmdg
+            // 
+            this.txtmdg.Location = new System.Drawing.Point(151, 28);
+            this.txtmdg.Name = "txtmdg";
+            this.txtmdg.Size = new System.Drawing.Size(100, 20);
+            this.txtmdg.TabIndex = 43;
+            // 
+            // dtngaygiotra
+            // 
+            this.dtngaygiotra.Checked = false;
+            this.dtngaygiotra.Location = new System.Drawing.Point(151, 160);
+            this.dtngaygiotra.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dtngaygiotra.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtngaygiotra.Name = "dtngaygiotra";
+            this.dtngaygiotra.Size = new System.Drawing.Size(200, 20);
+            this.dtngaygiotra.TabIndex = 42;
+            this.dtngaygiotra.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(68, 166);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "Ngày giờ trả";
+            // 
+            // btnluu
+            // 
+            this.btnluu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btnluu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnluu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnluu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnluu.Location = new System.Drawing.Point(345, 206);
+            this.btnluu.Name = "btnluu";
+            this.btnluu.Size = new System.Drawing.Size(74, 30);
+            this.btnluu.TabIndex = 38;
+            this.btnluu.Text = "Lưu";
+            this.btnluu.UseVisualStyleBackColor = false;
+            this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
             // dtngaygiomuon
             // 
@@ -181,41 +216,6 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Mã độc giả";
             // 
-            // dtngaygiotra
-            // 
-            this.dtngaygiotra.Checked = false;
-            this.dtngaygiotra.Location = new System.Drawing.Point(151, 160);
-            this.dtngaygiotra.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtngaygiotra.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            this.dtngaygiotra.Name = "dtngaygiotra";
-            this.dtngaygiotra.Size = new System.Drawing.Size(200, 20);
-            this.dtngaygiotra.TabIndex = 42;
-            this.dtngaygiotra.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(68, 166);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Ngày giờ trả";
-            // 
-            // txtmdg
-            // 
-            this.txtmdg.Location = new System.Drawing.Point(151, 28);
-            this.txtmdg.Name = "txtmdg";
-            this.txtmdg.Size = new System.Drawing.Size(100, 20);
-            this.txtmdg.TabIndex = 43;
-            // 
-            // txtmacuonsach
-            // 
-            this.txtmacuonsach.Location = new System.Drawing.Point(151, 65);
-            this.txtmacuonsach.Name = "txtmacuonsach";
-            this.txtmacuonsach.Size = new System.Drawing.Size(100, 20);
-            this.txtmacuonsach.TabIndex = 44;
-            // 
             // SuaMuonTraSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,7 +245,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnthem;
+        private System.Windows.Forms.Button btnluu;
         private System.Windows.Forms.DateTimePicker dtngaygiomuon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;

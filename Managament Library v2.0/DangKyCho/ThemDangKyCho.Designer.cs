@@ -35,13 +35,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbxmdg = new System.Windows.Forms.ComboBox();
+            this.cbxmadausach = new System.Windows.Forms.ComboBox();
             this.btnthem = new System.Windows.Forms.Button();
-            this.dtngaygiomuon = new System.Windows.Forms.DateTimePicker();
+            this.dtngaygiodk = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtmadausach = new System.Windows.Forms.TextBox();
-            this.txtmdg = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -93,9 +93,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(65, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 37);
+            this.label1.Size = new System.Drawing.Size(238, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "MƯỢN SÁCH";
+            this.label1.Text = "CHỜ MƯỢN SÁCH";
             // 
             // pictureBox1
             // 
@@ -109,18 +109,40 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cbxmdg);
+            this.panel3.Controls.Add(this.cbxmadausach);
             this.panel3.Controls.Add(this.btnthem);
-            this.panel3.Controls.Add(this.dtngaygiomuon);
+            this.panel3.Controls.Add(this.dtngaygiodk);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txtmadausach);
-            this.panel3.Controls.Add(this.txtmdg);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 53);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(428, 205);
             this.panel3.TabIndex = 1;
+            // 
+            // cbxmdg
+            // 
+            this.cbxmdg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxmdg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxmdg.FormattingEnabled = true;
+            this.cbxmdg.Location = new System.Drawing.Point(151, 28);
+            this.cbxmdg.Name = "cbxmdg";
+            this.cbxmdg.Size = new System.Drawing.Size(100, 21);
+            this.cbxmdg.Sorted = true;
+            this.cbxmdg.TabIndex = 40;
+            // 
+            // cbxmadausach
+            // 
+            this.cbxmadausach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxmadausach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxmadausach.FormattingEnabled = true;
+            this.cbxmadausach.Location = new System.Drawing.Point(151, 65);
+            this.cbxmadausach.Name = "cbxmadausach";
+            this.cbxmadausach.Size = new System.Drawing.Size(200, 21);
+            this.cbxmadausach.Sorted = true;
+            this.cbxmadausach.TabIndex = 39;
             // 
             // btnthem
             // 
@@ -134,17 +156,18 @@
             this.btnthem.TabIndex = 38;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = false;
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
-            // dtngaygiomuon
+            // dtngaygiodk
             // 
-            this.dtngaygiomuon.Checked = false;
-            this.dtngaygiomuon.Location = new System.Drawing.Point(151, 102);
-            this.dtngaygiomuon.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtngaygiomuon.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            this.dtngaygiomuon.Name = "dtngaygiomuon";
-            this.dtngaygiomuon.Size = new System.Drawing.Size(200, 20);
-            this.dtngaygiomuon.TabIndex = 35;
-            this.dtngaygiomuon.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtngaygiodk.Checked = false;
+            this.dtngaygiodk.Location = new System.Drawing.Point(151, 102);
+            this.dtngaygiodk.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dtngaygiodk.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtngaygiodk.Name = "dtngaygiodk";
+            this.dtngaygiodk.Size = new System.Drawing.Size(200, 20);
+            this.dtngaygiodk.TabIndex = 35;
+            this.dtngaygiodk.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // label5
             // 
@@ -176,20 +199,6 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Mã độc giả";
             // 
-            // txtmadausach
-            // 
-            this.txtmadausach.Location = new System.Drawing.Point(151, 65);
-            this.txtmadausach.Name = "txtmadausach";
-            this.txtmadausach.Size = new System.Drawing.Size(100, 20);
-            this.txtmadausach.TabIndex = 27;
-            // 
-            // txtmdg
-            // 
-            this.txtmdg.Location = new System.Drawing.Point(151, 28);
-            this.txtmdg.Name = "txtmdg";
-            this.txtmdg.Size = new System.Drawing.Size(100, 20);
-            this.txtmdg.TabIndex = 26;
-            // 
             // ThemDangKyCho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,6 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ThemDangKyCho";
             this.Text = "Đăng ký";
+            this.Load += new System.EventHandler(this.ThemDangKyCho_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -219,11 +229,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnthem;
-        private System.Windows.Forms.DateTimePicker dtngaygiomuon;
+        private System.Windows.Forms.DateTimePicker dtngaygiodk;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtmadausach;
-        private System.Windows.Forms.TextBox txtmdg;
+        private System.Windows.Forms.ComboBox cbxmadausach;
+        private System.Windows.Forms.ComboBox cbxmdg;
     }
 }

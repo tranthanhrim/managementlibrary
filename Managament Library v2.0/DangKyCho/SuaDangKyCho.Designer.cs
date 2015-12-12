@@ -35,15 +35,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbxmadausach = new System.Windows.Forms.ComboBox();
+            this.cbdamuon = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnluu = new System.Windows.Forms.Button();
-            this.dtngaygiomuon = new System.Windows.Forms.DateTimePicker();
+            this.dtngaygiodk = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtmdg = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbdamuon = new System.Windows.Forms.CheckBox();
-            this.cbxmadausach = new System.Windows.Forms.ComboBox();
+            this.cbxmdg = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -111,20 +111,47 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cbxmdg);
             this.panel3.Controls.Add(this.cbxmadausach);
             this.panel3.Controls.Add(this.cbdamuon);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.btnluu);
-            this.panel3.Controls.Add(this.dtngaygiomuon);
+            this.panel3.Controls.Add(this.dtngaygiodk);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txtmdg);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 53);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(428, 205);
             this.panel3.TabIndex = 1;
+            // 
+            // cbxmadausach
+            // 
+            this.cbxmadausach.FormattingEnabled = true;
+            this.cbxmadausach.Location = new System.Drawing.Point(175, 54);
+            this.cbxmadausach.Name = "cbxmadausach";
+            this.cbxmadausach.Size = new System.Drawing.Size(100, 21);
+            this.cbxmadausach.TabIndex = 41;
+            // 
+            // cbdamuon
+            // 
+            this.cbdamuon.AutoSize = true;
+            this.cbdamuon.Location = new System.Drawing.Point(175, 96);
+            this.cbdamuon.Name = "cbdamuon";
+            this.cbdamuon.Size = new System.Drawing.Size(69, 17);
+            this.cbdamuon.TabIndex = 40;
+            this.cbdamuon.Text = "Đã mượn";
+            this.cbdamuon.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(101, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Tình trạng";
             // 
             // btnluu
             // 
@@ -138,17 +165,18 @@
             this.btnluu.TabIndex = 38;
             this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = false;
+            this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
-            // dtngaygiomuon
+            // dtngaygiodk
             // 
-            this.dtngaygiomuon.Checked = false;
-            this.dtngaygiomuon.Location = new System.Drawing.Point(175, 129);
-            this.dtngaygiomuon.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtngaygiomuon.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
-            this.dtngaygiomuon.Name = "dtngaygiomuon";
-            this.dtngaygiomuon.Size = new System.Drawing.Size(200, 20);
-            this.dtngaygiomuon.TabIndex = 35;
-            this.dtngaygiomuon.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtngaygiodk.Checked = false;
+            this.dtngaygiodk.Location = new System.Drawing.Point(175, 129);
+            this.dtngaygiodk.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dtngaygiodk.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtngaygiodk.Name = "dtngaygiodk";
+            this.dtngaygiodk.Size = new System.Drawing.Size(200, 20);
+            this.dtngaygiodk.TabIndex = 35;
+            this.dtngaygiodk.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             // 
             // label5
             // 
@@ -180,39 +208,13 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Mã độc giả";
             // 
-            // txtmdg
+            // cbxmdg
             // 
-            this.txtmdg.Location = new System.Drawing.Point(175, 17);
-            this.txtmdg.Name = "txtmdg";
-            this.txtmdg.Size = new System.Drawing.Size(100, 20);
-            this.txtmdg.TabIndex = 26;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(101, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Tình trạng";
-            // 
-            // cbdamuon
-            // 
-            this.cbdamuon.AutoSize = true;
-            this.cbdamuon.Location = new System.Drawing.Point(175, 96);
-            this.cbdamuon.Name = "cbdamuon";
-            this.cbdamuon.Size = new System.Drawing.Size(69, 17);
-            this.cbdamuon.TabIndex = 40;
-            this.cbdamuon.Text = "Đã mượn";
-            this.cbdamuon.UseVisualStyleBackColor = true;
-            // 
-            // cbxmadausach
-            // 
-            this.cbxmadausach.FormattingEnabled = true;
-            this.cbxmadausach.Location = new System.Drawing.Point(175, 54);
-            this.cbxmadausach.Name = "cbxmadausach";
-            this.cbxmadausach.Size = new System.Drawing.Size(100, 21);
-            this.cbxmadausach.TabIndex = 41;
+            this.cbxmdg.FormattingEnabled = true;
+            this.cbxmdg.Location = new System.Drawing.Point(175, 17);
+            this.cbxmdg.Name = "cbxmdg";
+            this.cbxmdg.Size = new System.Drawing.Size(100, 21);
+            this.cbxmdg.TabIndex = 42;
             // 
             // SuaDangKyCho
             // 
@@ -223,6 +225,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SuaDangKyCho";
             this.Text = "Sửa";
+            this.Load += new System.EventHandler(this.SuaDangKyCho_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -243,13 +246,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnluu;
-        private System.Windows.Forms.DateTimePicker dtngaygiomuon;
+        private System.Windows.Forms.DateTimePicker dtngaygiodk;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtmdg;
         private System.Windows.Forms.CheckBox cbdamuon;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbxmadausach;
+        private System.Windows.Forms.ComboBox cbxmdg;
     }
 }

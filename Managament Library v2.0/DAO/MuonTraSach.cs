@@ -73,12 +73,32 @@ namespace Managament_Library_v2._0.DAO
 
         public void suaMuonTraSach(MUONSACH before, MUONSACH after)
         {
-            var temp = data.MUONSACHes.Find(before.madocgia, before.macuonsach, before.ngaygiomuon);
+            /*var temp = data.MUONSACHes.Find(before.madocgia, before.macuonsach, before.ngaygiomuon);
             if (temp != null)
             {
                 data.Entry(temp).CurrentValues.SetValues(after);
                 data.SaveChanges();
+            }*/
+            SqlCommand sql = new SqlCommand();
+            sql.CommandText = "update MUONSACH set madocgia = @mdg, macuonsach = @sach, ngaygiomuon = @muon, ngayhethan = @han, ngaygiotra = @tra where madocgia = @mdg1 and macuonsach = @sach1 and ngaygiomuon = @muon1";
+            sql.CommandType = CommandType.Text;
+            sql.Parameters.AddWithValue("@mdg", after.madocgia);
+            sql.Parameters.AddWithValue("@sach", after.macuonsach);
+            sql.Parameters.AddWithValue("@muon", after.ngaygiomuon);
+            sql.Parameters.AddWithValue("@han", after.ngayhethan);
+            
+            if (after.ngaygiotra != null)
+                sql.Parameters.AddWithValue("@tra", after.ngaygiotra);
+            else
+            {
+                sql.Parameters.AddWithValue("@tra", DBNull.Value);
             }
+            
+            sql.Parameters.AddWithValue("@mdg1", before.madocgia);
+            sql.Parameters.AddWithValue("@sach1", before.macuonsach);
+            sql.Parameters.AddWithValue("@muon1", before.ngaygiomuon);
+            sql.Connection = DataProvider.con;
+            sql.ExecuteNonQuery();
         }
 
         public void xoaMuonTraSach(MUONSACH inf)
@@ -108,5 +128,10 @@ namespace Managament_Library_v2._0.DAO
                 return dt;
             }
         }
+
+        /*public DataTable thongKeDauSachMuonNhieu()
+        {
+            string sql = "select* from (MUONSACH ms join CUONSACH cs on ms.macuonsach = cs.macuonsach) join DAUSACH ds on cs.madausach = ds.madausach"
+        }*/
     }
 }
