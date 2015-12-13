@@ -76,5 +76,25 @@ namespace Managament_Library_v2._0.CTL
         {
             return data.timCuonSach(cs);
         }
+
+        public DataTable timTuaSach(TUASACH ts, int type)
+        {
+            return data.timTuaSach(ts, type);
+        }
+
+        public DataTable timDauSach(DAUSACH ds, int type)
+        {
+            return data.timDauSach(ds, type);
+        }
+
+        public DataTable timCuonSach(CUONSACH cs, int type)
+        {
+            return data.timCuonSach(cs, type);
+        }
+
+        public DataTable timTheoTen(string ten, int type)
+        {
+            return data.timTheoTen(ten, type);
+        }
     }
 }

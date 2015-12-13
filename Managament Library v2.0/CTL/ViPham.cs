@@ -19,6 +19,11 @@ namespace Managament_Library_v2._0.CTL
             return data.loadViPham();
         }
 
+        public void themViPham(VIPHAM inf)
+        {
+            data.themViPham(inf);
+        }
+
         public void suaViPham(VIPHAM inf)
         {
             data.suaViPham(inf);
@@ -27,6 +32,11 @@ namespace Managament_Library_v2._0.CTL
         public VIPHAM timViPham(VIPHAM inf)
         {
             return data.timViPham(inf);
+        }
+
+        public DataTable timViPham(string mdg)
+        {
+            return data.timViPham(mdg);
         }
     }
 }

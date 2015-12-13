@@ -52,5 +52,29 @@ namespace Managament_Library_v2._0.DAO
         {
             return data.DKCHOMUONs.Find(inf.madocgia, inf.madausach, inf.ngaygiodk);
         }
+
+        public DataTable timDangKyCho(DKCHOMUON inf, int type)
+        {
+            DataTable dt = new DataTable();
+            if (type == 1)//tìm theo mã độc giả
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from DKCHOMUON where madocgia = @mdg", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@mdg", inf.madocgia);
+                da.Fill(dt);
+            }
+            else if (type == 2)//tìm theo mã cuốn sách
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from DKCHOMUON where madausach = @sach", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@sach", inf.madausach);
+                da.Fill(dt);
+            }
+            else if (type == 3)//tìm theo ngày
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from DKCHOMUON where ngaygiodk = @ngay", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@ngay", inf.ngaygiodk.Date);
+                da.Fill(dt);
+            }
+            return dt;
+        }
     }
 }

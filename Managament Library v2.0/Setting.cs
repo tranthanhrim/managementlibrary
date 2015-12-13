@@ -20,6 +20,7 @@ namespace Managament_Library_v2._0
         }
 
         ThamSo data = new ThamSo();
+        MatKhau dataMatKhau = new MatKhau();
 
         public delegate void OnUpdateThamSoHandler();
         public event OnUpdateThamSoHandler OnUpdateThamSo;
@@ -95,7 +96,22 @@ namespace Managament_Library_v2._0
                 }
                 data.suaThamSo(sosachmuon);
 
+                string matkhau = dataMatKhau.layMatKhau();
+                MATKHAU mkcu = new MATKHAU();
+                mkcu.matkhau1 = matkhau;
+                mkcu = dataMatKhau.tim(mkcu);
+
+                MATKHAU mkmoi = new MATKHAU();
+                mkmoi.matkhau1 = matkhau;
+                if (cbcandangnhap.Checked == true)
+                    mkmoi.candangnhap = true;
+                else
+                    mkmoi.candangnhap = false;
+                dataMatKhau.suaMatKhau(mkcu, mkmoi);
+
+
                 MessageBox.Show("Đã lưu!");
+                Close();
                 noticeUpdateThamSo();
             }
             catch (FormatException)
@@ -148,6 +164,12 @@ namespace Managament_Library_v2._0
                 txtsolantrehen.Text = solantrehen.giatri;
                 txtsongaykhoathe.Text = songaykhoathe.giatri;
             }
+
+            bool canDangNhap = dataMatKhau.canDangNhap();
+            if (canDangNhap == true)
+                cbcandangnhap.Checked = true;
+            else
+                cbcandangnhap.Checked = false;
 
         }
 

@@ -61,9 +61,13 @@ namespace Managament_Library_v2._0
 
             if (cbxmadausach.Items.Count > 0)
                 cbxmadausach.SelectedIndex = 0;
+            else
+                btnthem.Enabled = false;
 
             if (cbxmdg.Items.Count > 0)
                 cbxmdg.SelectedIndex = 0;
+            else
+                btnthem.Enabled = false;
         }
 
         private void btnthem_Click(object sender, EventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace Managament_Library_v2._0
 {
-    partial class TimThemMuonSach
+    partial class TimDangKyCho
     {
         /// <summary>
         /// Required designer variable.
@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimThemMuonSach));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimDangKyCho));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtngaygiodk = new System.Windows.Forms.DateTimePicker();
+            this.rbngaydk = new System.Windows.Forms.RadioButton();
+            this.rbmadausach = new System.Windows.Forms.RadioButton();
+            this.rbmdg = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtmcs = new System.Windows.Forms.TextBox();
+            this.txtmds = new System.Windows.Forms.TextBox();
             this.txtmdg = new System.Windows.Forms.TextBox();
-            this.dgvmuonsach = new System.Windows.Forms.DataGridView();
+            this.dgvdkcho = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btntim = new System.Windows.Forms.Button();
-            this.rbmdg = new System.Windows.Forms.RadioButton();
-            this.rbmacuonsach = new System.Windows.Forms.RadioButton();
-            this.rbngaymuon = new System.Windows.Forms.RadioButton();
-            this.dtngaygiomuon = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvmuonsach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvdkcho)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dgvmuonsach, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgvdkcho, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -69,7 +69,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 461);
-            this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
             // panel1
             // 
@@ -90,9 +90,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(65, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 37);
+            this.label1.Size = new System.Drawing.Size(485, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "TÌM THÔNG TIN MƯỢN SÁCH";
+            this.label1.Text = "TÌM THÔNG TIN ĐĂNG KỲ CHỜ MƯỢN";
             // 
             // pictureBox1
             // 
@@ -107,18 +107,57 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dtngaygiomuon);
-            this.panel2.Controls.Add(this.rbngaymuon);
-            this.panel2.Controls.Add(this.rbmacuonsach);
+            this.panel2.Controls.Add(this.dtngaygiodk);
+            this.panel2.Controls.Add(this.rbngaydk);
+            this.panel2.Controls.Add(this.rbmadausach);
             this.panel2.Controls.Add(this.rbmdg);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtmcs);
+            this.panel2.Controls.Add(this.txtmds);
             this.panel2.Controls.Add(this.txtmdg);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 53);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(778, 94);
             this.panel2.TabIndex = 2;
+            // 
+            // dtngaygiodk
+            // 
+            this.dtngaygiodk.Location = new System.Drawing.Point(474, 17);
+            this.dtngaygiodk.Name = "dtngaygiodk";
+            this.dtngaygiodk.Size = new System.Drawing.Size(200, 20);
+            this.dtngaygiodk.TabIndex = 35;
+            // 
+            // rbngaydk
+            // 
+            this.rbngaydk.AutoSize = true;
+            this.rbngaydk.Location = new System.Drawing.Point(389, 18);
+            this.rbngaydk.Name = "rbngaydk";
+            this.rbngaydk.Size = new System.Drawing.Size(79, 17);
+            this.rbngaydk.TabIndex = 34;
+            this.rbngaydk.Text = "Ngày mượn";
+            this.rbngaydk.UseVisualStyleBackColor = true;
+            // 
+            // rbmadausach
+            // 
+            this.rbmadausach.AutoSize = true;
+            this.rbmadausach.Location = new System.Drawing.Point(137, 65);
+            this.rbmadausach.Name = "rbmadausach";
+            this.rbmadausach.Size = new System.Drawing.Size(88, 17);
+            this.rbmadausach.TabIndex = 33;
+            this.rbmadausach.Text = "Mã đầu sách";
+            this.rbmadausach.UseVisualStyleBackColor = true;
+            // 
+            // rbmdg
+            // 
+            this.rbmdg.AutoSize = true;
+            this.rbmdg.Checked = true;
+            this.rbmdg.Location = new System.Drawing.Point(137, 18);
+            this.rbmdg.Name = "rbmdg";
+            this.rbmdg.Size = new System.Drawing.Size(79, 17);
+            this.rbmdg.TabIndex = 32;
+            this.rbmdg.TabStop = true;
+            this.rbmdg.Text = "Mã độc giả";
+            this.rbmdg.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -129,12 +168,12 @@
             this.label4.TabIndex = 31;
             this.label4.Text = "Lớp";
             // 
-            // txtmcs
+            // txtmds
             // 
-            this.txtmcs.Location = new System.Drawing.Point(246, 62);
-            this.txtmcs.Name = "txtmcs";
-            this.txtmcs.Size = new System.Drawing.Size(55, 20);
-            this.txtmcs.TabIndex = 30;
+            this.txtmds.Location = new System.Drawing.Point(246, 62);
+            this.txtmds.Name = "txtmds";
+            this.txtmds.Size = new System.Drawing.Size(55, 20);
+            this.txtmds.TabIndex = 30;
             // 
             // txtmdg
             // 
@@ -143,17 +182,17 @@
             this.txtmdg.Size = new System.Drawing.Size(55, 20);
             this.txtmdg.TabIndex = 0;
             // 
-            // dgvmuonsach
+            // dgvdkcho
             // 
-            this.dgvmuonsach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvmuonsach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvmuonsach.Location = new System.Drawing.Point(3, 153);
-            this.dgvmuonsach.MultiSelect = false;
-            this.dgvmuonsach.Name = "dgvmuonsach";
-            this.dgvmuonsach.ReadOnly = true;
-            this.dgvmuonsach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvmuonsach.Size = new System.Drawing.Size(778, 245);
-            this.dgvmuonsach.TabIndex = 3;
+            this.dgvdkcho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvdkcho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvdkcho.Location = new System.Drawing.Point(3, 153);
+            this.dgvdkcho.MultiSelect = false;
+            this.dgvdkcho.Name = "dgvdkcho";
+            this.dgvdkcho.ReadOnly = true;
+            this.dgvdkcho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvdkcho.Size = new System.Drawing.Size(778, 245);
+            this.dgvdkcho.TabIndex = 3;
             // 
             // panel3
             // 
@@ -178,61 +217,21 @@
             this.btntim.UseVisualStyleBackColor = false;
             this.btntim.Click += new System.EventHandler(this.btntim_Click);
             // 
-            // rbmdg
-            // 
-            this.rbmdg.AutoSize = true;
-            this.rbmdg.Checked = true;
-            this.rbmdg.Location = new System.Drawing.Point(137, 18);
-            this.rbmdg.Name = "rbmdg";
-            this.rbmdg.Size = new System.Drawing.Size(79, 17);
-            this.rbmdg.TabIndex = 32;
-            this.rbmdg.TabStop = true;
-            this.rbmdg.Text = "Mã độc giả";
-            this.rbmdg.UseVisualStyleBackColor = true;
-            // 
-            // rbmacuonsach
-            // 
-            this.rbmacuonsach.AutoSize = true;
-            this.rbmacuonsach.Location = new System.Drawing.Point(137, 65);
-            this.rbmacuonsach.Name = "rbmacuonsach";
-            this.rbmacuonsach.Size = new System.Drawing.Size(93, 17);
-            this.rbmacuonsach.TabIndex = 33;
-            this.rbmacuonsach.Text = "Mã cuốn sách";
-            this.rbmacuonsach.UseVisualStyleBackColor = true;
-            // 
-            // rbngaymuon
-            // 
-            this.rbngaymuon.AutoSize = true;
-            this.rbngaymuon.Location = new System.Drawing.Point(389, 18);
-            this.rbngaymuon.Name = "rbngaymuon";
-            this.rbngaymuon.Size = new System.Drawing.Size(79, 17);
-            this.rbngaymuon.TabIndex = 34;
-            this.rbngaymuon.Text = "Ngày mượn";
-            this.rbngaymuon.UseVisualStyleBackColor = true;
-            // 
-            // dtngaygiomuon
-            // 
-            this.dtngaygiomuon.Location = new System.Drawing.Point(474, 17);
-            this.dtngaygiomuon.Name = "dtngaygiomuon";
-            this.dtngaygiomuon.Size = new System.Drawing.Size(200, 20);
-            this.dtngaygiomuon.TabIndex = 35;
-            // 
-            // TimThemMuonSach
+            // TimDangKyCho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "TimThemMuonSach";
-            this.Text = "Tìm";
+            this.Name = "TimDangKyCho";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvmuonsach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvdkcho)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -245,14 +244,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtmcs;
-        private System.Windows.Forms.TextBox txtmdg;
-        private System.Windows.Forms.DataGridView dgvmuonsach;
-        private System.Windows.Forms.DateTimePicker dtngaygiomuon;
-        private System.Windows.Forms.RadioButton rbngaymuon;
-        private System.Windows.Forms.RadioButton rbmacuonsach;
+        private System.Windows.Forms.DateTimePicker dtngaygiodk;
+        private System.Windows.Forms.RadioButton rbngaydk;
+        private System.Windows.Forms.RadioButton rbmadausach;
         private System.Windows.Forms.RadioButton rbmdg;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtmds;
+        private System.Windows.Forms.TextBox txtmdg;
+        private System.Windows.Forms.DataGridView dgvdkcho;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btntim;
     }

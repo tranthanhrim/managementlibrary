@@ -114,19 +114,26 @@ namespace Managament_Library_v2._0.DAO
 
         public DataTable timMuonTraSach(MUONSACH inf, int type)
         {
-            if (type == 1)
+            DataTable dt = new DataTable();
+            if (type == 1)//tìm theo mã độc giả
             {
-                string sql = "select* from MUONSACH where madocgia = '"+ inf.madocgia +"'";
-                SqlDataAdapter da = new SqlDataAdapter(sql, DataProvider.con);
-                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter("select* from MUONSACH where madocgia = @mdg", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@mdg", inf.madocgia);              
                 da.Fill(dt);
-                return dt;
             }
-            else
+            else if (type == 2)//tìm theo mã cuốn sách
             {
-                DataTable dt = new DataTable();
-                return dt;
+                SqlDataAdapter da = new SqlDataAdapter("select* from MUONSACH where macuonsach = @sach", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@sach", inf.macuonsach);    
+                da.Fill(dt);
             }
+            else if (type == 3)
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from MUONSACH where ngaygiomuon = @ngay", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@ngay", inf.ngaygiomuon.Date);
+                da.Fill(dt);
+            }
+            return dt;
         }
 
         /*public DataTable thongKeDauSachMuonNhieu()

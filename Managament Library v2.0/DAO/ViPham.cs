@@ -24,6 +24,12 @@ namespace Managament_Library_v2._0.DAO
             return dt;
         }
 
+        public void themViPham(VIPHAM inf)
+        {
+            data.VIPHAMs.Add(inf);
+            data.SaveChanges();
+        }
+
         public void suaViPham(VIPHAM inf)
         {
             var temp = data.VIPHAMs.Find(inf.madocgia);
@@ -38,6 +44,14 @@ namespace Managament_Library_v2._0.DAO
         public VIPHAM timViPham(VIPHAM inf)
         {
             return data.VIPHAMs.Find(inf.madocgia);
+        }
+
+        public DataTable timViPham(string mdg)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select* from VIPHAM where madocgia = '" + mdg + "'", DataProvider.con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
     }
 }

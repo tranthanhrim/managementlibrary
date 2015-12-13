@@ -30,7 +30,7 @@ namespace Managament_Library_v2._0
 
         DocGia data = new DocGia();
         
-        public static String mdg = String.Empty;
+        public static string mdg = String.Empty;
         private void SuaDocGia_Load(object sender, EventArgs e)
         {
             DOCGIA temp1 = new DOCGIA();
@@ -100,7 +100,10 @@ namespace Managament_Library_v2._0
                 dg.gioitinh = cbxgioitinh.SelectedItem.ToString();
                 dg.ngaysinh = dngaysinh.Value.Date;
                 dg.ngaylap = dngaylap.Value.Date;
-                dg.tinhtrang = cbtinhtrang.Checked;
+                if (cbtinhtrang.Checked == true)
+                    dg.tinhtrang = true;
+                else
+                    dg.tinhtrang = false;
                 data.suaDocGia(dg);
 
                 UpdateNotice();

@@ -135,5 +135,108 @@ namespace Managament_Library_v2._0.DAO
         {
             return data.CUONSACHes.Find(cs.macuonsach);
         }
+
+        public DataTable timTuaSach(TUASACH ts, int type)
+        {
+            DataTable result = new DataTable();
+            if (type == 1) //tìm theo mã tựa sách
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from TUASACH where matuasach = @mts",DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@mts", ts.matuasach);
+                da.Fill(result);
+            }
+            else if (type == 2) //tìm theo tên tựa sách
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from TUASACH where tentuasach = @ten",DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@ten", ts.tentuasach);
+                da.Fill(result);
+            }
+            else if (type == 3) //tìm theo tên tác giả
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from TUASACH where tacgia = @tg",DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@tg", ts.tacgia);
+                da.Fill(result);
+            }
+            return result;
+        }
+
+        public DataTable timDauSach(DAUSACH ds, int type)
+        {
+            DataTable result = new DataTable();
+            if (type == 1) //tìm theo mã đầu sách
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from DAUSACH where madausach = @mds", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@mds", ds.madausach);
+                da.Fill(result);
+            }
+            else if (type == 2) //tìm theo mã tựa sách
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from DAUSACH where matuasach = @mts", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@mts", ds.matuasach);
+                da.Fill(result);
+                result.Columns["madausach"].ColumnName = "Mã đầu sách";
+                result.Columns["matuasach"].ColumnName = "Mã tựa sách";
+            }
+            return result;
+        }
+
+        public DataTable timCuonSach(CUONSACH cs, int type)
+        {
+            DataTable result = new DataTable();
+            if (type == 1) //tìm theo mã cuốn sách
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from CUONSACH where macuonsach = @mcs", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@mcs", cs.macuonsach);
+                da.Fill(result);
+            }
+            else if (type == 2) //tìm theo mã đầu sách
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from CUONSACH where madausach = @mds", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@mds", cs.madausach);
+                
+                da.Fill(result);
+            }
+            else if (type == 3) //tìm theo mã tựa sách
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from CUONSACH cs join DAUSACH ds on cs.madausach = ds.madausach where ds.matuasach = @mts", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@mts", cs.madausach);//thuộc tính madausach chứa mã tựa sách
+                da.Fill(result);
+                result.Columns.Remove("madausach1");
+                result.Columns.Remove("tinhtrang1");
+                result.Columns["madausach"].ColumnName = "Mã đầu sách";
+                result.Columns["macuonsach"].ColumnName = "Mã cuốn sách";
+                result.Columns["matuasach"].ColumnName = "Mã tựa sách";
+            }
+            
+            return result;
+        }
+
+        public DataTable timTheoTen(string ten, int type)
+        {
+            DataTable result = new DataTable();
+            if (type == 1) //tìm đầu sách theo tên tựa sách
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from DAUSACH ds join TUASACH ts on ds.matuasach = ts.matuasach where ts.tentuasach = @ten", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@ten", ten);
+                da.Fill(result);
+                result.Columns.Remove("matuasach1");
+                result.Columns["madausach"].ColumnName = "Mã đầu sách";
+                result.Columns["matuasach"].ColumnName = "Mã tựa sách";
+            }
+            else if (type == 2) //tìm cuốn sách theo tên tựa sách
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select* from (CUONSACH cs join DAUSACH ds on cs.madausach = ds.madausach) join TUASACH ts on ds.matuasach = ts.matuasach where ts.tentuasach = @ten", DataProvider.con);
+                da.SelectCommand.Parameters.AddWithValue("@ten", ten);
+                da.Fill(result);
+                result.Columns.Remove("matuasach1");
+                result.Columns.Remove("madausach1");
+                result.Columns.Remove("tinhtrang1");
+                result.Columns["madausach"].ColumnName = "Mã đầu sách";
+                result.Columns["macuonsach"].ColumnName = "Mã cuốn sách";
+                result.Columns["matuasach"].ColumnName = "Mã tựa sách";
+
+            }
+            return result;
+        }
     }
 }

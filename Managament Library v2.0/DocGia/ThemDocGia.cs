@@ -23,6 +23,7 @@ namespace Managament_Library_v2._0
         DataTable dt = new DataTable();
 
         DocGia data = new DocGia();
+        ViPham dataViPham = new ViPham();
         DOCGIA dg;
         HOCSINH hs;
         NHANVIEN nv;
@@ -73,6 +74,11 @@ namespace Managament_Library_v2._0
                     dg.tinhtrang = true;
                     data.themDocGia(dg);
 
+                    VIPHAM vp = new VIPHAM();
+                    vp.madocgia = txtmdg.Text;
+                    vp.vipham1 = 0;
+                    dataViPham.themViPham(vp);
+
                     if (rbhocsinh.Checked == true)
                     {
                         hs = new HOCSINH();
@@ -92,13 +98,13 @@ namespace Managament_Library_v2._0
                     addNotice();
                 }
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
-                MessageBox.Show("Wrong Format input!");
+                MessageBox.Show("Sai định dạng!");
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("Null input!");
+                MessageBox.Show("Có giá trị rỗng!");
             }
         }
 

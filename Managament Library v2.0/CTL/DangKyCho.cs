@@ -33,5 +33,10 @@ namespace Managament_Library_v2._0.CTL
         {
             return data.timDangKyCho(inf);
         }
+
+        public DataTable timDangKyCho(DKCHOMUON inf, int type)
+        {
+            return data.timDangKyCho(inf, type);
+        }
     }
 }

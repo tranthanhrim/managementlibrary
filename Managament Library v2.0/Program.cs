@@ -15,8 +15,14 @@ namespace Managament_Library_v2._0
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.SetCompatibleTextRenderingDefault(false);           
+            //Application.Run(new DangNhap());
+
+            DangNhap formDangNhap = new DangNhap();
+            if (formDangNhap.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new Form1());
+            }
         }
     }
 }
