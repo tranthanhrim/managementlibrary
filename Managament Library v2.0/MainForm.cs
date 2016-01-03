@@ -20,7 +20,6 @@ namespace Managament_Library_v2._0
             InitializeComponent();
         }
 
-        public static List<THAMSO> thamSo;
 
         DocGia dataDocGia = new DocGia();
         Sach dataSach = new Sach();
@@ -48,12 +47,12 @@ namespace Managament_Library_v2._0
             dgvvipham.DataSource = dataViPham.loadViPham();
         }
 
-        void updateThamSo()
+        /*void updateThamSo()
         {
             ThamSo dataThamSo = new ThamSo();
             thamSo = dataThamSo.loadThamSo();
             updateDocGia();
-        }
+        }*/
 
         void updateDangKyCho()
         {
@@ -70,14 +69,9 @@ namespace Managament_Library_v2._0
             inf.madocgia = madocgia;
             inf = dataViPham.timViPham(inf);
 
-            for (int i = 0; i < thamSo.Count; i++)
-            {
-                if (thamSo[i].tenthamso == "solantrehen")
-                {
-                    solantrehen = thamSo[i];
-                    break;
-                }
-            }
+            solantrehen = new THAMSO();
+            solantrehen.tenthamso = "solantrehen";
+            solantrehen = dataThamSo.timThamSo(solantrehen);
 
             inf.vipham1++;
 
@@ -260,18 +254,39 @@ namespace Managament_Library_v2._0
             }
         }
 
+        void updateAll()
+        {
+            updateMuonTraSach();
+            updateDataViPham();
+            //updateThamSo();
+            updateDangKyCho();
+            updateSach();
+            updateDocGia();
+        }
+
         #endregion
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
             DataProvider.openConnect();
-            updateMuonTraSach();
+            /*updateMuonTraSach();
             updateDataViPham();
             updateThamSo();
             updateDangKyCho();         
             updateSach();
-            updateDocGia();
+            updateDocGia();*/
+            updateAll();
+            ToolTip setting = new ToolTip();
+            setting.SetToolTip(btnsetting, "Cài đặt");
+            ToolTip thongke = new ToolTip();
+            thongke.SetToolTip(btnthongke, "Thống kê");
+            ToolTip matkhau = new ToolTip();
+            matkhau.SetToolTip(btnmatkhau, "Đổi mật khẩu");
+            ToolTip xuatkhau = new ToolTip();
+            xuatkhau.SetToolTip(btnexport, "Xuất dữ liệu");
+            ToolTip nhapkhau = new ToolTip();
+            nhapkhau.SetToolTip(btnimport, "Nhập dữ liệu");
 
         }
 
@@ -301,9 +316,11 @@ namespace Managament_Library_v2._0
                     dg.madocgia = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();
                     hs.madocgia = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();
                     nv.madocgia = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();
+                    dataDocGia.xoaDocGia(dg);
                     dataDocGia.xoaNhanVien(nv);
                     dataDocGia.xoaHocSinh(hs);
-                    dataDocGia.xoaDocGia(dg);
+                    ViPham dataViPham = new ViPham();
+                    dataViPham.xoaViPham(dg.madocgia);
                     updateDocGia();
                 }
                 else if (tcdocgia.SelectedTabIndex == 1)//xóa theo tab học sinh
@@ -313,9 +330,11 @@ namespace Managament_Library_v2._0
                     DOCGIA dg = new DOCGIA();
                     HOCSINH hs = new HOCSINH();
                     dg.madocgia = dgvhocsinh.SelectedRows[0].Cells[0].Value.ToString();
-                    hs.madocgia = dgvhocsinh.SelectedRows[0].Cells[0].Value.ToString();
-                    dataDocGia.xoaHocSinh(hs);
+                    hs.madocgia = dgvhocsinh.SelectedRows[0].Cells[0].Value.ToString();                 
                     dataDocGia.xoaDocGia(dg);
+                    dataDocGia.xoaHocSinh(hs);
+                    ViPham dataViPham = new ViPham();
+                    dataViPham.xoaViPham(dg.madocgia);
                     updateDocGia();
 
                 }
@@ -327,8 +346,10 @@ namespace Managament_Library_v2._0
                     NHANVIEN nv = new NHANVIEN();
                     dg.madocgia = dgvnhanvien.SelectedRows[0].Cells[0].Value.ToString();
                     nv.madocgia = dgvnhanvien.SelectedRows[0].Cells[0].Value.ToString();
-                    dataDocGia.xoaNhanVien(nv);
                     dataDocGia.xoaDocGia(dg);
+                    dataDocGia.xoaNhanVien(nv);                 
+                    ViPham dataViPham = new ViPham();
+                    dataViPham.xoaViPham(dg.madocgia);
                     updateDocGia();
                 }
             }
@@ -336,10 +357,10 @@ namespace Managament_Library_v2._0
             {
                 MessageBox.Show("Có liên kết dữ liệu, không thể xóa!");
             }
-            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            /*catch (System.Data.Entity.Infrastructure.DbUpdateException)
             {
                 MessageBox.Show("Có liên kết dữ liệu, không thể xóa!");
-            }
+            }*/
             
         }
 
@@ -424,7 +445,46 @@ namespace Managament_Library_v2._0
 
         private void btnxoasach_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DialogResult delete = MessageBox.Show("Do you really want to delete?", "Exit", MessageBoxButtons.YesNo);
+                if (delete == DialogResult.No)
+                    return;
 
+                if (tcsach.SelectedTabIndex == 0)//xóa theo tab tựa sách
+                {
+                    if (dgvtuasach.SelectedRows.Count == 0)
+                        return;
+                    
+                    string matuasach = dgvtuasach.SelectedRows[0].Cells[0].Value.ToString();
+                    dataSach.xoaTuaSach(matuasach);
+                    updateSach();
+
+                }
+                else if (tcsach.SelectedTabIndex == 1)//xóa theo tab đầu sách
+                {
+                    if (dgvdausach.SelectedRows.Count == 0)
+                        return;
+
+                    string madausach = dgvdausach.SelectedRows[0].Cells[0].Value.ToString();
+                    dataSach.xoaDauSach(madausach);
+                    updateSach();
+
+                }
+                else if (tcsach.SelectedTabIndex == 2)//xóa theo tab cuốn sách
+                {
+                    if (dgvcuonsach.SelectedRows.Count == 0)
+                        return;
+                    string macuonsach = dgvcuonsach.SelectedRows[0].Cells[0].Value.ToString();
+                    dataSach.xoaCuonSach(macuonsach);
+                    updateSach();
+
+                }
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Có liên kết dữ liệu, không thể xóa!");
+            }
         }
 
         private void btntimsach_Click(object sender, EventArgs e)
@@ -515,11 +575,11 @@ namespace Managament_Library_v2._0
 
         #endregion
 
-
+        #region menu button
         private void btnsetting_Click(object sender, EventArgs e)
         {
             Setting formSetting = new Setting();
-            formSetting.OnUpdateThamSo += new Setting.OnUpdateThamSoHandler(updateThamSo);
+            formSetting.OnUpdateThamSo += new Setting.OnUpdateThamSoHandler(updateDocGia);
             formSetting.ShowDialog();
         }
 
@@ -545,10 +605,80 @@ namespace Managament_Library_v2._0
 
         private void btnmatkhau_Click(object sender, EventArgs e)
         {
-            SuaMatKhau formSuaMK = new SuaMatKhau();
+            DoiMatKhau formSuaMK = new DoiMatKhau();
             formSuaMK.ShowDialog();
         }
 
+        private void btnexport_Click(object sender, EventArgs e)
+        {
+            NhapXuatDuLieu xuatDL = new NhapXuatDuLieu();
+            xuatDL.xuatDuLieu();
+        }
+
+        private void btnimport_Click(object sender, EventArgs e)
+        {
+            NhapXuatDuLieu nhapDL = new NhapXuatDuLieu();
+            nhapDL.OnImport += new NhapXuatDuLieu.OnImportHandler(updateAll);
+            nhapDL.NhapDuLieu();
+        }
+        #endregion
+
+        #region delete all
+        private void btndelallcho_Click(object sender, EventArgs e)
+        {
+            DialogResult delete = MessageBox.Show("Bạn có thực muốn xóa hết dữ liệu này?", "Exit", MessageBoxButtons.YesNo);
+            if (delete == DialogResult.No)
+                return;
+
+            dataDangKy.xoaTatCa();
+            updateDangKyCho();
+        }
+
+        private void btndelallmuon_Click(object sender, EventArgs e)
+        {
+            DialogResult delete = MessageBox.Show("Bạn có thực muốn xóa hết dữ liệu này?", "Exit", MessageBoxButtons.YesNo);
+            if (delete == DialogResult.No)
+                return;
+            dataMuonTraSach.xoaTatCa();
+            updateMuonTraSach();
+        }
+
+        private void btndelallsach_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult delete = MessageBox.Show("Bạn có thực muốn xóa hết dữ liệu này?", "Exit", MessageBoxButtons.YesNo);
+                if (delete == DialogResult.No)
+                    return;
+                dataSach.xoaTatCa();
+                updateSach();
+            }
+            catch(SqlException)
+            {
+                MessageBox.Show("Có ràng buộc dữ liệu, không thể xóa!");
+            }
+            
+        }
+
+        private void btndelalldg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult delete = MessageBox.Show("Bạn có thực muốn xóa hết dữ liệu này?", "Exit", MessageBoxButtons.YesNo);
+                if (delete == DialogResult.No)
+                    return;
+                dataDocGia.xoaTatCa();
+                ViPham dataViPham = new ViPham();
+                dataViPham.xoaTatCa();
+                
+                updateDocGia();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Có ràng buộc dữ liệu, không thể xóa!");
+            }
+        }
+        #endregion
 
     }
 }

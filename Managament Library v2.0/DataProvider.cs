@@ -41,5 +41,13 @@ namespace Managament_Library_v2._0
             {
             }
         }
+
+        static public DataTable getDataTable (string sql)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
 }

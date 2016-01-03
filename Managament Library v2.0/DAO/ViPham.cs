@@ -41,6 +41,22 @@ namespace Managament_Library_v2._0.DAO
             }
         }
 
+        public void xoaViPham(string madocgia)
+        {
+            var temp = data.VIPHAMs.Find(madocgia);
+            if (temp != null)
+            {
+                data.VIPHAMs.Remove(temp);
+                data.SaveChanges();
+            }
+        }
+
+        public void xoaTatCa()
+        {
+            data.Database.ExecuteSqlCommand("delete from VIPHAM");
+            data.SaveChanges();
+        }
+
         public VIPHAM timViPham(VIPHAM inf)
         {
             return data.VIPHAMs.Find(inf.madocgia);

@@ -33,6 +33,11 @@ namespace Managament_Library_v2._0.CTL
             data.xoaMuonTraSach(inf);
         }
 
+        public void xoaTatCa()
+        {
+            data.xoaTatCa();
+        }
+
         public MUONSACH timMuonTraSach(MUONSACH inf)
         {
             return data.timMuonTraSach(inf);

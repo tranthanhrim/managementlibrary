@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnimport = new System.Windows.Forms.Button();
+            this.btnexport = new System.Windows.Forms.Button();
             this.btnmatkhau = new System.Windows.Forms.Button();
             this.btnblock = new System.Windows.Forms.Button();
             this.btnthongke = new System.Windows.Forms.Button();
@@ -40,20 +42,33 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
-            this.tabControlPanel9 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvmuontrasach = new System.Windows.Forms.DataGridView();
-            this.ribbonControl3 = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar13 = new DevComponents.DotNetBar.RibbonBar();
-            this.btntimmuon = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar9 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnsuamuon = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar11 = new DevComponents.DotNetBar.RibbonBar();
-            this.btntrasach = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar12 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnmuonsach = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonTabItem3 = new DevComponents.DotNetBar.RibbonTabItem();
-            this.timuontrasach = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tcdocgia = new DevComponents.DotNetBar.TabControl();
+            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvdocgia = new System.Windows.Forms.DataGridView();
+            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel11 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvvipham = new System.Windows.Forms.DataGridView();
+            this.tivipham = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvnhanvien = new System.Windows.Forms.DataGridView();
+            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvhocsinh = new System.Windows.Forms.DataGridView();
+            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
+            this.btntimdg = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnsuadg = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnxoadg = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnthemdg = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
+            this.tidocgia = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel10 = new DevComponents.DotNetBar.TabControlPanel();
             this.dgvchomuonsach = new System.Windows.Forms.DataGridView();
             this.ribbonControl4 = new DevComponents.DotNetBar.RibbonControl();
@@ -88,33 +103,20 @@
             this.buttonItem26 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem14 = new DevComponents.DotNetBar.ButtonItem();
             this.tidangky = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tcdocgia = new DevComponents.DotNetBar.TabControl();
-            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvdocgia = new System.Windows.Forms.DataGridView();
-            this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel11 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvvipham = new System.Windows.Forms.DataGridView();
-            this.tivipham = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvnhanvien = new System.Windows.Forms.DataGridView();
-            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvhocsinh = new System.Windows.Forms.DataGridView();
-            this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
-            this.btntimdg = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnsuadg = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnxoadg = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnthemdg = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
-            this.tidocgia = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel9 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvmuontrasach = new System.Windows.Forms.DataGridView();
+            this.ribbonControl3 = new DevComponents.DotNetBar.RibbonControl();
+            this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar13 = new DevComponents.DotNetBar.RibbonBar();
+            this.btntimmuon = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar9 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnsuamuon = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar11 = new DevComponents.DotNetBar.RibbonBar();
+            this.btntrasach = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar12 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnmuonsach = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonTabItem3 = new DevComponents.DotNetBar.RibbonTabItem();
+            this.timuontrasach = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tcsach = new DevComponents.DotNetBar.TabControl();
@@ -144,20 +146,20 @@
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar16 = new DevComponents.DotNetBar.RibbonBar();
+            this.btndelallmuon = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar19 = new DevComponents.DotNetBar.RibbonBar();
+            this.btndelallcho = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar20 = new DevComponents.DotNetBar.RibbonBar();
+            this.btndelallsach = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar21 = new DevComponents.DotNetBar.RibbonBar();
+            this.btndelalldg = new DevComponents.DotNetBar.ButtonItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabControlPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvmuontrasach)).BeginInit();
-            this.ribbonControl3.SuspendLayout();
-            this.ribbonPanel3.SuspendLayout();
-            this.tabControlPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvchomuonsach)).BeginInit();
-            this.ribbonControl4.SuspendLayout();
-            this.ribbonPanel4.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcdocgia)).BeginInit();
@@ -172,6 +174,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvhocsinh)).BeginInit();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
+            this.tabControlPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvchomuonsach)).BeginInit();
+            this.ribbonControl4.SuspendLayout();
+            this.ribbonPanel4.SuspendLayout();
+            this.tabControlPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvmuontrasach)).BeginInit();
+            this.ribbonControl3.SuspendLayout();
+            this.ribbonPanel3.SuspendLayout();
             this.tabControlPanel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcsach)).BeginInit();
@@ -199,12 +209,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 561);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 561);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.btnimport);
+            this.panel1.Controls.Add(this.btnexport);
             this.panel1.Controls.Add(this.btnmatkhau);
             this.panel1.Controls.Add(this.btnblock);
             this.panel1.Controls.Add(this.btnthongke);
@@ -214,8 +226,36 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(778, 74);
+            this.panel1.Size = new System.Drawing.Size(878, 74);
             this.panel1.TabIndex = 0;
+            // 
+            // btnimport
+            // 
+            this.btnimport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnimport.BackColor = System.Drawing.Color.Transparent;
+            this.btnimport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnimport.ForeColor = System.Drawing.Color.Transparent;
+            this.btnimport.Image = ((System.Drawing.Image)(resources.GetObject("btnimport.Image")));
+            this.btnimport.Location = new System.Drawing.Point(605, 3);
+            this.btnimport.Name = "btnimport";
+            this.btnimport.Size = new System.Drawing.Size(40, 37);
+            this.btnimport.TabIndex = 8;
+            this.btnimport.UseVisualStyleBackColor = false;
+            this.btnimport.Click += new System.EventHandler(this.btnimport_Click);
+            // 
+            // btnexport
+            // 
+            this.btnexport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnexport.BackColor = System.Drawing.Color.Transparent;
+            this.btnexport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexport.ForeColor = System.Drawing.Color.Transparent;
+            this.btnexport.Image = ((System.Drawing.Image)(resources.GetObject("btnexport.Image")));
+            this.btnexport.Location = new System.Drawing.Point(651, 3);
+            this.btnexport.Name = "btnexport";
+            this.btnexport.Size = new System.Drawing.Size(40, 37);
+            this.btnexport.TabIndex = 7;
+            this.btnexport.UseVisualStyleBackColor = false;
+            this.btnexport.Click += new System.EventHandler(this.btnexport_Click);
             // 
             // btnmatkhau
             // 
@@ -224,7 +264,7 @@
             this.btnmatkhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmatkhau.ForeColor = System.Drawing.Color.Transparent;
             this.btnmatkhau.Image = ((System.Drawing.Image)(resources.GetObject("btnmatkhau.Image")));
-            this.btnmatkhau.Location = new System.Drawing.Point(643, 3);
+            this.btnmatkhau.Location = new System.Drawing.Point(743, 3);
             this.btnmatkhau.Name = "btnmatkhau";
             this.btnmatkhau.Size = new System.Drawing.Size(40, 37);
             this.btnmatkhau.TabIndex = 6;
@@ -238,7 +278,7 @@
             this.btnblock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnblock.ForeColor = System.Drawing.Color.Transparent;
             this.btnblock.Image = ((System.Drawing.Image)(resources.GetObject("btnblock.Image")));
-            this.btnblock.Location = new System.Drawing.Point(597, 3);
+            this.btnblock.Location = new System.Drawing.Point(697, 3);
             this.btnblock.Name = "btnblock";
             this.btnblock.Size = new System.Drawing.Size(40, 37);
             this.btnblock.TabIndex = 5;
@@ -252,7 +292,7 @@
             this.btnthongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnthongke.ForeColor = System.Drawing.Color.Transparent;
             this.btnthongke.Image = ((System.Drawing.Image)(resources.GetObject("btnthongke.Image")));
-            this.btnthongke.Location = new System.Drawing.Point(689, 3);
+            this.btnthongke.Location = new System.Drawing.Point(789, 3);
             this.btnthongke.Name = "btnthongke";
             this.btnthongke.Size = new System.Drawing.Size(40, 37);
             this.btnthongke.TabIndex = 3;
@@ -266,7 +306,7 @@
             this.btnsetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsetting.ForeColor = System.Drawing.Color.Transparent;
             this.btnsetting.Image = ((System.Drawing.Image)(resources.GetObject("btnsetting.Image")));
-            this.btnsetting.Location = new System.Drawing.Point(735, 3);
+            this.btnsetting.Location = new System.Drawing.Point(835, 3);
             this.btnsetting.Name = "btnsetting";
             this.btnsetting.Size = new System.Drawing.Size(40, 37);
             this.btnsetting.TabIndex = 1;
@@ -302,22 +342,22 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(778, 455);
+            this.panel2.Size = new System.Drawing.Size(878, 455);
             this.panel2.TabIndex = 1;
             // 
             // tabControl1
             // 
             this.tabControl1.CanReorderTabs = true;
-            this.tabControl1.Controls.Add(this.tabControlPanel10);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
-            this.tabControl1.Controls.Add(this.tabControlPanel9);
             this.tabControl1.Controls.Add(this.tabControlPanel5);
+            this.tabControl1.Controls.Add(this.tabControlPanel9);
+            this.tabControl1.Controls.Add(this.tabControlPanel10);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabControl1.SelectedTabIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(778, 455);
+            this.tabControl1.Size = new System.Drawing.Size(878, 455);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl1.Tabs.Add(this.tidocgia);
@@ -326,285 +366,448 @@
             this.tabControl1.Tabs.Add(this.tidangky);
             this.tabControl1.Text = "tabControl1";
             // 
-            // tabControlPanel9
+            // tabControlPanel1
             // 
-            this.tabControlPanel9.Controls.Add(this.dgvmuontrasach);
-            this.tabControlPanel9.Controls.Add(this.ribbonControl3);
-            this.tabControlPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel9.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel9.Name = "tabControlPanel9";
-            this.tabControlPanel9.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel9.Size = new System.Drawing.Size(778, 429);
-            this.tabControlPanel9.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel9.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel9.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel9.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel9.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            this.tabControlPanel1.Controls.Add(this.panel3);
+            this.tabControlPanel1.Controls.Add(this.ribbonControl1);
+            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel1.Name = "tabControlPanel1";
+            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel1.Size = new System.Drawing.Size(878, 429);
+            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel9.Style.GradientAngle = 90;
-            this.tabControlPanel9.TabIndex = 3;
-            this.tabControlPanel9.TabItem = this.timuontrasach;
+            this.tabControlPanel1.Style.GradientAngle = 90;
+            this.tabControlPanel1.TabIndex = 1;
+            this.tabControlPanel1.TabItem = this.tidocgia;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.tcdocgia);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(1, 111);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(876, 317);
+            this.panel3.TabIndex = 2;
+            // 
+            // tcdocgia
+            // 
+            this.tcdocgia.CanReorderTabs = true;
+            this.tcdocgia.Controls.Add(this.tabControlPanel2);
+            this.tcdocgia.Controls.Add(this.tabControlPanel11);
+            this.tcdocgia.Controls.Add(this.tabControlPanel4);
+            this.tcdocgia.Controls.Add(this.tabControlPanel3);
+            this.tcdocgia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tcdocgia.Location = new System.Drawing.Point(0, 0);
+            this.tcdocgia.Name = "tcdocgia";
+            this.tcdocgia.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.tcdocgia.SelectedTabIndex = 0;
+            this.tcdocgia.Size = new System.Drawing.Size(876, 317);
+            this.tcdocgia.TabIndex = 0;
+            this.tcdocgia.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
+            this.tcdocgia.Tabs.Add(this.tabItem2);
+            this.tcdocgia.Tabs.Add(this.tabItem3);
+            this.tcdocgia.Tabs.Add(this.tabItem4);
+            this.tcdocgia.Tabs.Add(this.tivipham);
+            this.tcdocgia.Text = "tabControl2";
+            // 
+            // tabControlPanel2
+            // 
+            this.tabControlPanel2.Controls.Add(this.dgvdocgia);
+            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel2.Name = "tabControlPanel2";
+            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel2.Size = new System.Drawing.Size(876, 291);
+            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.GradientAngle = 90;
+            this.tabControlPanel2.TabIndex = 1;
+            this.tabControlPanel2.TabItem = this.tabItem2;
+            // 
+            // dgvdocgia
+            // 
+            this.dgvdocgia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvdocgia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvdocgia.Location = new System.Drawing.Point(1, 1);
+            this.dgvdocgia.MultiSelect = false;
+            this.dgvdocgia.Name = "dgvdocgia";
+            this.dgvdocgia.ReadOnly = true;
+            this.dgvdocgia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvdocgia.Size = new System.Drawing.Size(874, 289);
+            this.dgvdocgia.TabIndex = 0;
+            // 
+            // tabItem2
+            // 
+            this.tabItem2.AttachedControl = this.tabControlPanel2;
+            this.tabItem2.Name = "tabItem2";
+            this.tabItem2.Text = "Độc giả";
+            // 
+            // tabControlPanel11
+            // 
+            this.tabControlPanel11.Controls.Add(this.dgvvipham);
+            this.tabControlPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel11.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel11.Name = "tabControlPanel11";
+            this.tabControlPanel11.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel11.Size = new System.Drawing.Size(876, 291);
+            this.tabControlPanel11.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel11.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel11.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel11.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel11.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel11.Style.GradientAngle = 90;
+            this.tabControlPanel11.TabIndex = 4;
+            this.tabControlPanel11.TabItem = this.tivipham;
+            // 
+            // dgvvipham
+            // 
+            this.dgvvipham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvvipham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvvipham.Location = new System.Drawing.Point(1, 1);
+            this.dgvvipham.MultiSelect = false;
+            this.dgvvipham.Name = "dgvvipham";
+            this.dgvvipham.ReadOnly = true;
+            this.dgvvipham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvvipham.Size = new System.Drawing.Size(874, 289);
+            this.dgvvipham.TabIndex = 0;
+            // 
+            // tivipham
+            // 
+            this.tivipham.AttachedControl = this.tabControlPanel11;
+            this.tivipham.Name = "tivipham";
+            this.tivipham.Text = "Vi phạm";
+            // 
+            // tabControlPanel4
+            // 
+            this.tabControlPanel4.Controls.Add(this.dgvnhanvien);
+            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel4.Name = "tabControlPanel4";
+            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel4.Size = new System.Drawing.Size(876, 291);
+            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel4.Style.GradientAngle = 90;
+            this.tabControlPanel4.TabIndex = 3;
+            this.tabControlPanel4.TabItem = this.tabItem4;
+            // 
+            // dgvnhanvien
+            // 
+            this.dgvnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvnhanvien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvnhanvien.Location = new System.Drawing.Point(1, 1);
+            this.dgvnhanvien.MultiSelect = false;
+            this.dgvnhanvien.Name = "dgvnhanvien";
+            this.dgvnhanvien.ReadOnly = true;
+            this.dgvnhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvnhanvien.Size = new System.Drawing.Size(874, 289);
+            this.dgvnhanvien.TabIndex = 0;
+            // 
+            // tabItem4
+            // 
+            this.tabItem4.AttachedControl = this.tabControlPanel4;
+            this.tabItem4.Name = "tabItem4";
+            this.tabItem4.Text = "Nhân viên";
+            // 
+            // tabControlPanel3
+            // 
+            this.tabControlPanel3.Controls.Add(this.dgvhocsinh);
+            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel3.Name = "tabControlPanel3";
+            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel3.Size = new System.Drawing.Size(876, 291);
+            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.GradientAngle = 90;
+            this.tabControlPanel3.TabIndex = 2;
+            this.tabControlPanel3.TabItem = this.tabItem3;
+            // 
+            // dgvhocsinh
+            // 
+            this.dgvhocsinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvhocsinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvhocsinh.Location = new System.Drawing.Point(1, 1);
+            this.dgvhocsinh.MultiSelect = false;
+            this.dgvhocsinh.Name = "dgvhocsinh";
+            this.dgvhocsinh.ReadOnly = true;
+            this.dgvhocsinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvhocsinh.Size = new System.Drawing.Size(874, 289);
+            this.dgvhocsinh.TabIndex = 0;
+            // 
+            // tabItem3
+            // 
+            this.tabItem3.AttachedControl = this.tabControlPanel3;
+            this.tabItem3.Name = "tabItem3";
+            this.tabItem3.Text = "Học sinh";
+            // 
+            // ribbonControl1
+            // 
             // 
-            // dgvmuontrasach
-            // 
-            this.dgvmuontrasach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvmuontrasach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvmuontrasach.Location = new System.Drawing.Point(1, 111);
-            this.dgvmuontrasach.MultiSelect = false;
-            this.dgvmuontrasach.Name = "dgvmuontrasach";
-            this.dgvmuontrasach.ReadOnly = true;
-            this.dgvmuontrasach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvmuontrasach.ShowCellToolTips = false;
-            this.dgvmuontrasach.Size = new System.Drawing.Size(776, 317);
-            this.dgvmuontrasach.TabIndex = 4;
+            // 
+            // 
+            this.ribbonControl1.BackgroundStyle.Class = "";
+            this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.ribbonTabItem1});
+            this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
+            this.ribbonControl1.Location = new System.Drawing.Point(1, 1);
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.ribbonControl1.Size = new System.Drawing.Size(876, 110);
+            this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonControl1.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
+            this.ribbonControl1.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
+            this.ribbonControl1.SystemText.QatAddItemText = "&Add to Quick Access Toolbar";
+            this.ribbonControl1.SystemText.QatCustomizeMenuLabel = "<b>Customize Quick Access Toolbar</b>";
+            this.ribbonControl1.SystemText.QatCustomizeText = "&Customize Quick Access Toolbar...";
+            this.ribbonControl1.SystemText.QatDialogAddButton = "&Add >>";
+            this.ribbonControl1.SystemText.QatDialogCancelButton = "Cancel";
+            this.ribbonControl1.SystemText.QatDialogCaption = "Customize Quick Access Toolbar";
+            this.ribbonControl1.SystemText.QatDialogCategoriesLabel = "&Choose commands from:";
+            this.ribbonControl1.SystemText.QatDialogOkButton = "OK";
+            this.ribbonControl1.SystemText.QatDialogPlacementCheckbox = "&Place Quick Access Toolbar below the Ribbon";
+            this.ribbonControl1.SystemText.QatDialogRemoveButton = "&Remove";
+            this.ribbonControl1.SystemText.QatPlaceAboveRibbonText = "&Place Quick Access Toolbar above the Ribbon";
+            this.ribbonControl1.SystemText.QatPlaceBelowRibbonText = "&Place Quick Access Toolbar below the Ribbon";
+            this.ribbonControl1.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
+            this.ribbonControl1.TabGroupHeight = 14;
+            this.ribbonControl1.TabIndex = 1;
+            this.ribbonControl1.Text = "ribbonControl1";
             // 
-            // ribbonControl3
+            // ribbonPanel1
             // 
+            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel1.Controls.Add(this.ribbonBar21);
+            this.ribbonPanel1.Controls.Add(this.ribbonBar2);
+            this.ribbonPanel1.Controls.Add(this.ribbonBar4);
+            this.ribbonPanel1.Controls.Add(this.ribbonBar3);
+            this.ribbonPanel1.Controls.Add(this.ribbonBar1);
+            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 26);
+            this.ribbonPanel1.Name = "ribbonPanel1";
+            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel1.Size = new System.Drawing.Size(876, 82);
             // 
             // 
             // 
-            this.ribbonControl3.BackgroundStyle.Class = "";
-            this.ribbonControl3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonControl3.Controls.Add(this.ribbonPanel3);
-            this.ribbonControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ribbonControl3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.ribbonTabItem3});
-            this.ribbonControl3.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
-            this.ribbonControl3.Location = new System.Drawing.Point(1, 1);
-            this.ribbonControl3.Name = "ribbonControl3";
-            this.ribbonControl3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.ribbonControl3.Size = new System.Drawing.Size(776, 110);
-            this.ribbonControl3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonControl3.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
-            this.ribbonControl3.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
-            this.ribbonControl3.SystemText.QatAddItemText = "&Add to Quick Access Toolbar";
-            this.ribbonControl3.SystemText.QatCustomizeMenuLabel = "<b>Customize Quick Access Toolbar</b>";
-            this.ribbonControl3.SystemText.QatCustomizeText = "&Customize Quick Access Toolbar...";
-            this.ribbonControl3.SystemText.QatDialogAddButton = "&Add >>";
-            this.ribbonControl3.SystemText.QatDialogCancelButton = "Cancel";
-            this.ribbonControl3.SystemText.QatDialogCaption = "Customize Quick Access Toolbar";
-            this.ribbonControl3.SystemText.QatDialogCategoriesLabel = "&Choose commands from:";
-            this.ribbonControl3.SystemText.QatDialogOkButton = "OK";
-            this.ribbonControl3.SystemText.QatDialogPlacementCheckbox = "&Place Quick Access Toolbar below the Ribbon";
-            this.ribbonControl3.SystemText.QatDialogRemoveButton = "&Remove";
-            this.ribbonControl3.SystemText.QatPlaceAboveRibbonText = "&Place Quick Access Toolbar above the Ribbon";
-            this.ribbonControl3.SystemText.QatPlaceBelowRibbonText = "&Place Quick Access Toolbar below the Ribbon";
-            this.ribbonControl3.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
-            this.ribbonControl3.TabGroupHeight = 14;
-            this.ribbonControl3.TabIndex = 3;
-            this.ribbonControl3.Text = "ribbonControl3";
+            this.ribbonPanel1.Style.Class = "";
+            this.ribbonPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // ribbonPanel3
             // 
-            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel3.Controls.Add(this.ribbonBar13);
-            this.ribbonPanel3.Controls.Add(this.ribbonBar9);
-            this.ribbonPanel3.Controls.Add(this.ribbonBar11);
-            this.ribbonPanel3.Controls.Add(this.ribbonBar12);
-            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel3.Location = new System.Drawing.Point(0, 26);
-            this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(776, 82);
             // 
+            this.ribbonPanel1.StyleMouseDown.Class = "";
+            this.ribbonPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
-            this.ribbonPanel3.Style.Class = "";
-            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            this.ribbonPanel1.StyleMouseOver.Class = "";
+            this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel1.TabIndex = 1;
             // 
+            // ribbonBar2
             // 
-            this.ribbonPanel3.StyleMouseDown.Class = "";
-            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar2.AutoOverflowEnabled = true;
             // 
             // 
             // 
-            this.ribbonPanel3.StyleMouseOver.Class = "";
-            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel3.TabIndex = 1;
+            this.ribbonBar2.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar2.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // ribbonBar13
             // 
-            this.ribbonBar13.AutoOverflowEnabled = true;
             // 
+            this.ribbonBar2.BackgroundStyle.Class = "";
+            this.ribbonBar2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar2.ContainerControlProcessDialogKey = true;
+            this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btntimdg});
+            this.ribbonBar2.Location = new System.Drawing.Point(257, 0);
+            this.ribbonBar2.Name = "ribbonBar2";
+            this.ribbonBar2.Size = new System.Drawing.Size(90, 79);
+            this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar2.TabIndex = 4;
+            this.ribbonBar2.Text = "Tìm";
             // 
             // 
-            this.ribbonBar13.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar13.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            this.ribbonBar2.TitleStyle.Class = "";
+            this.ribbonBar2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
-            this.ribbonBar13.BackgroundStyle.Class = "";
-            this.ribbonBar13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar13.ContainerControlProcessDialogKey = true;
-            this.ribbonBar13.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar13.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btntimmuon});
-            this.ribbonBar13.Location = new System.Drawing.Point(266, 0);
-            this.ribbonBar13.Name = "ribbonBar13";
-            this.ribbonBar13.Size = new System.Drawing.Size(92, 79);
-            this.ribbonBar13.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar13.TabIndex = 5;
-            this.ribbonBar13.Text = "Tìm";
             // 
+            this.ribbonBar2.TitleStyleMouseOver.Class = "";
+            this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // btntimdg
             // 
-            this.ribbonBar13.TitleStyle.Class = "";
-            this.ribbonBar13.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.btntimdg.Image = ((System.Drawing.Image)(resources.GetObject("btntimdg.Image")));
+            this.btntimdg.ImagePaddingHorizontal = 30;
+            this.btntimdg.Name = "btntimdg";
+            this.btntimdg.SubItemsExpandWidth = 14;
+            this.btntimdg.Text = "buttonItem4";
+            this.btntimdg.Click += new System.EventHandler(this.btntimdg_Click);
             // 
+            // ribbonBar4
             // 
+            this.ribbonBar4.AutoOverflowEnabled = true;
             // 
-            this.ribbonBar13.TitleStyleMouseOver.Class = "";
-            this.ribbonBar13.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // btntimmuon
             // 
-            this.btntimmuon.Image = ((System.Drawing.Image)(resources.GetObject("btntimmuon.Image")));
-            this.btntimmuon.ImagePaddingHorizontal = 30;
-            this.btntimmuon.Name = "btntimmuon";
-            this.btntimmuon.SubItemsExpandWidth = 14;
-            this.btntimmuon.Text = "buttonItem4";
-            this.btntimmuon.Click += new System.EventHandler(this.btntimmuon_Click);
+            this.ribbonBar4.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar4.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // ribbonBar9
             // 
-            this.ribbonBar9.AutoOverflowEnabled = true;
             // 
+            this.ribbonBar4.BackgroundStyle.Class = "";
+            this.ribbonBar4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar4.ContainerControlProcessDialogKey = true;
+            this.ribbonBar4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar4.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnsuadg});
+            this.ribbonBar4.Location = new System.Drawing.Point(176, 0);
+            this.ribbonBar4.Name = "ribbonBar4";
+            this.ribbonBar4.Size = new System.Drawing.Size(81, 79);
+            this.ribbonBar4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar4.TabIndex = 3;
+            this.ribbonBar4.Text = "Sửa";
             // 
             // 
-            this.ribbonBar9.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar9.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            this.ribbonBar4.TitleStyle.Class = "";
+            this.ribbonBar4.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
-            this.ribbonBar9.BackgroundStyle.Class = "";
-            this.ribbonBar9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar9.ContainerControlProcessDialogKey = true;
-            this.ribbonBar9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar9.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnsuamuon});
-            this.ribbonBar9.Location = new System.Drawing.Point(176, 0);
-            this.ribbonBar9.Name = "ribbonBar9";
-            this.ribbonBar9.Size = new System.Drawing.Size(90, 79);
-            this.ribbonBar9.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar9.TabIndex = 4;
-            this.ribbonBar9.Text = "Sửa";
             // 
+            this.ribbonBar4.TitleStyleMouseOver.Class = "";
+            this.ribbonBar4.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // btnsuadg
             // 
-            this.ribbonBar9.TitleStyle.Class = "";
-            this.ribbonBar9.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.btnsuadg.Image = ((System.Drawing.Image)(resources.GetObject("btnsuadg.Image")));
+            this.btnsuadg.ImagePaddingHorizontal = 30;
+            this.btnsuadg.Name = "btnsuadg";
+            this.btnsuadg.SubItemsExpandWidth = 14;
+            this.btnsuadg.Text = "buttonItem3";
+            this.btnsuadg.Click += new System.EventHandler(this.btnsuadg_Click);
             // 
+            // ribbonBar3
             // 
+            this.ribbonBar3.AutoOverflowEnabled = true;
             // 
-            this.ribbonBar9.TitleStyleMouseOver.Class = "";
-            this.ribbonBar9.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // btnsuamuon
             // 
-            this.btnsuamuon.Image = ((System.Drawing.Image)(resources.GetObject("btnsuamuon.Image")));
-            this.btnsuamuon.ImagePaddingHorizontal = 30;
-            this.btnsuamuon.Name = "btnsuamuon";
-            this.btnsuamuon.SubItemsExpandWidth = 14;
-            this.btnsuamuon.Text = "buttonItem3";
-            this.btnsuamuon.Click += new System.EventHandler(this.btnsuamuon_Click);
+            this.ribbonBar3.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar3.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // ribbonBar11
             // 
-            this.ribbonBar11.AutoOverflowEnabled = true;
             // 
+            this.ribbonBar3.BackgroundStyle.Class = "";
+            this.ribbonBar3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar3.ContainerControlProcessDialogKey = true;
+            this.ribbonBar3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnxoadg});
+            this.ribbonBar3.Location = new System.Drawing.Point(90, 0);
+            this.ribbonBar3.Name = "ribbonBar3";
+            this.ribbonBar3.Size = new System.Drawing.Size(86, 79);
+            this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar3.TabIndex = 2;
+            this.ribbonBar3.Text = "Xóa";
             // 
             // 
-            this.ribbonBar11.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar11.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            this.ribbonBar3.TitleStyle.Class = "";
+            this.ribbonBar3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
-            this.ribbonBar11.BackgroundStyle.Class = "";
-            this.ribbonBar11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar11.ContainerControlProcessDialogKey = true;
-            this.ribbonBar11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar11.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btntrasach});
-            this.ribbonBar11.Location = new System.Drawing.Point(90, 0);
-            this.ribbonBar11.Name = "ribbonBar11";
-            this.ribbonBar11.Size = new System.Drawing.Size(86, 79);
-            this.ribbonBar11.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar11.TabIndex = 2;
-            this.ribbonBar11.Text = "Trả";
             // 
+            this.ribbonBar3.TitleStyleMouseOver.Class = "";
+            this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // btnxoadg
             // 
-            this.ribbonBar11.TitleStyle.Class = "";
-            this.ribbonBar11.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.btnxoadg.Image = ((System.Drawing.Image)(resources.GetObject("btnxoadg.Image")));
+            this.btnxoadg.ImagePaddingHorizontal = 30;
+            this.btnxoadg.Name = "btnxoadg";
+            this.btnxoadg.SubItemsExpandWidth = 14;
+            this.btnxoadg.Text = "buttonItem2";
+            this.btnxoadg.Click += new System.EventHandler(this.btnxoadg_Click);
             // 
+            // ribbonBar1
             // 
+            this.ribbonBar1.AutoOverflowEnabled = true;
             // 
-            this.ribbonBar11.TitleStyleMouseOver.Class = "";
-            this.ribbonBar11.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // btntrasach
             // 
-            this.btntrasach.Image = ((System.Drawing.Image)(resources.GetObject("btntrasach.Image")));
-            this.btntrasach.ImagePaddingHorizontal = 30;
-            this.btntrasach.Name = "btntrasach";
-            this.btntrasach.SubItemsExpandWidth = 14;
-            this.btntrasach.Click += new System.EventHandler(this.btntrasach_Click);
+            this.ribbonBar1.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar1.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // ribbonBar12
             // 
-            this.ribbonBar12.AutoOverflowEnabled = true;
             // 
+            this.ribbonBar1.BackgroundStyle.Class = "";
+            this.ribbonBar1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar1.ContainerControlProcessDialogKey = true;
+            this.ribbonBar1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnthemdg});
+            this.ribbonBar1.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar1.Name = "ribbonBar1";
+            this.ribbonBar1.Size = new System.Drawing.Size(87, 79);
+            this.ribbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar1.TabIndex = 0;
+            this.ribbonBar1.Text = "Thêm";
             // 
             // 
-            this.ribbonBar12.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar12.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            this.ribbonBar1.TitleStyle.Class = "";
+            this.ribbonBar1.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
-            this.ribbonBar12.BackgroundStyle.Class = "";
-            this.ribbonBar12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar12.ContainerControlProcessDialogKey = true;
-            this.ribbonBar12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar12.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnmuonsach});
-            this.ribbonBar12.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar12.Name = "ribbonBar12";
-            this.ribbonBar12.Size = new System.Drawing.Size(87, 79);
-            this.ribbonBar12.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar12.TabIndex = 0;
-            this.ribbonBar12.Text = "Mượn";
             // 
+            this.ribbonBar1.TitleStyleMouseOver.Class = "";
+            this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // btnthemdg
             // 
-            this.ribbonBar12.TitleStyle.Class = "";
-            this.ribbonBar12.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.btnthemdg.Image = ((System.Drawing.Image)(resources.GetObject("btnthemdg.Image")));
+            this.btnthemdg.ImagePaddingHorizontal = 30;
+            this.btnthemdg.Name = "btnthemdg";
+            this.btnthemdg.SubItemsExpandWidth = 14;
+            this.btnthemdg.Click += new System.EventHandler(this.btnthemdg_Click);
             // 
+            // ribbonTabItem1
             // 
+            this.ribbonTabItem1.Checked = true;
+            this.ribbonTabItem1.Name = "ribbonTabItem1";
+            this.ribbonTabItem1.Panel = this.ribbonPanel1;
+            this.ribbonTabItem1.Text = "Thao tác";
             // 
-            this.ribbonBar12.TitleStyleMouseOver.Class = "";
-            this.ribbonBar12.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // tidocgia
             // 
-            // btnmuonsach
-            // 
-            this.btnmuonsach.Image = ((System.Drawing.Image)(resources.GetObject("btnmuonsach.Image")));
-            this.btnmuonsach.ImagePaddingHorizontal = 30;
-            this.btnmuonsach.Name = "btnmuonsach";
-            this.btnmuonsach.SubItemsExpandWidth = 14;
-            this.btnmuonsach.Click += new System.EventHandler(this.btnmuonsach_Click);
-            // 
-            // ribbonTabItem3
-            // 
-            this.ribbonTabItem3.Checked = true;
-            this.ribbonTabItem3.Name = "ribbonTabItem3";
-            this.ribbonTabItem3.Panel = this.ribbonPanel3;
-            this.ribbonTabItem3.Text = "Thao tác";
-            // 
-            // timuontrasach
-            // 
-            this.timuontrasach.AttachedControl = this.tabControlPanel9;
-            this.timuontrasach.Name = "timuontrasach";
-            this.timuontrasach.Text = "Mượn/Trả sách";
+            this.tidocgia.AttachedControl = this.tabControlPanel1;
+            this.tidocgia.Name = "tidocgia";
+            this.tidocgia.Text = "Độc giả";
             // 
             // tabControlPanel10
             // 
@@ -614,7 +817,7 @@
             this.tabControlPanel10.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel10.Name = "tabControlPanel10";
             this.tabControlPanel10.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel10.Size = new System.Drawing.Size(778, 429);
+            this.tabControlPanel10.Size = new System.Drawing.Size(878, 429);
             this.tabControlPanel10.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel10.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel10.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -634,7 +837,7 @@
             this.dgvchomuonsach.Name = "dgvchomuonsach";
             this.dgvchomuonsach.ReadOnly = true;
             this.dgvchomuonsach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvchomuonsach.Size = new System.Drawing.Size(776, 317);
+            this.dgvchomuonsach.Size = new System.Drawing.Size(876, 317);
             this.dgvchomuonsach.TabIndex = 5;
             // 
             // ribbonControl4
@@ -655,7 +858,7 @@
             this.ribbonControl4.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.office2007StartButton1,
             this.buttonItem14});
-            this.ribbonControl4.Size = new System.Drawing.Size(776, 110);
+            this.ribbonControl4.Size = new System.Drawing.Size(876, 110);
             this.ribbonControl4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonControl4.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
             this.ribbonControl4.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
@@ -679,6 +882,7 @@
             // ribbonPanel4
             // 
             this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel4.Controls.Add(this.ribbonBar19);
             this.ribbonPanel4.Controls.Add(this.ribbonBar14);
             this.ribbonPanel4.Controls.Add(this.ribbonBar15);
             this.ribbonPanel4.Controls.Add(this.ribbonBar17);
@@ -687,7 +891,7 @@
             this.ribbonPanel4.Location = new System.Drawing.Point(0, 26);
             this.ribbonPanel4.Name = "ribbonPanel4";
             this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel4.Size = new System.Drawing.Size(776, 82);
+            this.ribbonPanel4.Size = new System.Drawing.Size(876, 82);
             // 
             // 
             // 
@@ -1075,447 +1279,286 @@
             this.tidangky.Name = "tidangky";
             this.tidangky.Text = "Chờ mượn sách";
             // 
-            // tabControlPanel1
+            // tabControlPanel9
             // 
-            this.tabControlPanel1.Controls.Add(this.panel3);
-            this.tabControlPanel1.Controls.Add(this.ribbonControl1);
-            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel1.Name = "tabControlPanel1";
-            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(778, 429);
-            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            this.tabControlPanel9.Controls.Add(this.dgvmuontrasach);
+            this.tabControlPanel9.Controls.Add(this.ribbonControl3);
+            this.tabControlPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel9.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel9.Name = "tabControlPanel9";
+            this.tabControlPanel9.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel9.Size = new System.Drawing.Size(878, 429);
+            this.tabControlPanel9.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel9.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel9.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel9.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel9.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel1.Style.GradientAngle = 90;
-            this.tabControlPanel1.TabIndex = 1;
-            this.tabControlPanel1.TabItem = this.tidocgia;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.tcdocgia);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(1, 111);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(776, 317);
-            this.panel3.TabIndex = 2;
-            // 
-            // tcdocgia
-            // 
-            this.tcdocgia.CanReorderTabs = true;
-            this.tcdocgia.Controls.Add(this.tabControlPanel2);
-            this.tcdocgia.Controls.Add(this.tabControlPanel11);
-            this.tcdocgia.Controls.Add(this.tabControlPanel4);
-            this.tcdocgia.Controls.Add(this.tabControlPanel3);
-            this.tcdocgia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcdocgia.Location = new System.Drawing.Point(0, 0);
-            this.tcdocgia.Name = "tcdocgia";
-            this.tcdocgia.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tcdocgia.SelectedTabIndex = 0;
-            this.tcdocgia.Size = new System.Drawing.Size(776, 317);
-            this.tcdocgia.TabIndex = 0;
-            this.tcdocgia.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
-            this.tcdocgia.Tabs.Add(this.tabItem2);
-            this.tcdocgia.Tabs.Add(this.tabItem3);
-            this.tcdocgia.Tabs.Add(this.tabItem4);
-            this.tcdocgia.Tabs.Add(this.tivipham);
-            this.tcdocgia.Text = "tabControl2";
-            // 
-            // tabControlPanel2
-            // 
-            this.tabControlPanel2.Controls.Add(this.dgvdocgia);
-            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel2.Name = "tabControlPanel2";
-            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(776, 291);
-            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel2.Style.GradientAngle = 90;
-            this.tabControlPanel2.TabIndex = 1;
-            this.tabControlPanel2.TabItem = this.tabItem2;
-            // 
-            // dgvdocgia
-            // 
-            this.dgvdocgia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvdocgia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvdocgia.Location = new System.Drawing.Point(1, 1);
-            this.dgvdocgia.MultiSelect = false;
-            this.dgvdocgia.Name = "dgvdocgia";
-            this.dgvdocgia.ReadOnly = true;
-            this.dgvdocgia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdocgia.Size = new System.Drawing.Size(774, 289);
-            this.dgvdocgia.TabIndex = 0;
-            // 
-            // tabItem2
-            // 
-            this.tabItem2.AttachedControl = this.tabControlPanel2;
-            this.tabItem2.Name = "tabItem2";
-            this.tabItem2.Text = "Độc giả";
-            // 
-            // tabControlPanel11
-            // 
-            this.tabControlPanel11.Controls.Add(this.dgvvipham);
-            this.tabControlPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel11.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel11.Name = "tabControlPanel11";
-            this.tabControlPanel11.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel11.Size = new System.Drawing.Size(776, 291);
-            this.tabControlPanel11.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel11.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel11.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel11.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel11.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel11.Style.GradientAngle = 90;
-            this.tabControlPanel11.TabIndex = 4;
-            this.tabControlPanel11.TabItem = this.tivipham;
-            // 
-            // dgvvipham
-            // 
-            this.dgvvipham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvvipham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvvipham.Location = new System.Drawing.Point(1, 1);
-            this.dgvvipham.MultiSelect = false;
-            this.dgvvipham.Name = "dgvvipham";
-            this.dgvvipham.ReadOnly = true;
-            this.dgvvipham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvvipham.Size = new System.Drawing.Size(774, 289);
-            this.dgvvipham.TabIndex = 0;
-            // 
-            // tivipham
-            // 
-            this.tivipham.AttachedControl = this.tabControlPanel11;
-            this.tivipham.Name = "tivipham";
-            this.tivipham.Text = "Vi phạm";
-            // 
-            // tabControlPanel4
-            // 
-            this.tabControlPanel4.Controls.Add(this.dgvnhanvien);
-            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel4.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel4.Name = "tabControlPanel4";
-            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(776, 291);
-            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel4.Style.GradientAngle = 90;
-            this.tabControlPanel4.TabIndex = 3;
-            this.tabControlPanel4.TabItem = this.tabItem4;
-            // 
-            // dgvnhanvien
-            // 
-            this.dgvnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvnhanvien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvnhanvien.Location = new System.Drawing.Point(1, 1);
-            this.dgvnhanvien.MultiSelect = false;
-            this.dgvnhanvien.Name = "dgvnhanvien";
-            this.dgvnhanvien.ReadOnly = true;
-            this.dgvnhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvnhanvien.Size = new System.Drawing.Size(774, 289);
-            this.dgvnhanvien.TabIndex = 0;
-            // 
-            // tabItem4
-            // 
-            this.tabItem4.AttachedControl = this.tabControlPanel4;
-            this.tabItem4.Name = "tabItem4";
-            this.tabItem4.Text = "Nhân viên";
-            // 
-            // tabControlPanel3
-            // 
-            this.tabControlPanel3.Controls.Add(this.dgvhocsinh);
-            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel3.Name = "tabControlPanel3";
-            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(776, 291);
-            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel3.Style.GradientAngle = 90;
-            this.tabControlPanel3.TabIndex = 2;
-            this.tabControlPanel3.TabItem = this.tabItem3;
-            // 
-            // dgvhocsinh
-            // 
-            this.dgvhocsinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvhocsinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvhocsinh.Location = new System.Drawing.Point(1, 1);
-            this.dgvhocsinh.MultiSelect = false;
-            this.dgvhocsinh.Name = "dgvhocsinh";
-            this.dgvhocsinh.ReadOnly = true;
-            this.dgvhocsinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvhocsinh.Size = new System.Drawing.Size(774, 289);
-            this.dgvhocsinh.TabIndex = 0;
-            // 
-            // tabItem3
-            // 
-            this.tabItem3.AttachedControl = this.tabControlPanel3;
-            this.tabItem3.Name = "tabItem3";
-            this.tabItem3.Text = "Học sinh";
-            // 
-            // ribbonControl1
+            this.tabControlPanel9.Style.GradientAngle = 90;
+            this.tabControlPanel9.TabIndex = 3;
+            this.tabControlPanel9.TabItem = this.timuontrasach;
             // 
+            // dgvmuontrasach
+            // 
+            this.dgvmuontrasach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvmuontrasach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvmuontrasach.Location = new System.Drawing.Point(1, 111);
+            this.dgvmuontrasach.MultiSelect = false;
+            this.dgvmuontrasach.Name = "dgvmuontrasach";
+            this.dgvmuontrasach.ReadOnly = true;
+            this.dgvmuontrasach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvmuontrasach.ShowCellToolTips = false;
+            this.dgvmuontrasach.Size = new System.Drawing.Size(876, 317);
+            this.dgvmuontrasach.TabIndex = 4;
             // 
-            // 
-            // 
-            this.ribbonControl1.BackgroundStyle.Class = "";
-            this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
-            this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.ribbonTabItem1});
-            this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
-            this.ribbonControl1.Location = new System.Drawing.Point(1, 1);
-            this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.ribbonControl1.Size = new System.Drawing.Size(776, 110);
-            this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonControl1.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
-            this.ribbonControl1.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
-            this.ribbonControl1.SystemText.QatAddItemText = "&Add to Quick Access Toolbar";
-            this.ribbonControl1.SystemText.QatCustomizeMenuLabel = "<b>Customize Quick Access Toolbar</b>";
-            this.ribbonControl1.SystemText.QatCustomizeText = "&Customize Quick Access Toolbar...";
-            this.ribbonControl1.SystemText.QatDialogAddButton = "&Add >>";
-            this.ribbonControl1.SystemText.QatDialogCancelButton = "Cancel";
-            this.ribbonControl1.SystemText.QatDialogCaption = "Customize Quick Access Toolbar";
-            this.ribbonControl1.SystemText.QatDialogCategoriesLabel = "&Choose commands from:";
-            this.ribbonControl1.SystemText.QatDialogOkButton = "OK";
-            this.ribbonControl1.SystemText.QatDialogPlacementCheckbox = "&Place Quick Access Toolbar below the Ribbon";
-            this.ribbonControl1.SystemText.QatDialogRemoveButton = "&Remove";
-            this.ribbonControl1.SystemText.QatPlaceAboveRibbonText = "&Place Quick Access Toolbar above the Ribbon";
-            this.ribbonControl1.SystemText.QatPlaceBelowRibbonText = "&Place Quick Access Toolbar below the Ribbon";
-            this.ribbonControl1.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
-            this.ribbonControl1.TabGroupHeight = 14;
-            this.ribbonControl1.TabIndex = 1;
-            this.ribbonControl1.Text = "ribbonControl1";
+            // ribbonControl3
             // 
-            // ribbonPanel1
             // 
-            this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel1.Controls.Add(this.ribbonBar2);
-            this.ribbonPanel1.Controls.Add(this.ribbonBar4);
-            this.ribbonPanel1.Controls.Add(this.ribbonBar3);
-            this.ribbonPanel1.Controls.Add(this.ribbonBar1);
-            this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 26);
-            this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(776, 82);
             // 
             // 
+            this.ribbonControl3.BackgroundStyle.Class = "";
+            this.ribbonControl3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonControl3.Controls.Add(this.ribbonPanel3);
+            this.ribbonControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ribbonControl3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.ribbonTabItem3});
+            this.ribbonControl3.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
+            this.ribbonControl3.Location = new System.Drawing.Point(1, 1);
+            this.ribbonControl3.Name = "ribbonControl3";
+            this.ribbonControl3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.ribbonControl3.Size = new System.Drawing.Size(876, 110);
+            this.ribbonControl3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonControl3.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
+            this.ribbonControl3.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
+            this.ribbonControl3.SystemText.QatAddItemText = "&Add to Quick Access Toolbar";
+            this.ribbonControl3.SystemText.QatCustomizeMenuLabel = "<b>Customize Quick Access Toolbar</b>";
+            this.ribbonControl3.SystemText.QatCustomizeText = "&Customize Quick Access Toolbar...";
+            this.ribbonControl3.SystemText.QatDialogAddButton = "&Add >>";
+            this.ribbonControl3.SystemText.QatDialogCancelButton = "Cancel";
+            this.ribbonControl3.SystemText.QatDialogCaption = "Customize Quick Access Toolbar";
+            this.ribbonControl3.SystemText.QatDialogCategoriesLabel = "&Choose commands from:";
+            this.ribbonControl3.SystemText.QatDialogOkButton = "OK";
+            this.ribbonControl3.SystemText.QatDialogPlacementCheckbox = "&Place Quick Access Toolbar below the Ribbon";
+            this.ribbonControl3.SystemText.QatDialogRemoveButton = "&Remove";
+            this.ribbonControl3.SystemText.QatPlaceAboveRibbonText = "&Place Quick Access Toolbar above the Ribbon";
+            this.ribbonControl3.SystemText.QatPlaceBelowRibbonText = "&Place Quick Access Toolbar below the Ribbon";
+            this.ribbonControl3.SystemText.QatRemoveItemText = "&Remove from Quick Access Toolbar";
+            this.ribbonControl3.TabGroupHeight = 14;
+            this.ribbonControl3.TabIndex = 3;
+            this.ribbonControl3.Text = "ribbonControl3";
             // 
-            this.ribbonPanel1.Style.Class = "";
-            this.ribbonPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // ribbonPanel3
             // 
+            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel3.Controls.Add(this.ribbonBar16);
+            this.ribbonPanel3.Controls.Add(this.ribbonBar13);
+            this.ribbonPanel3.Controls.Add(this.ribbonBar9);
+            this.ribbonPanel3.Controls.Add(this.ribbonBar11);
+            this.ribbonPanel3.Controls.Add(this.ribbonBar12);
+            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel3.Location = new System.Drawing.Point(0, 26);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel3.Size = new System.Drawing.Size(876, 82);
             // 
             // 
-            this.ribbonPanel1.StyleMouseDown.Class = "";
-            this.ribbonPanel1.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            this.ribbonPanel3.Style.Class = "";
+            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
-            this.ribbonPanel1.StyleMouseOver.Class = "";
-            this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel1.TabIndex = 1;
             // 
-            // ribbonBar2
+            this.ribbonPanel3.StyleMouseDown.Class = "";
+            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            this.ribbonBar2.AutoOverflowEnabled = true;
             // 
             // 
+            this.ribbonPanel3.StyleMouseOver.Class = "";
+            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel3.TabIndex = 1;
             // 
-            this.ribbonBar2.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar2.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // ribbonBar13
             // 
+            this.ribbonBar13.AutoOverflowEnabled = true;
             // 
             // 
-            this.ribbonBar2.BackgroundStyle.Class = "";
-            this.ribbonBar2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar2.ContainerControlProcessDialogKey = true;
-            this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btntimdg});
-            this.ribbonBar2.Location = new System.Drawing.Point(257, 0);
-            this.ribbonBar2.Name = "ribbonBar2";
-            this.ribbonBar2.Size = new System.Drawing.Size(90, 79);
-            this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar2.TabIndex = 4;
-            this.ribbonBar2.Text = "Tìm";
             // 
+            this.ribbonBar13.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar13.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
-            this.ribbonBar2.TitleStyle.Class = "";
-            this.ribbonBar2.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            this.ribbonBar13.BackgroundStyle.Class = "";
+            this.ribbonBar13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar13.ContainerControlProcessDialogKey = true;
+            this.ribbonBar13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar13.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btntimmuon});
+            this.ribbonBar13.Location = new System.Drawing.Point(266, 0);
+            this.ribbonBar13.Name = "ribbonBar13";
+            this.ribbonBar13.Size = new System.Drawing.Size(92, 79);
+            this.ribbonBar13.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar13.TabIndex = 5;
+            this.ribbonBar13.Text = "Tìm";
             // 
             // 
-            this.ribbonBar2.TitleStyleMouseOver.Class = "";
-            this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // btntimdg
+            this.ribbonBar13.TitleStyle.Class = "";
+            this.ribbonBar13.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            this.btntimdg.Image = ((System.Drawing.Image)(resources.GetObject("btntimdg.Image")));
-            this.btntimdg.ImagePaddingHorizontal = 30;
-            this.btntimdg.Name = "btntimdg";
-            this.btntimdg.SubItemsExpandWidth = 14;
-            this.btntimdg.Text = "buttonItem4";
-            this.btntimdg.Click += new System.EventHandler(this.btntimdg_Click);
             // 
-            // ribbonBar4
             // 
-            this.ribbonBar4.AutoOverflowEnabled = true;
+            this.ribbonBar13.TitleStyleMouseOver.Class = "";
+            this.ribbonBar13.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // btntimmuon
             // 
+            this.btntimmuon.Image = ((System.Drawing.Image)(resources.GetObject("btntimmuon.Image")));
+            this.btntimmuon.ImagePaddingHorizontal = 30;
+            this.btntimmuon.Name = "btntimmuon";
+            this.btntimmuon.SubItemsExpandWidth = 14;
+            this.btntimmuon.Text = "buttonItem4";
+            this.btntimmuon.Click += new System.EventHandler(this.btntimmuon_Click);
             // 
-            this.ribbonBar4.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar4.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // ribbonBar9
             // 
+            this.ribbonBar9.AutoOverflowEnabled = true;
             // 
             // 
-            this.ribbonBar4.BackgroundStyle.Class = "";
-            this.ribbonBar4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar4.ContainerControlProcessDialogKey = true;
-            this.ribbonBar4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar4.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnsuadg});
-            this.ribbonBar4.Location = new System.Drawing.Point(176, 0);
-            this.ribbonBar4.Name = "ribbonBar4";
-            this.ribbonBar4.Size = new System.Drawing.Size(81, 79);
-            this.ribbonBar4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar4.TabIndex = 3;
-            this.ribbonBar4.Text = "Sửa";
             // 
+            this.ribbonBar9.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar9.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
-            this.ribbonBar4.TitleStyle.Class = "";
-            this.ribbonBar4.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            this.ribbonBar9.BackgroundStyle.Class = "";
+            this.ribbonBar9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar9.ContainerControlProcessDialogKey = true;
+            this.ribbonBar9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar9.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnsuamuon});
+            this.ribbonBar9.Location = new System.Drawing.Point(176, 0);
+            this.ribbonBar9.Name = "ribbonBar9";
+            this.ribbonBar9.Size = new System.Drawing.Size(90, 79);
+            this.ribbonBar9.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar9.TabIndex = 4;
+            this.ribbonBar9.Text = "Sửa";
             // 
             // 
-            this.ribbonBar4.TitleStyleMouseOver.Class = "";
-            this.ribbonBar4.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // btnsuadg
+            this.ribbonBar9.TitleStyle.Class = "";
+            this.ribbonBar9.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            this.btnsuadg.Image = ((System.Drawing.Image)(resources.GetObject("btnsuadg.Image")));
-            this.btnsuadg.ImagePaddingHorizontal = 30;
-            this.btnsuadg.Name = "btnsuadg";
-            this.btnsuadg.SubItemsExpandWidth = 14;
-            this.btnsuadg.Text = "buttonItem3";
-            this.btnsuadg.Click += new System.EventHandler(this.btnsuadg_Click);
             // 
-            // ribbonBar3
             // 
-            this.ribbonBar3.AutoOverflowEnabled = true;
+            this.ribbonBar9.TitleStyleMouseOver.Class = "";
+            this.ribbonBar9.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // btnsuamuon
             // 
+            this.btnsuamuon.Image = ((System.Drawing.Image)(resources.GetObject("btnsuamuon.Image")));
+            this.btnsuamuon.ImagePaddingHorizontal = 30;
+            this.btnsuamuon.Name = "btnsuamuon";
+            this.btnsuamuon.SubItemsExpandWidth = 14;
+            this.btnsuamuon.Text = "buttonItem3";
+            this.btnsuamuon.Click += new System.EventHandler(this.btnsuamuon_Click);
             // 
-            this.ribbonBar3.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar3.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // ribbonBar11
             // 
+            this.ribbonBar11.AutoOverflowEnabled = true;
             // 
             // 
-            this.ribbonBar3.BackgroundStyle.Class = "";
-            this.ribbonBar3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar3.ContainerControlProcessDialogKey = true;
-            this.ribbonBar3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnxoadg});
-            this.ribbonBar3.Location = new System.Drawing.Point(90, 0);
-            this.ribbonBar3.Name = "ribbonBar3";
-            this.ribbonBar3.Size = new System.Drawing.Size(86, 79);
-            this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar3.TabIndex = 2;
-            this.ribbonBar3.Text = "Xóa";
             // 
+            this.ribbonBar11.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar11.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
-            this.ribbonBar3.TitleStyle.Class = "";
-            this.ribbonBar3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            this.ribbonBar11.BackgroundStyle.Class = "";
+            this.ribbonBar11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar11.ContainerControlProcessDialogKey = true;
+            this.ribbonBar11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar11.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btntrasach});
+            this.ribbonBar11.Location = new System.Drawing.Point(90, 0);
+            this.ribbonBar11.Name = "ribbonBar11";
+            this.ribbonBar11.Size = new System.Drawing.Size(86, 79);
+            this.ribbonBar11.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar11.TabIndex = 2;
+            this.ribbonBar11.Text = "Trả";
             // 
             // 
-            this.ribbonBar3.TitleStyleMouseOver.Class = "";
-            this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // btnxoadg
+            this.ribbonBar11.TitleStyle.Class = "";
+            this.ribbonBar11.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            this.btnxoadg.Image = ((System.Drawing.Image)(resources.GetObject("btnxoadg.Image")));
-            this.btnxoadg.ImagePaddingHorizontal = 30;
-            this.btnxoadg.Name = "btnxoadg";
-            this.btnxoadg.SubItemsExpandWidth = 14;
-            this.btnxoadg.Text = "buttonItem2";
-            this.btnxoadg.Click += new System.EventHandler(this.btnxoadg_Click);
             // 
-            // ribbonBar1
             // 
-            this.ribbonBar1.AutoOverflowEnabled = true;
+            this.ribbonBar11.TitleStyleMouseOver.Class = "";
+            this.ribbonBar11.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // btntrasach
             // 
+            this.btntrasach.Image = ((System.Drawing.Image)(resources.GetObject("btntrasach.Image")));
+            this.btntrasach.ImagePaddingHorizontal = 30;
+            this.btntrasach.Name = "btntrasach";
+            this.btntrasach.SubItemsExpandWidth = 14;
+            this.btntrasach.Click += new System.EventHandler(this.btntrasach_Click);
             // 
-            this.ribbonBar1.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar1.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // ribbonBar12
             // 
+            this.ribbonBar12.AutoOverflowEnabled = true;
             // 
             // 
-            this.ribbonBar1.BackgroundStyle.Class = "";
-            this.ribbonBar1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar1.ContainerControlProcessDialogKey = true;
-            this.ribbonBar1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnthemdg});
-            this.ribbonBar1.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar1.Name = "ribbonBar1";
-            this.ribbonBar1.Size = new System.Drawing.Size(87, 79);
-            this.ribbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar1.TabIndex = 0;
-            this.ribbonBar1.Text = "Thêm";
             // 
+            this.ribbonBar12.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar12.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
-            this.ribbonBar1.TitleStyle.Class = "";
-            this.ribbonBar1.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            this.ribbonBar12.BackgroundStyle.Class = "";
+            this.ribbonBar12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar12.ContainerControlProcessDialogKey = true;
+            this.ribbonBar12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar12.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnmuonsach});
+            this.ribbonBar12.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar12.Name = "ribbonBar12";
+            this.ribbonBar12.Size = new System.Drawing.Size(87, 79);
+            this.ribbonBar12.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar12.TabIndex = 0;
+            this.ribbonBar12.Text = "Mượn";
             // 
             // 
-            this.ribbonBar1.TitleStyleMouseOver.Class = "";
-            this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // btnthemdg
+            this.ribbonBar12.TitleStyle.Class = "";
+            this.ribbonBar12.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            this.btnthemdg.Image = ((System.Drawing.Image)(resources.GetObject("btnthemdg.Image")));
-            this.btnthemdg.ImagePaddingHorizontal = 30;
-            this.btnthemdg.Name = "btnthemdg";
-            this.btnthemdg.SubItemsExpandWidth = 14;
-            this.btnthemdg.Click += new System.EventHandler(this.btnthemdg_Click);
             // 
-            // ribbonTabItem1
             // 
-            this.ribbonTabItem1.Checked = true;
-            this.ribbonTabItem1.Name = "ribbonTabItem1";
-            this.ribbonTabItem1.Panel = this.ribbonPanel1;
-            this.ribbonTabItem1.Text = "Thao tác";
+            this.ribbonBar12.TitleStyleMouseOver.Class = "";
+            this.ribbonBar12.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // tidocgia
+            // btnmuonsach
             // 
-            this.tidocgia.AttachedControl = this.tabControlPanel1;
-            this.tidocgia.Name = "tidocgia";
-            this.tidocgia.Text = "Độc giả";
+            this.btnmuonsach.Image = ((System.Drawing.Image)(resources.GetObject("btnmuonsach.Image")));
+            this.btnmuonsach.ImagePaddingHorizontal = 30;
+            this.btnmuonsach.Name = "btnmuonsach";
+            this.btnmuonsach.SubItemsExpandWidth = 14;
+            this.btnmuonsach.Click += new System.EventHandler(this.btnmuonsach_Click);
+            // 
+            // ribbonTabItem3
+            // 
+            this.ribbonTabItem3.Checked = true;
+            this.ribbonTabItem3.Name = "ribbonTabItem3";
+            this.ribbonTabItem3.Panel = this.ribbonPanel3;
+            this.ribbonTabItem3.Text = "Thao tác";
+            // 
+            // timuontrasach
+            // 
+            this.timuontrasach.AttachedControl = this.tabControlPanel9;
+            this.timuontrasach.Name = "timuontrasach";
+            this.timuontrasach.Text = "Mượn/Trả sách";
             // 
             // tabControlPanel5
             // 
@@ -1525,7 +1568,7 @@
             this.tabControlPanel5.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel5.Name = "tabControlPanel5";
             this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel5.Size = new System.Drawing.Size(778, 429);
+            this.tabControlPanel5.Size = new System.Drawing.Size(878, 429);
             this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel5.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1542,7 +1585,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(1, 111);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(776, 317);
+            this.panel4.Size = new System.Drawing.Size(876, 317);
             this.panel4.TabIndex = 3;
             // 
             // tcsach
@@ -1556,7 +1599,7 @@
             this.tcsach.Name = "tcsach";
             this.tcsach.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tcsach.SelectedTabIndex = 0;
-            this.tcsach.Size = new System.Drawing.Size(776, 317);
+            this.tcsach.Size = new System.Drawing.Size(876, 317);
             this.tcsach.TabIndex = 0;
             this.tcsach.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tcsach.Tabs.Add(this.tabItem6);
@@ -1570,7 +1613,7 @@
             this.tabControlPanel6.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel6.Name = "tabControlPanel6";
             this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel6.Size = new System.Drawing.Size(776, 291);
+            this.tabControlPanel6.Size = new System.Drawing.Size(876, 291);
             this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1590,7 +1633,7 @@
             this.dgvtuasach.Name = "dgvtuasach";
             this.dgvtuasach.ReadOnly = true;
             this.dgvtuasach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvtuasach.Size = new System.Drawing.Size(774, 289);
+            this.dgvtuasach.Size = new System.Drawing.Size(874, 289);
             this.dgvtuasach.TabIndex = 0;
             // 
             // tabItem6
@@ -1606,7 +1649,7 @@
             this.tabControlPanel7.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel7.Name = "tabControlPanel7";
             this.tabControlPanel7.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel7.Size = new System.Drawing.Size(776, 291);
+            this.tabControlPanel7.Size = new System.Drawing.Size(876, 291);
             this.tabControlPanel7.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel7.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel7.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1626,7 +1669,7 @@
             this.dgvdausach.Name = "dgvdausach";
             this.dgvdausach.ReadOnly = true;
             this.dgvdausach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdausach.Size = new System.Drawing.Size(774, 289);
+            this.dgvdausach.Size = new System.Drawing.Size(874, 289);
             this.dgvdausach.TabIndex = 0;
             // 
             // tabItem7
@@ -1642,7 +1685,7 @@
             this.tabControlPanel8.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel8.Name = "tabControlPanel8";
             this.tabControlPanel8.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel8.Size = new System.Drawing.Size(776, 291);
+            this.tabControlPanel8.Size = new System.Drawing.Size(876, 291);
             this.tabControlPanel8.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel8.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel8.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1662,7 +1705,7 @@
             this.dgvcuonsach.Name = "dgvcuonsach";
             this.dgvcuonsach.ReadOnly = true;
             this.dgvcuonsach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcuonsach.Size = new System.Drawing.Size(774, 289);
+            this.dgvcuonsach.Size = new System.Drawing.Size(874, 289);
             this.dgvcuonsach.TabIndex = 0;
             // 
             // tabItem8
@@ -1686,7 +1729,7 @@
             this.ribbonControl2.Location = new System.Drawing.Point(1, 1);
             this.ribbonControl2.Name = "ribbonControl2";
             this.ribbonControl2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.ribbonControl2.Size = new System.Drawing.Size(776, 110);
+            this.ribbonControl2.Size = new System.Drawing.Size(876, 110);
             this.ribbonControl2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonControl2.SystemText.MaximizeRibbonText = "&Maximize the Ribbon";
             this.ribbonControl2.SystemText.MinimizeRibbonText = "Mi&nimize the Ribbon";
@@ -1710,6 +1753,7 @@
             // ribbonPanel2
             // 
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel2.Controls.Add(this.ribbonBar20);
             this.ribbonPanel2.Controls.Add(this.ribbonBar10);
             this.ribbonPanel2.Controls.Add(this.ribbonBar5);
             this.ribbonPanel2.Controls.Add(this.ribbonBar6);
@@ -1719,7 +1763,7 @@
             this.ribbonPanel2.Location = new System.Drawing.Point(0, 26);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(776, 82);
+            this.ribbonPanel2.Size = new System.Drawing.Size(876, 82);
             // 
             // 
             // 
@@ -1984,13 +2028,186 @@
             this.buttonItem3.SubItemsExpandWidth = 14;
             this.buttonItem3.Text = "buttonItem2";
             // 
+            // ribbonBar16
+            // 
+            this.ribbonBar16.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar16.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar16.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar16.BackgroundStyle.Class = "";
+            this.ribbonBar16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar16.ContainerControlProcessDialogKey = true;
+            this.ribbonBar16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar16.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btndelallmuon});
+            this.ribbonBar16.Location = new System.Drawing.Point(358, 0);
+            this.ribbonBar16.Name = "ribbonBar16";
+            this.ribbonBar16.Size = new System.Drawing.Size(90, 79);
+            this.ribbonBar16.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar16.TabIndex = 6;
+            this.ribbonBar16.Text = "Xóa tất cả";
+            // 
+            // 
+            // 
+            this.ribbonBar16.TitleStyle.Class = "";
+            this.ribbonBar16.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar16.TitleStyleMouseOver.Class = "";
+            this.ribbonBar16.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btndelallmuon
+            // 
+            this.btndelallmuon.Image = ((System.Drawing.Image)(resources.GetObject("btndelallmuon.Image")));
+            this.btndelallmuon.ImagePaddingHorizontal = 30;
+            this.btndelallmuon.Name = "btndelallmuon";
+            this.btndelallmuon.SubItemsExpandWidth = 14;
+            this.btndelallmuon.Text = "buttonItem4";
+            this.btndelallmuon.Click += new System.EventHandler(this.btndelallmuon_Click);
+            // 
+            // ribbonBar19
+            // 
+            this.ribbonBar19.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar19.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar19.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar19.BackgroundStyle.Class = "";
+            this.ribbonBar19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar19.ContainerControlProcessDialogKey = true;
+            this.ribbonBar19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar19.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btndelallcho});
+            this.ribbonBar19.Location = new System.Drawing.Point(358, 0);
+            this.ribbonBar19.Name = "ribbonBar19";
+            this.ribbonBar19.Size = new System.Drawing.Size(90, 79);
+            this.ribbonBar19.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar19.TabIndex = 7;
+            this.ribbonBar19.Text = "Xóa tất cả";
+            // 
+            // 
+            // 
+            this.ribbonBar19.TitleStyle.Class = "";
+            this.ribbonBar19.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar19.TitleStyleMouseOver.Class = "";
+            this.ribbonBar19.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btndelallcho
+            // 
+            this.btndelallcho.Image = ((System.Drawing.Image)(resources.GetObject("btndelallcho.Image")));
+            this.btndelallcho.ImagePaddingHorizontal = 30;
+            this.btndelallcho.Name = "btndelallcho";
+            this.btndelallcho.SubItemsExpandWidth = 14;
+            this.btndelallcho.Text = "buttonItem4";
+            this.btndelallcho.Click += new System.EventHandler(this.btndelallcho_Click);
+            // 
+            // ribbonBar20
+            // 
+            this.ribbonBar20.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar20.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar20.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar20.BackgroundStyle.Class = "";
+            this.ribbonBar20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar20.ContainerControlProcessDialogKey = true;
+            this.ribbonBar20.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar20.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btndelallsach});
+            this.ribbonBar20.Location = new System.Drawing.Point(441, 0);
+            this.ribbonBar20.Name = "ribbonBar20";
+            this.ribbonBar20.Size = new System.Drawing.Size(90, 79);
+            this.ribbonBar20.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar20.TabIndex = 7;
+            this.ribbonBar20.Text = "Xóa tất cả";
+            // 
+            // 
+            // 
+            this.ribbonBar20.TitleStyle.Class = "";
+            this.ribbonBar20.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar20.TitleStyleMouseOver.Class = "";
+            this.ribbonBar20.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btndelallsach
+            // 
+            this.btndelallsach.Image = ((System.Drawing.Image)(resources.GetObject("btndelallsach.Image")));
+            this.btndelallsach.ImagePaddingHorizontal = 30;
+            this.btndelallsach.Name = "btndelallsach";
+            this.btndelallsach.SubItemsExpandWidth = 14;
+            this.btndelallsach.Text = "buttonItem4";
+            this.btndelallsach.Click += new System.EventHandler(this.btndelallsach_Click);
+            // 
+            // ribbonBar21
+            // 
+            this.ribbonBar21.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar21.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar21.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar21.BackgroundStyle.Class = "";
+            this.ribbonBar21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar21.ContainerControlProcessDialogKey = true;
+            this.ribbonBar21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar21.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btndelalldg});
+            this.ribbonBar21.Location = new System.Drawing.Point(347, 0);
+            this.ribbonBar21.Name = "ribbonBar21";
+            this.ribbonBar21.Size = new System.Drawing.Size(90, 79);
+            this.ribbonBar21.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar21.TabIndex = 7;
+            this.ribbonBar21.Text = "Xóa tất cả";
+            // 
+            // 
+            // 
+            this.ribbonBar21.TitleStyle.Class = "";
+            this.ribbonBar21.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar21.TitleStyleMouseOver.Class = "";
+            this.ribbonBar21.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btndelalldg
+            // 
+            this.btndelalldg.Image = ((System.Drawing.Image)(resources.GetObject("btndelalldg.Image")));
+            this.btndelalldg.ImagePaddingHorizontal = 30;
+            this.btndelalldg.Name = "btndelalldg";
+            this.btndelalldg.SubItemsExpandWidth = 14;
+            this.btndelalldg.Text = "buttonItem4";
+            this.btndelalldg.Click += new System.EventHandler(this.btndelalldg_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Form1";
             this.Text = "Quản lý thư viện";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -2001,16 +2218,6 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabControlPanel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvmuontrasach)).EndInit();
-            this.ribbonControl3.ResumeLayout(false);
-            this.ribbonControl3.PerformLayout();
-            this.ribbonPanel3.ResumeLayout(false);
-            this.tabControlPanel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvchomuonsach)).EndInit();
-            this.ribbonControl4.ResumeLayout(false);
-            this.ribbonControl4.PerformLayout();
-            this.ribbonPanel4.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tcdocgia)).EndInit();
@@ -2026,6 +2233,16 @@
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
             this.ribbonPanel1.ResumeLayout(false);
+            this.tabControlPanel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvchomuonsach)).EndInit();
+            this.ribbonControl4.ResumeLayout(false);
+            this.ribbonControl4.PerformLayout();
+            this.ribbonPanel4.ResumeLayout(false);
+            this.tabControlPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvmuontrasach)).EndInit();
+            this.ribbonControl3.ResumeLayout(false);
+            this.ribbonControl3.PerformLayout();
+            this.ribbonPanel3.ResumeLayout(false);
             this.tabControlPanel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tcsach)).EndInit();
@@ -2159,6 +2376,16 @@
         private DevComponents.DotNetBar.ButtonItem btnngonngu;
         private System.Windows.Forms.Button btnblock;
         private System.Windows.Forms.Button btnmatkhau;
+        private System.Windows.Forms.Button btnimport;
+        private System.Windows.Forms.Button btnexport;
+        private DevComponents.DotNetBar.RibbonBar ribbonBar19;
+        private DevComponents.DotNetBar.ButtonItem btndelallcho;
+        private DevComponents.DotNetBar.RibbonBar ribbonBar16;
+        private DevComponents.DotNetBar.ButtonItem btndelallmuon;
+        private DevComponents.DotNetBar.RibbonBar ribbonBar20;
+        private DevComponents.DotNetBar.ButtonItem btndelallsach;
+        private DevComponents.DotNetBar.RibbonBar ribbonBar21;
+        private DevComponents.DotNetBar.ButtonItem btndelalldg;
     }
 }
 

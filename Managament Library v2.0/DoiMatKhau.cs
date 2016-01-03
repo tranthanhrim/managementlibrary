@@ -12,9 +12,9 @@ using Managament_Library_v2._0.CTL;
 
 namespace Managament_Library_v2._0
 {
-    public partial class SuaMatKhau : Form
+    public partial class DoiMatKhau : Form
     {
-        public SuaMatKhau()
+        public DoiMatKhau()
         {
             InitializeComponent();
         }

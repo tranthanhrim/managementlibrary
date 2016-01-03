@@ -12,6 +12,7 @@ namespace Managament_Library_v2._0.DAO
     public class MuonTraSach
     {
         LibraryDataContext data = new LibraryDataContext();
+        ThamSo dataThamSo = new ThamSo();
         public DataTable loadMuonTraSach()
         {
             DataProvider.openConnect();
@@ -38,8 +39,13 @@ namespace Managament_Library_v2._0.DAO
             }
 
             THAMSO sosachmuon = new THAMSO();
+            sosachmuon.tenthamso = "sosachmuon";
+            sosachmuon = dataThamSo.timThamSo(sosachmuon);
             THAMSO songaymuon = new THAMSO();
-            for (int i = 0; i < Form1.thamSo.Count; i++)
+            songaymuon.tenthamso = "songaymuon";
+            songaymuon = dataThamSo.timThamSo(songaymuon);
+            
+            /*for (int i = 0; i < Form1.thamSo.Count; i++)
             {
                 if (Form1.thamSo[i].tenthamso == "sosachmuon")
                 {
@@ -55,7 +61,7 @@ namespace Managament_Library_v2._0.DAO
                     songaymuon = Form1.thamSo[i];
                     break;
                 }
-            }
+            }*/
 
             if (sosachmuon.tinhtrang == true)
             {
@@ -104,6 +110,12 @@ namespace Managament_Library_v2._0.DAO
         public void xoaMuonTraSach(MUONSACH inf)
         {
             data.MUONSACHes.Remove(inf);
+            data.SaveChanges();
+        }
+
+        public void xoaTatCa()
+        {
+            data.Database.ExecuteSqlCommand("delete from MUONSACH");
             data.SaveChanges();
         }
 

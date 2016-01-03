@@ -65,6 +65,11 @@ namespace Managament_Library_v2._0.CTL
             data.xoaHocSinh(dg);
         }
 
+        public void xoaTatCa()
+        {
+            data.xoaTatCa();
+        }
+
         public DataTable timHocSinh(HOCSINH dg, int type)
         {
             return data.timHocSinh(dg, type);

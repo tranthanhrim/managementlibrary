@@ -99,35 +99,46 @@ namespace Managament_Library_v2._0.DAO
 
         public void xoaDocGia(DOCGIA dg)
         {
-            var temp = data.DOCGIAs.Find(dg.madocgia);
+            /*var temp = data.DOCGIAs.Find(dg.madocgia);
 
             if (temp != null)
             {
                 data.DOCGIAs.Remove(temp);
                 data.SaveChanges();
-            }
+            }*/
+            data.Database.ExecuteSqlCommand("delete from DOCGIA where madocgia = '"+dg.madocgia+"'");
         }
 
         public void xoaHocSinh(HOCSINH hs)
         {
-            var temp = data.HOCSINHs.Find(hs.madocgia);
+            /*var temp = data.HOCSINHs.Find(hs.madocgia);
 
             if (temp != null)
             {
                 data.HOCSINHs.Remove(temp);
                 data.SaveChanges();
-            }
+            }*/
+            data.Database.ExecuteSqlCommand("delete from HOCSINH where madocgia = '" + hs.madocgia + "'");
         }
 
         public void xoaNhanVien(NHANVIEN nv)
         {
-            var temp = data.NHANVIENs.Find(nv.madocgia);
+            /*var temp = data.NHANVIENs.Find(nv.madocgia);
 
             if (temp != null)
             {
                 data.NHANVIENs.Remove(temp);
                 data.SaveChanges();
-            }
+            }*/
+            data.Database.ExecuteSqlCommand("delete from NHANVIEN where madocgia = '" + nv.madocgia + "'");
+        }
+
+        public void xoaTatCa()
+        {
+            data.Database.ExecuteSqlCommand("delete from DOCGIA");
+            data.Database.ExecuteSqlCommand("delete from NHANVIEN");
+            data.Database.ExecuteSqlCommand("delete from HOCSINH");          
+            data.SaveChanges();
         }
 
         public DOCGIA timDocGia(DOCGIA dg)

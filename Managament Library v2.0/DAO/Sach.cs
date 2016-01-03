@@ -121,6 +121,29 @@ namespace Managament_Library_v2._0.DAO
             }
         }
 
+        public void xoaTuaSach(string matuasach)
+        {
+            data.Database.ExecuteSqlCommand("delete from TUASACH where matuasach = '"+matuasach+"'");
+        }
+
+        public void xoaDauSach(string madausach)
+        {
+            data.Database.ExecuteSqlCommand("delete from DAUSACH where madausach = '" + madausach + "'");
+        }
+
+        public void xoaCuonSach(string macuonsach)
+        {
+            data.Database.ExecuteSqlCommand("delete from CUONSACH where macuonsach = '" + macuonsach + "'");
+        }
+
+        public void xoaTatCa()
+        {
+            data.Database.ExecuteSqlCommand("delete from CUONSACH");
+            data.Database.ExecuteSqlCommand("delete from DAUSACH");
+            data.Database.ExecuteSqlCommand("delete from TUASACH");
+            data.SaveChanges();
+        }
+
         public TUASACH timTuaSach(TUASACH ts)
         {
             return data.TUASACHes.Find(ts.matuasach);

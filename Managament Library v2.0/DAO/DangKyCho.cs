@@ -76,5 +76,11 @@ namespace Managament_Library_v2._0.DAO
             }
             return dt;
         }
+
+        public void xoaTatCa()
+        {
+            data.Database.ExecuteSqlCommand("delete from DKCHOMUON");
+            data.SaveChanges();
+        }
     }
 }

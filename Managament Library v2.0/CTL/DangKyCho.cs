@@ -38,5 +38,10 @@ namespace Managament_Library_v2._0.CTL
         {
             return data.timDangKyCho(inf, type);
         }
+
+        public void xoaTatCa()
+        {
+            data.xoaTatCa();
+        }
     }
 }

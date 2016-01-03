@@ -62,6 +62,26 @@ namespace Managament_Library_v2._0.CTL
             data.suaCuonSach(cs);
         }
 
+        public void xoaTuaSach(string matuasach)
+        {
+            data.xoaTuaSach(matuasach);
+        }
+
+        public void xoaDauSach(string madausach)
+        {
+            data.xoaDauSach(madausach);
+        }
+
+        public void xoaCuonSach(string macuonsach)
+        {
+            data.xoaCuonSach(macuonsach);
+        }
+        
+        public void xoaTatCa()
+        {
+            data.xoaTatCa();
+        }
+
         public TUASACH timTuaSach(TUASACH ts)
         {
             return data.timTuaSach(ts);

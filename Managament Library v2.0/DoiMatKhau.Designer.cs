@@ -1,6 +1,6 @@
 ﻿namespace Managament_Library_v2._0
 {
-    partial class SuaMatKhau
+    partial class DoiMatKhau
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuaMatKhau));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoiMatKhau));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,9 +82,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(67, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 37);
+            this.label1.Size = new System.Drawing.Size(203, 37);
             this.label1.TabIndex = 2;
-            this.label1.Text = "SỬA MẬT KHẨU";
+            this.label1.Text = "ĐỔI MẬT KHẨU";
             // 
             // pictureBox1
             // 
@@ -177,14 +177,14 @@
             this.btnluu.UseVisualStyleBackColor = false;
             this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
             // 
-            // SuaMatKhau
+            // DoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 261);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "SuaMatKhau";
+            this.Name = "DoiMatKhau";
             this.Text = "Sửa mật khẩu";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

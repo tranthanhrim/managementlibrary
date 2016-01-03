@@ -29,6 +29,16 @@ namespace Managament_Library_v2._0.CTL
             data.suaViPham(inf);
         }
 
+        public void xoaViPham(string madocgia)
+        {
+            data.xoaViPham(madocgia);
+        }
+
+        public void xoaTatCa()
+        {
+            data.xoaTatCa();
+        }
+
         public VIPHAM timViPham(VIPHAM inf)
         {
             return data.timViPham(inf);
