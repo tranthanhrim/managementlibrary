@@ -34,16 +34,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtngaygiomuon = new System.Windows.Forms.DateTimePicker();
+            this.rbngaymuon = new System.Windows.Forms.RadioButton();
+            this.rbmacuonsach = new System.Windows.Forms.RadioButton();
+            this.rbmdg = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.txtmcs = new System.Windows.Forms.TextBox();
             this.txtmdg = new System.Windows.Forms.TextBox();
             this.dgvmuonsach = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btntim = new System.Windows.Forms.Button();
-            this.rbmdg = new System.Windows.Forms.RadioButton();
-            this.rbmacuonsach = new System.Windows.Forms.RadioButton();
-            this.rbngaymuon = new System.Windows.Forms.RadioButton();
-            this.dtngaygiomuon = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -107,6 +107,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.dtngaygiomuon);
             this.panel2.Controls.Add(this.rbngaymuon);
             this.panel2.Controls.Add(this.rbmacuonsach);
@@ -119,6 +120,48 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(778, 94);
             this.panel2.TabIndex = 2;
+            // 
+            // dtngaygiomuon
+            // 
+            this.dtngaygiomuon.Location = new System.Drawing.Point(474, 17);
+            this.dtngaygiomuon.Name = "dtngaygiomuon";
+            this.dtngaygiomuon.Size = new System.Drawing.Size(200, 20);
+            this.dtngaygiomuon.TabIndex = 35;
+            this.dtngaygiomuon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmdg_KeyDown);
+            // 
+            // rbngaymuon
+            // 
+            this.rbngaymuon.AutoSize = true;
+            this.rbngaymuon.Location = new System.Drawing.Point(389, 18);
+            this.rbngaymuon.Name = "rbngaymuon";
+            this.rbngaymuon.Size = new System.Drawing.Size(79, 17);
+            this.rbngaymuon.TabIndex = 34;
+            this.rbngaymuon.Text = "Ngày mượn";
+            this.rbngaymuon.UseVisualStyleBackColor = true;
+            // 
+            // rbmacuonsach
+            // 
+            this.rbmacuonsach.AutoSize = true;
+            this.rbmacuonsach.Location = new System.Drawing.Point(137, 65);
+            this.rbmacuonsach.Name = "rbmacuonsach";
+            this.rbmacuonsach.Size = new System.Drawing.Size(93, 17);
+            this.rbmacuonsach.TabIndex = 33;
+            this.rbmacuonsach.Text = "Mã cuốn sách";
+            this.rbmacuonsach.UseVisualStyleBackColor = true;
+            this.rbmacuonsach.CheckedChanged += new System.EventHandler(this.rbmacuonsach_CheckedChanged);
+            // 
+            // rbmdg
+            // 
+            this.rbmdg.AutoSize = true;
+            this.rbmdg.Checked = true;
+            this.rbmdg.Location = new System.Drawing.Point(137, 18);
+            this.rbmdg.Name = "rbmdg";
+            this.rbmdg.Size = new System.Drawing.Size(79, 17);
+            this.rbmdg.TabIndex = 32;
+            this.rbmdg.TabStop = true;
+            this.rbmdg.Text = "Mã độc giả";
+            this.rbmdg.UseVisualStyleBackColor = true;
+            this.rbmdg.CheckedChanged += new System.EventHandler(this.rbmdg_CheckedChanged);
             // 
             // label4
             // 
@@ -135,6 +178,7 @@
             this.txtmcs.Name = "txtmcs";
             this.txtmcs.Size = new System.Drawing.Size(55, 20);
             this.txtmcs.TabIndex = 30;
+            this.txtmcs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmdg_KeyDown);
             // 
             // txtmdg
             // 
@@ -142,6 +186,7 @@
             this.txtmdg.Name = "txtmdg";
             this.txtmdg.Size = new System.Drawing.Size(55, 20);
             this.txtmdg.TabIndex = 0;
+            this.txtmdg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmdg_KeyDown);
             // 
             // dgvmuonsach
             // 
@@ -157,6 +202,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.Controls.Add(this.btntim);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 404);
@@ -170,52 +216,13 @@
             this.btntim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntim.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntim.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btntim.Location = new System.Drawing.Point(695, 3);
+            this.btntim.Location = new System.Drawing.Point(672, 3);
             this.btntim.Name = "btntim";
-            this.btntim.Size = new System.Drawing.Size(83, 48);
+            this.btntim.Size = new System.Drawing.Size(106, 48);
             this.btntim.TabIndex = 30;
             this.btntim.Text = "Tìm";
             this.btntim.UseVisualStyleBackColor = false;
             this.btntim.Click += new System.EventHandler(this.btntim_Click);
-            // 
-            // rbmdg
-            // 
-            this.rbmdg.AutoSize = true;
-            this.rbmdg.Checked = true;
-            this.rbmdg.Location = new System.Drawing.Point(137, 18);
-            this.rbmdg.Name = "rbmdg";
-            this.rbmdg.Size = new System.Drawing.Size(79, 17);
-            this.rbmdg.TabIndex = 32;
-            this.rbmdg.TabStop = true;
-            this.rbmdg.Text = "Mã độc giả";
-            this.rbmdg.UseVisualStyleBackColor = true;
-            // 
-            // rbmacuonsach
-            // 
-            this.rbmacuonsach.AutoSize = true;
-            this.rbmacuonsach.Location = new System.Drawing.Point(137, 65);
-            this.rbmacuonsach.Name = "rbmacuonsach";
-            this.rbmacuonsach.Size = new System.Drawing.Size(93, 17);
-            this.rbmacuonsach.TabIndex = 33;
-            this.rbmacuonsach.Text = "Mã cuốn sách";
-            this.rbmacuonsach.UseVisualStyleBackColor = true;
-            // 
-            // rbngaymuon
-            // 
-            this.rbngaymuon.AutoSize = true;
-            this.rbngaymuon.Location = new System.Drawing.Point(389, 18);
-            this.rbngaymuon.Name = "rbngaymuon";
-            this.rbngaymuon.Size = new System.Drawing.Size(79, 17);
-            this.rbngaymuon.TabIndex = 34;
-            this.rbngaymuon.Text = "Ngày mượn";
-            this.rbngaymuon.UseVisualStyleBackColor = true;
-            // 
-            // dtngaygiomuon
-            // 
-            this.dtngaygiomuon.Location = new System.Drawing.Point(474, 17);
-            this.dtngaygiomuon.Name = "dtngaygiomuon";
-            this.dtngaygiomuon.Size = new System.Drawing.Size(200, 20);
-            this.dtngaygiomuon.TabIndex = 35;
             // 
             // TimThemMuonSach
             // 
@@ -224,8 +231,10 @@
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.KeyPreview = true;
             this.Name = "TimThemMuonSach";
             this.Text = "Tìm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TimThemMuonSach_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -121,42 +121,19 @@ namespace Managament_Library_v2._0.DAO
             }
         }
 
-        public void xoaTuaSach(string matuasach)
+        public TUASACH timTuaSach(string matuasach)
         {
-            data.Database.ExecuteSqlCommand("delete from TUASACH where matuasach = '"+matuasach+"'");
+            return data.TUASACHes.Find(matuasach);
         }
 
-        public void xoaDauSach(string madausach)
+        public DAUSACH timDauSach(string madausach)
         {
-            data.Database.ExecuteSqlCommand("delete from DAUSACH where madausach = '" + madausach + "'");
+            return data.DAUSACHes.Find(madausach);
         }
 
-        public void xoaCuonSach(string macuonsach)
+        public CUONSACH timCuonSach(string macuonsach)
         {
-            data.Database.ExecuteSqlCommand("delete from CUONSACH where macuonsach = '" + macuonsach + "'");
-        }
-
-        public void xoaTatCa()
-        {
-            data.Database.ExecuteSqlCommand("delete from CUONSACH");
-            data.Database.ExecuteSqlCommand("delete from DAUSACH");
-            data.Database.ExecuteSqlCommand("delete from TUASACH");
-            data.SaveChanges();
-        }
-
-        public TUASACH timTuaSach(TUASACH ts)
-        {
-            return data.TUASACHes.Find(ts.matuasach);
-        }
-
-        public DAUSACH timDauSach(DAUSACH ds)
-        {
-            return data.DAUSACHes.Find(ds.madausach);
-        }
-
-        public CUONSACH timCuonSach(CUONSACH cs)
-        {
-            return data.CUONSACHes.Find(cs.macuonsach);
+            return data.CUONSACHes.Find(macuonsach);
         }
 
         public DataTable timTuaSach(TUASACH ts, int type)
@@ -260,6 +237,40 @@ namespace Managament_Library_v2._0.DAO
 
             }
             return result;
+        }
+
+        public void xoaTuaSach(string matuasach)
+        {
+            DAUSACH ds = new DAUSACH();
+            ds.matuasach = matuasach;
+            DataTable dtDauSach = timDauSach(ds, 2); //tìm đầu sách theo mã tựa sách
+            for (int i = 0; i < dtDauSach.Rows.Count; i++ )
+            {
+                data.Database.ExecuteSqlCommand("delete from CUONSACH where madausach = '" + dtDauSach.Rows[i]["Mã đầu sách"].ToString() + "'");
+            }
+
+            data.Database.ExecuteSqlCommand("delete from DAUSACH where matuasach = '" + matuasach + "'");
+            data.Database.ExecuteSqlCommand("delete from TUASACH where matuasach = '" + matuasach + "'");
+        }
+
+        public void xoaDauSach(string madausach)
+        {
+            data.Database.ExecuteSqlCommand("delete from CUONSACH where madausach = '" + madausach + "'");
+            data.Database.ExecuteSqlCommand("delete from DAUSACH where madausach = '" + madausach + "'");
+        }
+
+        public void xoaCuonSach(string macuonsach)
+        {
+            data.Database.ExecuteSqlCommand("delete from CUONSACH where macuonsach = '" + macuonsach + "'");
+        }
+
+
+        public void xoaTatCa()
+        {
+            data.Database.ExecuteSqlCommand("delete from CUONSACH");
+            data.Database.ExecuteSqlCommand("delete from DAUSACH");
+            data.Database.ExecuteSqlCommand("delete from TUASACH");
+            data.SaveChanges();
         }
     }
 }

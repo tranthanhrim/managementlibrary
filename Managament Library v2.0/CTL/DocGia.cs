@@ -29,9 +29,9 @@ namespace Managament_Library_v2._0.CTL
             data.suaDocGia(dg);
         }
 
-        public void xoaDocGia(DOCGIA dg)
+        public void xoaDocGia(string madocgia)
         {
-            data.xoaDocGia(dg);
+            data.xoaDocGia(madocgia);
         }
 
         public DataTable timDocGia(DOCGIA dg, int type)
@@ -39,9 +39,9 @@ namespace Managament_Library_v2._0.CTL
             return data.timDocGia(dg, type);
         }
 
-        public DOCGIA timDocGia(DOCGIA dg)
+        public DOCGIA timDocGia(string madocgia)
         {
-            return data.timDocGia(dg);
+            return data.timDocGia(madocgia);
         }
 
 
@@ -60,9 +60,9 @@ namespace Managament_Library_v2._0.CTL
             data.suaHocSinh(dg);
         }
 
-        public void xoaHocSinh(HOCSINH dg)
+        public void xoaHocSinh(string madocgia)
         {
-            data.xoaHocSinh(dg);
+            data.xoaHocSinh(madocgia);
         }
 
         public void xoaTatCa()
@@ -75,9 +75,9 @@ namespace Managament_Library_v2._0.CTL
             return data.timHocSinh(dg, type);
         }
 
-        public HOCSINH timHocSinh(HOCSINH hs)
+        public HOCSINH timHocSinh(string madocgia)
         {
-            return data.timHocSinh(hs);
+            return data.timHocSinh(madocgia);
         }
 
         public DataTable loadNhanVien()
@@ -95,9 +95,9 @@ namespace Managament_Library_v2._0.CTL
             data.suaNhanVien(dg);
         }
 
-        public void xoaNhanVien(NHANVIEN dg)
+        public void xoaNhanVien(string madocgia)
         {
-            data.xoaNhanVien(dg);
+            data.xoaNhanVien(madocgia);
         }
 
         public DataTable timNhanVien(NHANVIEN dg, int type)
@@ -105,9 +105,9 @@ namespace Managament_Library_v2._0.CTL
             return data.timNhanVien(dg, type);
         }
 
-        public NHANVIEN timNhanVien(NHANVIEN nv)
+        public NHANVIEN timNhanVien(string madocgia)
         {
-            return data.timNhanVien(nv);
+            return data.timNhanVien(madocgia);
         }
     }
 }

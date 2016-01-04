@@ -53,6 +53,8 @@ namespace Managament_Library_v2._0
             }
             else
             {
+                MessageBox.Show("Đã thêm!");
+                Close();
                 noticeBorrowBook(inf.macuonsach);
             }          
         }

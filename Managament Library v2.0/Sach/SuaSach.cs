@@ -57,9 +57,7 @@ namespace Managament_Library_v2._0
                 tithemdausach.Visible = false;
                 tithemcuonsach.Visible = false;
 
-                ts = new TUASACH();
-                ts.matuasach = mts;
-                ts = dataSach.timTuaSach(ts);
+                ts = dataSach.timTuaSach(mts);
                 txtmatuasach.Text = ts.matuasach;
                 txttentuasach.Text = ts.tentuasach;
                 txttacgia.Text = ts.tacgia;
@@ -71,9 +69,7 @@ namespace Managament_Library_v2._0
                 tithemdausach.Visible = true;
                 tithemcuonsach.Visible = false;
 
-                ds = new DAUSACH();
-                ds.madausach = mds;
-                ds = dataSach.timDauSach(ds);
+                ds = dataSach.timDauSach(mds);
 
                 txtmadausach.Text = ds.madausach;
                 if (ds.tinhtrang == true)
@@ -117,9 +113,7 @@ namespace Managament_Library_v2._0
                 tithemdausach.Visible = false;
                 tithemcuonsach.Visible = true;
 
-                cs = new CUONSACH();
-                cs.macuonsach = mcs;
-                cs = dataSach.timCuonSach(cs);
+                cs = dataSach.timCuonSach(mcs);
 
                 txtmacuonsach.Text = cs.macuonsach;
                 if (cs.tinhtrang == true)

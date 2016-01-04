@@ -60,6 +60,8 @@ namespace Managament_Library_v2._0
                 noticeIllegal(temp.madocgia);
             }
 
+            MessageBox.Show("Đã lưu!");
+            Close();
             OnBackBook(temp.macuonsach);
         }
     }

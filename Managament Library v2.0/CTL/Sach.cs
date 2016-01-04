@@ -82,19 +82,19 @@ namespace Managament_Library_v2._0.CTL
             data.xoaTatCa();
         }
 
-        public TUASACH timTuaSach(TUASACH ts)
+        public TUASACH timTuaSach(string matuasach)
         {
-            return data.timTuaSach(ts);
+            return data.timTuaSach(matuasach);
         }
 
-        public DAUSACH timDauSach(DAUSACH ds)
+        public DAUSACH timDauSach(string madausach)
         {
-            return data.timDauSach(ds);
+            return data.timDauSach(madausach);
         }
    
-        public CUONSACH timCuonSach(CUONSACH cs)
+        public CUONSACH timCuonSach(string macuonsach)
         {
-            return data.timCuonSach(cs);
+            return data.timCuonSach(macuonsach);
         }
 
         public DataTable timTuaSach(TUASACH ts, int type)

@@ -19,7 +19,11 @@ namespace Managament_Library_v2._0
             //Application.Run(new DangNhap());
 
             DangNhap formDangNhap = new DangNhap();
-            if (formDangNhap.ShowDialog() == DialogResult.OK)
+            if(formDangNhap.DialogResult == DialogResult.OK)
+            {
+                Application.Run(new Form1());
+            }           
+            else if (formDangNhap.ShowDialog() == DialogResult.OK)
             {
                 Application.Run(new Form1());
             }

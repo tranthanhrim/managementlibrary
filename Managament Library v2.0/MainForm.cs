@@ -24,42 +24,52 @@ namespace Managament_Library_v2._0
         DocGia dataDocGia = new DocGia();
         Sach dataSach = new Sach();
         MuonTraSach dataMuonTraSach = new MuonTraSach();
-        //ThamSo dataThamSo = new ThamSo();
         DangKyCho dataDangKy = new DangKyCho();
 
 
         #region update
-        void updateDocGia()
+
+        void updateDgvDocGia()//load lại DataGridView độc giả
         {
             ViPham dataViPham = new ViPham();
-            ktHetHanPhat();
-            ktTheHetHan();
-            ktPhucHoiThe();
             dgvdocgia.DataSource = dataDocGia.loadDocGia();
             dgvhocsinh.DataSource = dataDocGia.loadHocSinh();
             dgvnhanvien.DataSource = dataDocGia.loadNhanVien();
-            dgvvipham.DataSource = dataViPham.loadViPham();
+            dgvvipham.DataSource = dataViPham.loadViPham();           
         }
 
-        void updateDataViPham()
+        void updateDgvSach()//load lại DataGridView sách
+        {
+            dgvtuasach.DataSource = dataSach.loadTuaSach();
+            dgvdausach.DataSource = dataSach.loadDauSach();
+            dgvcuonsach.DataSource = dataSach.loadCuonSach();
+        }
+
+        void updateDgvViPham()//load lại DataGridView vi phạm
         {
             ViPham dataViPham = new ViPham();
-            dgvvipham.DataSource = dataViPham.loadViPham();
+            dgvvipham.DataSource = dataViPham.loadViPham();          
         }
 
-        /*void updateThamSo()
-        {
-            ThamSo dataThamSo = new ThamSo();
-            thamSo = dataThamSo.loadThamSo();
-            updateDocGia();
-        }*/
-
-        void updateDangKyCho()
+        void updateDgvDangKyCho()//load lại DataGridView đăng ký chờ mượn sách
         {
             dgvchomuonsach.DataSource = dataDangKy.loadDangKyCho();
         }
 
-        void updateViPham(string madocgia)
+        void updateDgvMuonTraSach()
+        {
+            dgvmuontrasach.DataSource = dataMuonTraSach.loadMuonTraSach();
+        }
+
+        void checkDocGia()//kiểm tra thẻ độc giả
+        {
+            ktPhucHoiThe();
+            ktTheHetHan();
+            ktHetHanPhat();
+            updateDgvDocGia();
+        }
+   
+        void updateViPham(string madocgia)//cập nhật bảng vi phạm
         {
             ViPham dataViPham = new ViPham();
             ThamSo dataThamSo = new ThamSo();
@@ -87,38 +97,28 @@ namespace Managament_Library_v2._0
                 }
             }
             dataViPham.suaViPham(inf);
-            updateDocGia();
+            //updateDocGia();
+            dgvdocgia.DataSource = dataDocGia.loadDocGia();
+            dgvhocsinh.DataSource = dataDocGia.loadHocSinh();
+            dgvnhanvien.DataSource = dataDocGia.loadNhanVien();
+            dgvvipham.DataSource = dataViPham.loadViPham();
         }
 
-        void updateSach()
+        void updateTinhTrangCuonSach(string macuonsach)//cập nhật thuộc tính "tình trạng" của CUỐN SÁCH
         {
-            dgvtuasach.DataSource = dataSach.loadTuaSach();
-            dgvdausach.DataSource = dataSach.loadDauSach();
-            dgvcuonsach.DataSource = dataSach.loadCuonSach();
-        }
-
-        void updateMuonTraSach()
-        {
-            dgvmuontrasach.DataSource = dataMuonTraSach.loadMuonTraSach();
-        }
-
-        void updateTinhTrangCuonSach(string macuonsach)
-        {
-            CUONSACH cs = new CUONSACH();
-            cs.macuonsach = macuonsach;
-            cs = dataSach.timCuonSach(cs);
+            CUONSACH cs = dataSach.timCuonSach(macuonsach);
             if (cs.tinhtrang == true)
                 cs.tinhtrang = false;
             else
                 cs.tinhtrang = true;
 
-            dataSach.suaCuonSach(cs); //Update thuộc tính "tình trạng" của CUỐN SÁCH
-            updateMuonTraSach();
-            updateDauSach(cs.madausach); //Kiểm tra thuộc tính "tình trạng" của ĐẦU SÁCH
-            updateSach();
+            dataSach.suaCuonSach(cs); //cập nhật thuộc tính "tình trạng" của CUỐN SÁCH
+            updateTinhTrangDauSach(cs.madausach); //cập nhật thuộc tính "tình trạng" của ĐẦU SÁCH
+            updateDgvMuonTraSach();
+            updateDgvSach();
         }
 
-        void updateDauSach(string madausach)
+        void updateTinhTrangDauSach(string madausach)//cập nhật thuộc tính "tình trạng" của ĐẦU SÁCH
         {
             bool conCuonSach = false;
             DataTable dtCuonSach = dataSach.loadCuonSach();
@@ -131,31 +131,29 @@ namespace Managament_Library_v2._0
                 }
             }
 
-            updateTinhTrangDauSach(madausach, conCuonSach);
-        }
-
-        void updateTinhTrangDauSach(string madausach, bool conCuonSach)
-        {
-            
-            DAUSACH ds = new DAUSACH();
-            ds.madausach = madausach;
-            ds = dataSach.timDauSach(ds);
+            DAUSACH ds = dataSach.timDauSach(madausach);
             ds.tinhtrang = conCuonSach;
             dataSach.suaDauSach(ds);
-            updateSach();
+            //updateTinhTrangDauSach(madausach, conCuonSach);
         }
 
-        void khoaThe(string madocgia)
+        //void updateTinhTrangDauSach(string madausach, bool conCuonSach)
+        //{
+        //    DAUSACH ds = dataSach.timDauSach(madausach);
+        //    ds.tinhtrang = conCuonSach;
+        //    dataSach.suaDauSach(ds);
+        //    updateDgvSach();
+        //}
+
+        void khoaThe(string madocgia)//khóa thẻ độc giả
         {
-            DOCGIA dg = new DOCGIA();
-            dg.madocgia = madocgia;
-            dg = dataDocGia.timDocGia(dg);
+            DOCGIA dg = dataDocGia.timDocGia(madocgia);
             dg.tinhtrang = false;
             dataDocGia.suaDocGia(dg);
-            updateDocGia();
+            //updateDocGia();
         }
 
-        void ktTheHetHan()
+        void ktTheHetHan()//kiểm tra thẻ độc giả hết hạn
         {
             ThamSo dataThamSo = new ThamSo();
             DataTable dt = dataDocGia.loadDocGia();
@@ -176,16 +174,17 @@ namespace Managament_Library_v2._0
 
                 if (ngayhethan.Date < DateTime.Now.Date) //khóa thẻ
                 {
-                    dg = new DOCGIA();
-                    dg.madocgia = dt.Rows[i]["Mã độc giả"].ToString();
-                    dg = dataDocGia.timDocGia(dg);
+                    //dg = new DOCGIA();
+                    //dg.madocgia = dt.Rows[i]["Mã độc giả"].ToString();
+                    string madocgia = dt.Rows[i]["Mã độc giả"].ToString();
+                    dg = dataDocGia.timDocGia(madocgia);
                     dg.tinhtrang = false;
                     dataDocGia.suaDocGia(dg);
                 }
             }
         }
 
-        void ktPhucHoiThe()
+        void ktPhucHoiThe()//kiểm tra phục hồi thẻ độc giả đã gia hạn
         {
             ViPham dataViPham = new ViPham();
             ThamSo dataThamSo = new ThamSo();
@@ -209,9 +208,10 @@ namespace Managament_Library_v2._0
                 ngayhethan = ngaydk.AddMonths(Convert.ToInt32(handungthe.giatri));
                 if (ngayhethan.Date >= DateTime.Now.Date && (vp.Rows[0]["ngayhethan"].ToString() == String.Empty || (DateTime)vp.Rows[0]["ngayhethan"] < DateTime.Now)) //mở thẻ
                 {
-                    dg = new DOCGIA();
-                    dg.madocgia = dt.Rows[i]["Mã độc giả"].ToString();
-                    dg = dataDocGia.timDocGia(dg);
+                    //dg = new DOCGIA();
+                    string madocgia = dt.Rows[i]["Mã độc giả"].ToString();
+                    //dg.madocgia = dt.Rows[i]["Mã độc giả"].ToString();
+                    dg = dataDocGia.timDocGia(madocgia);
                     if (dg.tinhtrang != true)
                     {
                         dg.tinhtrang = true;
@@ -221,7 +221,7 @@ namespace Managament_Library_v2._0
             }
         }
 
-        void ktHetHanPhat()
+        void ktHetHanPhat()//kiểm tra phục hồi thẻ độc giả hết hạn phạt
         {
             ViPham dataViPham = new ViPham();
             DataTable dt = dataViPham.loadViPham();
@@ -238,9 +238,10 @@ namespace Managament_Library_v2._0
 
                     if (ngayhethan.Date < DateTime.Now.Date)
                     {
-                        dg = new DOCGIA();
-                        dg.madocgia = dt.Rows[i]["Mã độc giả"].ToString();
-                        dg = dataDocGia.timDocGia(dg);
+                        //dg = new DOCGIA();
+                        string madocgia = dt.Rows[i]["Mã độc giả"].ToString();
+                        //dg.madocgia = dt.Rows[i]["Mã độc giả"].ToString();
+                        dg = dataDocGia.timDocGia(madocgia);
                         dg.tinhtrang = true;
                         dataDocGia.suaDocGia(dg);
 
@@ -254,14 +255,13 @@ namespace Managament_Library_v2._0
             }
         }
 
-        void updateAll()
+        void updateAll()//cập nhật tất cả
         {
-            updateMuonTraSach();
-            updateDataViPham();
-            //updateThamSo();
-            updateDangKyCho();
-            updateSach();
-            updateDocGia();
+            updateDgvMuonTraSach();
+            updateDgvViPham();
+            updateDgvDangKyCho();
+            updateDgvSach();
+            checkDocGia();
         }
 
         #endregion
@@ -270,12 +270,6 @@ namespace Managament_Library_v2._0
         private void Form1_Load(object sender, EventArgs e)
         {
             DataProvider.openConnect();
-            /*updateMuonTraSach();
-            updateDataViPham();
-            updateThamSo();
-            updateDangKyCho();         
-            updateSach();
-            updateDocGia();*/
             updateAll();
             ToolTip setting = new ToolTip();
             setting.SetToolTip(btnsetting, "Cài đặt");
@@ -287,6 +281,8 @@ namespace Managament_Library_v2._0
             xuatkhau.SetToolTip(btnexport, "Xuất dữ liệu");
             ToolTip nhapkhau = new ToolTip();
             nhapkhau.SetToolTip(btnimport, "Nhập dữ liệu");
+            ToolTip ktKhoaTheDg = new ToolTip();
+            ktKhoaTheDg.SetToolTip(btnblock, "Kiểm tra khóa thẻ");
 
         }
 
@@ -294,7 +290,7 @@ namespace Managament_Library_v2._0
         private void btnthemdg_Click(object sender, EventArgs e)
         {
             ThemDocGia formThemDG = new ThemDocGia();
-            formThemDG.OnAdd += new ThemDocGia.OnAddHandler(updateDocGia);
+            formThemDG.OnAdd += new ThemDocGia.OnAddHandler(checkDocGia);
             formThemDG.ShowDialog();
         }
 
@@ -310,47 +306,38 @@ namespace Managament_Library_v2._0
                 {
                     if (dgvdocgia.SelectedRows.Count == 0)
                         return;
-                    DOCGIA dg = new DOCGIA();
-                    HOCSINH hs = new HOCSINH();
-                    NHANVIEN nv = new NHANVIEN();
-                    dg.madocgia = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();
-                    hs.madocgia = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();
-                    nv.madocgia = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();
-                    dataDocGia.xoaDocGia(dg);
-                    dataDocGia.xoaNhanVien(nv);
-                    dataDocGia.xoaHocSinh(hs);
+
+                    string madocgia = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();
+                    dataDocGia.xoaDocGia(madocgia);
+                    dataDocGia.xoaNhanVien(madocgia);
+                    dataDocGia.xoaHocSinh(madocgia);
                     ViPham dataViPham = new ViPham();
-                    dataViPham.xoaViPham(dg.madocgia);
-                    updateDocGia();
+                    dataViPham.xoaViPham(madocgia);
+                    updateDgvDocGia();
                 }
                 else if (tcdocgia.SelectedTabIndex == 1)//xóa theo tab học sinh
                 {
                     if (dgvhocsinh.SelectedRows.Count == 0)
                         return;
-                    DOCGIA dg = new DOCGIA();
-                    HOCSINH hs = new HOCSINH();
-                    dg.madocgia = dgvhocsinh.SelectedRows[0].Cells[0].Value.ToString();
-                    hs.madocgia = dgvhocsinh.SelectedRows[0].Cells[0].Value.ToString();                 
-                    dataDocGia.xoaDocGia(dg);
-                    dataDocGia.xoaHocSinh(hs);
+
+                    string madocgia = dgvhocsinh.SelectedRows[0].Cells[0].Value.ToString();
+                    dataDocGia.xoaDocGia(madocgia);
+                    dataDocGia.xoaHocSinh(madocgia);
                     ViPham dataViPham = new ViPham();
-                    dataViPham.xoaViPham(dg.madocgia);
-                    updateDocGia();
+                    dataViPham.xoaViPham(madocgia);
+                    updateDgvDocGia();
 
                 }
                 else if (tcdocgia.SelectedTabIndex == 2)//xóa theo tab nhân viên
                 {
                     if (dgvnhanvien.SelectedRows.Count == 0)
                         return;
-                    DOCGIA dg = new DOCGIA();
-                    NHANVIEN nv = new NHANVIEN();
-                    dg.madocgia = dgvnhanvien.SelectedRows[0].Cells[0].Value.ToString();
-                    nv.madocgia = dgvnhanvien.SelectedRows[0].Cells[0].Value.ToString();
-                    dataDocGia.xoaDocGia(dg);
-                    dataDocGia.xoaNhanVien(nv);                 
+                    string madocgia = dgvnhanvien.SelectedRows[0].Cells[0].Value.ToString();
+                    dataDocGia.xoaDocGia(madocgia);
+                    dataDocGia.xoaNhanVien(madocgia);                 
                     ViPham dataViPham = new ViPham();
-                    dataViPham.xoaViPham(dg.madocgia);
-                    updateDocGia();
+                    dataViPham.xoaViPham(madocgia);
+                    updateDgvDocGia();
                 }
             }
             catch (SqlException)
@@ -360,8 +347,7 @@ namespace Managament_Library_v2._0
             /*catch (System.Data.Entity.Infrastructure.DbUpdateException)
             {
                 MessageBox.Show("Có liên kết dữ liệu, không thể xóa!");
-            }*/
-            
+            }*/           
         }
 
         private void btnsuadg_Click(object sender, EventArgs e)
@@ -371,7 +357,7 @@ namespace Managament_Library_v2._0
                 if (dgvdocgia.SelectedRows.Count == 0)
                     return;
                 SuaDocGia formSuaDG = new SuaDocGia();
-                formSuaDG.OnUpdate += new SuaDocGia.OnUpdateHandler(updateDocGia);
+                formSuaDG.OnUpdate += new SuaDocGia.OnUpdateHandler(checkDocGia);
                 SuaDocGia.mdg = dgvdocgia.SelectedRows[0].Cells[0].Value.ToString();              
                 formSuaDG.ShowDialog();
             }
@@ -380,7 +366,7 @@ namespace Managament_Library_v2._0
                 if (dgvhocsinh.SelectedRows.Count == 0)
                     return;
                 SuaDocGia formSuaDG = new SuaDocGia();
-                formSuaDG.OnUpdate += new SuaDocGia.OnUpdateHandler(updateDocGia);
+                formSuaDG.OnUpdate += new SuaDocGia.OnUpdateHandler(checkDocGia);
                 SuaDocGia.mdg = dgvhocsinh.SelectedRows[0].Cells[0].Value.ToString();
                 formSuaDG.ShowDialog();
 
@@ -390,7 +376,7 @@ namespace Managament_Library_v2._0
                 if (dgvnhanvien.SelectedRows.Count == 0)
                     return;
                 SuaDocGia formSuaDG = new SuaDocGia();
-                formSuaDG.OnUpdate += new SuaDocGia.OnUpdateHandler(updateDocGia);
+                formSuaDG.OnUpdate += new SuaDocGia.OnUpdateHandler(checkDocGia);
                 SuaDocGia.mdg = dgvnhanvien.SelectedRows[0].Cells[0].Value.ToString();
                 formSuaDG.ShowDialog();
             }
@@ -400,7 +386,8 @@ namespace Managament_Library_v2._0
                     return;
                 SuaViPham formSuaVP = new SuaViPham();
                 SuaViPham.madocgia = dgvvipham.SelectedRows[0].Cells[0].Value.ToString();
-                formSuaVP.OnUpdate += new SuaViPham.OnUpdateHandler(updateDataViPham);
+                //formSuaVP.OnUpdate += new SuaViPham.OnUpdateHandler(updateDgvViPham);
+                formSuaVP.OnUpdate += new SuaViPham.OnUpdateHandler(checkDocGia);
                 formSuaVP.ShowDialog();
             }
             
@@ -417,14 +404,14 @@ namespace Managament_Library_v2._0
         private void btnthemsach_Click(object sender, EventArgs e)
         {
             ThemSach formThemSach = new ThemSach();
-            formThemSach.OnAddBook += new ThemSach.OnAddBookHandler(updateSach);
+            formThemSach.OnAddBook += new ThemSach.OnAddBookHandler(updateDgvSach);
             formThemSach.ShowDialog();
         }
 
         private void btnsuasach_Click(object sender, EventArgs e)
         {
             SuaSach formSuaSach = new SuaSach();
-            formSuaSach.OnUpdateBook += new SuaSach.OnUpdateBookHandler(updateSach);
+            formSuaSach.OnUpdateBook += new SuaSach.OnUpdateBookHandler(updateDgvSach);
             if (tcsach.SelectedTabIndex == 0)
             {     
                 SuaSach.mts = dgvtuasach.SelectedRows[0].Cells[0].Value.ToString();
@@ -458,7 +445,7 @@ namespace Managament_Library_v2._0
                     
                     string matuasach = dgvtuasach.SelectedRows[0].Cells[0].Value.ToString();
                     dataSach.xoaTuaSach(matuasach);
-                    updateSach();
+                    updateDgvSach();
 
                 }
                 else if (tcsach.SelectedTabIndex == 1)//xóa theo tab đầu sách
@@ -468,7 +455,8 @@ namespace Managament_Library_v2._0
 
                     string madausach = dgvdausach.SelectedRows[0].Cells[0].Value.ToString();
                     dataSach.xoaDauSach(madausach);
-                    updateSach();
+
+                    updateDgvSach();
 
                 }
                 else if (tcsach.SelectedTabIndex == 2)//xóa theo tab cuốn sách
@@ -477,7 +465,7 @@ namespace Managament_Library_v2._0
                         return;
                     string macuonsach = dgvcuonsach.SelectedRows[0].Cells[0].Value.ToString();
                     dataSach.xoaCuonSach(macuonsach);
-                    updateSach();
+                    updateDgvSach();
 
                 }
             }
@@ -526,7 +514,7 @@ namespace Managament_Library_v2._0
             SuaMuonTraSach.inf.madocgia = dgvmuontrasach.SelectedRows[0].Cells[0].Value.ToString();
             SuaMuonTraSach.inf.macuonsach = dgvmuontrasach.SelectedRows[0].Cells[1].Value.ToString();
             SuaMuonTraSach.inf.ngaygiomuon = (DateTime)dgvmuontrasach.SelectedRows[0].Cells[2].Value;
-            formSua.OnUpdateBackBook += new SuaMuonTraSach.OnUpdateBackBookHandler(updateMuonTraSach);
+            formSua.OnUpdateBackBook += new SuaMuonTraSach.OnUpdateBackBookHandler(updateDgvMuonTraSach);
             formSua.ShowDialog();
         }
 
@@ -542,14 +530,14 @@ namespace Managament_Library_v2._0
         private void btnchomuon_Click(object sender, EventArgs e)
         {
             ThemDangKyCho formCho = new ThemDangKyCho();
-            formCho.OnSign += new ThemDangKyCho.OnSignHandler(updateDangKyCho);
+            formCho.OnSign += new ThemDangKyCho.OnSignHandler(updateDgvDangKyCho);
             formCho.ShowDialog();
         }
 
         private void btnsuacho_Click(object sender, EventArgs e)
         {
             SuaDangKyCho formSua = new SuaDangKyCho();
-            formSua.OnUpdate += new SuaDangKyCho.OnUpdateHandler(updateDangKyCho);
+            formSua.OnUpdate += new SuaDangKyCho.OnUpdateHandler(updateDgvDangKyCho);
             SuaDangKyCho.inf.madocgia = dgvchomuonsach.SelectedRows[0].Cells[0].Value.ToString();
             SuaDangKyCho.inf.madausach = dgvchomuonsach.SelectedRows[0].Cells[1].Value.ToString();
             SuaDangKyCho.inf.ngaygiodk = (DateTime)dgvchomuonsach.SelectedRows[0].Cells[2].Value;
@@ -579,7 +567,7 @@ namespace Managament_Library_v2._0
         private void btnsetting_Click(object sender, EventArgs e)
         {
             Setting formSetting = new Setting();
-            formSetting.OnUpdateThamSo += new Setting.OnUpdateThamSoHandler(updateDocGia);
+            formSetting.OnUpdateThamSo += new Setting.OnUpdateThamSoHandler(checkDocGia);
             formSetting.ShowDialog();
         }
 
@@ -597,10 +585,7 @@ namespace Managament_Library_v2._0
 
         private void btnblock_Click(object sender, EventArgs e)
         {
-            ktHetHanPhat();
-            ktTheHetHan();
-            ktPhucHoiThe();
-            updateDocGia();
+            checkDocGia();
         }
 
         private void btnmatkhau_Click(object sender, EventArgs e)
@@ -631,7 +616,7 @@ namespace Managament_Library_v2._0
                 return;
 
             dataDangKy.xoaTatCa();
-            updateDangKyCho();
+            updateDgvDangKyCho();
         }
 
         private void btndelallmuon_Click(object sender, EventArgs e)
@@ -640,7 +625,7 @@ namespace Managament_Library_v2._0
             if (delete == DialogResult.No)
                 return;
             dataMuonTraSach.xoaTatCa();
-            updateMuonTraSach();
+            updateDgvMuonTraSach();
         }
 
         private void btndelallsach_Click(object sender, EventArgs e)
@@ -651,7 +636,7 @@ namespace Managament_Library_v2._0
                 if (delete == DialogResult.No)
                     return;
                 dataSach.xoaTatCa();
-                updateSach();
+                updateDgvSach();
             }
             catch(SqlException)
             {
@@ -670,8 +655,8 @@ namespace Managament_Library_v2._0
                 dataDocGia.xoaTatCa();
                 ViPham dataViPham = new ViPham();
                 dataViPham.xoaTatCa();
-                
-                updateDocGia();
+
+                updateDgvDocGia();
             }
             catch (SqlException)
             {
@@ -679,6 +664,20 @@ namespace Managament_Library_v2._0
             }
         }
         #endregion
+
+        private void tcdocgia_SelectedTabChanged(object sender, DevComponents.DotNetBar.TabStripTabChangedEventArgs e)
+        {
+            if (tcdocgia.SelectedTabIndex == 3)
+            {
+                btndelalldg.Enabled = false;
+                btnxoadg.Enabled = false;
+            }
+            else
+            {
+                btndelalldg.Enabled = true;
+                btnxoadg.Enabled = true;
+            }
+        }
 
     }
 }

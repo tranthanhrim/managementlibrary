@@ -38,7 +38,6 @@
             this.rbngaydk = new System.Windows.Forms.RadioButton();
             this.rbmadausach = new System.Windows.Forms.RadioButton();
             this.rbmdg = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtmds = new System.Windows.Forms.TextBox();
             this.txtmdg = new System.Windows.Forms.TextBox();
             this.dgvdkcho = new System.Windows.Forms.DataGridView();
@@ -107,11 +106,11 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.dtngaygiodk);
             this.panel2.Controls.Add(this.rbngaydk);
             this.panel2.Controls.Add(this.rbmadausach);
             this.panel2.Controls.Add(this.rbmdg);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtmds);
             this.panel2.Controls.Add(this.txtmdg);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -126,6 +125,7 @@
             this.dtngaygiodk.Name = "dtngaygiodk";
             this.dtngaygiodk.Size = new System.Drawing.Size(200, 20);
             this.dtngaygiodk.TabIndex = 35;
+            this.dtngaygiodk.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmdg_KeyDown);
             // 
             // rbngaydk
             // 
@@ -140,12 +140,13 @@
             // rbmadausach
             // 
             this.rbmadausach.AutoSize = true;
-            this.rbmadausach.Location = new System.Drawing.Point(137, 65);
+            this.rbmadausach.Location = new System.Drawing.Point(137, 63);
             this.rbmadausach.Name = "rbmadausach";
             this.rbmadausach.Size = new System.Drawing.Size(88, 17);
             this.rbmadausach.TabIndex = 33;
             this.rbmadausach.Text = "Mã đầu sách";
             this.rbmadausach.UseVisualStyleBackColor = true;
+            this.rbmadausach.CheckedChanged += new System.EventHandler(this.rbmadausach_CheckedChanged);
             // 
             // rbmdg
             // 
@@ -158,15 +159,7 @@
             this.rbmdg.TabStop = true;
             this.rbmdg.Text = "Mã độc giả";
             this.rbmdg.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(205, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Lớp";
+            this.rbmdg.CheckedChanged += new System.EventHandler(this.rbmdg_CheckedChanged);
             // 
             // txtmds
             // 
@@ -174,6 +167,7 @@
             this.txtmds.Name = "txtmds";
             this.txtmds.Size = new System.Drawing.Size(55, 20);
             this.txtmds.TabIndex = 30;
+            this.txtmds.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmdg_KeyDown);
             // 
             // txtmdg
             // 
@@ -181,6 +175,7 @@
             this.txtmdg.Name = "txtmdg";
             this.txtmdg.Size = new System.Drawing.Size(55, 20);
             this.txtmdg.TabIndex = 0;
+            this.txtmdg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmdg_KeyDown);
             // 
             // dgvdkcho
             // 
@@ -196,6 +191,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.Controls.Add(this.btntim);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 404);
@@ -209,9 +205,9 @@
             this.btntim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntim.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntim.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btntim.Location = new System.Drawing.Point(695, 3);
+            this.btntim.Location = new System.Drawing.Point(668, 3);
             this.btntim.Name = "btntim";
-            this.btntim.Size = new System.Drawing.Size(83, 48);
+            this.btntim.Size = new System.Drawing.Size(110, 48);
             this.btntim.TabIndex = 30;
             this.btntim.Text = "Tìm";
             this.btntim.UseVisualStyleBackColor = false;
@@ -224,7 +220,9 @@
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.KeyPreview = true;
             this.Name = "TimDangKyCho";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TimDangKyCho_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -248,7 +246,6 @@
         private System.Windows.Forms.RadioButton rbngaydk;
         private System.Windows.Forms.RadioButton rbmadausach;
         private System.Windows.Forms.RadioButton rbmdg;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtmds;
         private System.Windows.Forms.TextBox txtmdg;
         private System.Windows.Forms.DataGridView dgvdkcho;

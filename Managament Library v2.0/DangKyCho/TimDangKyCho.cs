@@ -42,5 +42,31 @@ namespace Managament_Library_v2._0
                 dgvdkcho.DataSource = data.timDangKyCho(inf, 3);
             }
         }
+
+        private void TimDangKyCho_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btntim_Click(null, null);
+            }
+        }
+
+        private void txtmdg_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void rbmdg_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmdg.Select();
+        }
+
+        private void rbmadausach_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmds.Select();
+        }
     }
 }

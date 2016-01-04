@@ -85,5 +85,72 @@ namespace Managament_Library_v2._0
                 }
             }
         }
+
+        private void TimSach_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btntim_Click(null, null);
+            }
+        }
+        private void txtmatuasach_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void rbmatuasach_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmatuasach.Select();
+        }
+
+        private void rbtentuasach_CheckedChanged(object sender, EventArgs e)
+        {
+            txttentuasach.Select();
+        }
+
+        private void rbtacgia_CheckedChanged(object sender, EventArgs e)
+        {
+            txttacgia.Select();
+        }
+
+        private void rbmadausach_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmadausach.Select();
+        }
+
+        private void rbmatuasach2_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmatuasach2.Select();
+        }
+
+        private void rbtentuasach2_CheckedChanged(object sender, EventArgs e)
+        {
+            txttentuasach2.Select();
+        }
+
+        private void rbmacuonsach_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmacuonsach.Select();
+        }
+
+        private void rbmadausach2_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmadausach2.Select();
+        }
+
+        private void rbmatuasach3_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmatuasach3.Select();
+        }
+
+        private void rbtentuasach3_CheckedChanged(object sender, EventArgs e)
+        {
+            txttentuasach3.Select();
+        }
+
+
     }
 }

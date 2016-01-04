@@ -38,6 +38,9 @@
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rbtacgia = new System.Windows.Forms.RadioButton();
+            this.rbtentuasach = new System.Windows.Forms.RadioButton();
+            this.rbmatuasach = new System.Windows.Forms.RadioButton();
             this.txttacgia = new System.Windows.Forms.TextBox();
             this.txttentuasach = new System.Windows.Forms.TextBox();
             this.txtmatuasach = new System.Windows.Forms.TextBox();
@@ -46,6 +49,9 @@
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.rbtentuasach2 = new System.Windows.Forms.RadioButton();
+            this.rbmatuasach2 = new System.Windows.Forms.RadioButton();
+            this.rbmadausach = new System.Windows.Forms.RadioButton();
             this.txtmatuasach2 = new System.Windows.Forms.TextBox();
             this.txttentuasach2 = new System.Windows.Forms.TextBox();
             this.txtmadausach = new System.Windows.Forms.TextBox();
@@ -54,6 +60,10 @@
             this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.rbtentuasach3 = new System.Windows.Forms.RadioButton();
+            this.rbmatuasach3 = new System.Windows.Forms.RadioButton();
+            this.rbmadausach2 = new System.Windows.Forms.RadioButton();
+            this.rbmacuonsach = new System.Windows.Forms.RadioButton();
             this.txtmatuasach3 = new System.Windows.Forms.TextBox();
             this.txtmacuonsach = new System.Windows.Forms.TextBox();
             this.txttentuasach3 = new System.Windows.Forms.TextBox();
@@ -61,18 +71,8 @@
             this.dgvcuonsach = new System.Windows.Forms.DataGridView();
             this.ticuonsach = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.rbmatuasach = new System.Windows.Forms.RadioButton();
-            this.rbtentuasach = new System.Windows.Forms.RadioButton();
-            this.rbtacgia = new System.Windows.Forms.RadioButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btntim = new System.Windows.Forms.Button();
-            this.rbmadausach = new System.Windows.Forms.RadioButton();
-            this.rbmatuasach2 = new System.Windows.Forms.RadioButton();
-            this.rbtentuasach2 = new System.Windows.Forms.RadioButton();
-            this.rbmacuonsach = new System.Windows.Forms.RadioButton();
-            this.rbmadausach2 = new System.Windows.Forms.RadioButton();
-            this.rbmatuasach3 = new System.Windows.Forms.RadioButton();
-            this.rbtentuasach3 = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -214,12 +214,48 @@
             this.panel2.Size = new System.Drawing.Size(770, 94);
             this.panel2.TabIndex = 0;
             // 
+            // rbtacgia
+            // 
+            this.rbtacgia.AutoSize = true;
+            this.rbtacgia.Location = new System.Drawing.Point(390, 58);
+            this.rbtacgia.Name = "rbtacgia";
+            this.rbtacgia.Size = new System.Drawing.Size(79, 17);
+            this.rbtacgia.TabIndex = 45;
+            this.rbtacgia.Text = "Tên tác giả";
+            this.rbtacgia.UseVisualStyleBackColor = true;
+            this.rbtacgia.CheckedChanged += new System.EventHandler(this.rbtacgia_CheckedChanged);
+            // 
+            // rbtentuasach
+            // 
+            this.rbtentuasach.AutoSize = true;
+            this.rbtentuasach.Location = new System.Drawing.Point(390, 18);
+            this.rbtentuasach.Name = "rbtentuasach";
+            this.rbtentuasach.Size = new System.Drawing.Size(88, 17);
+            this.rbtentuasach.TabIndex = 44;
+            this.rbtentuasach.Text = "Tên tựa sách";
+            this.rbtentuasach.UseVisualStyleBackColor = true;
+            this.rbtentuasach.CheckedChanged += new System.EventHandler(this.rbtentuasach_CheckedChanged);
+            // 
+            // rbmatuasach
+            // 
+            this.rbmatuasach.AutoSize = true;
+            this.rbmatuasach.Checked = true;
+            this.rbmatuasach.Location = new System.Drawing.Point(93, 18);
+            this.rbmatuasach.Name = "rbmatuasach";
+            this.rbmatuasach.Size = new System.Drawing.Size(84, 17);
+            this.rbmatuasach.TabIndex = 43;
+            this.rbmatuasach.TabStop = true;
+            this.rbmatuasach.Text = "Mã tựa sách";
+            this.rbmatuasach.UseVisualStyleBackColor = true;
+            this.rbmatuasach.CheckedChanged += new System.EventHandler(this.rbmatuasach_CheckedChanged);
+            // 
             // txttacgia
             // 
             this.txttacgia.Location = new System.Drawing.Point(484, 57);
             this.txttacgia.Name = "txttacgia";
             this.txttacgia.Size = new System.Drawing.Size(193, 20);
             this.txttacgia.TabIndex = 39;
+            this.txttacgia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmatuasach_KeyDown);
             // 
             // txttentuasach
             // 
@@ -227,6 +263,7 @@
             this.txttentuasach.Name = "txttentuasach";
             this.txttentuasach.Size = new System.Drawing.Size(193, 20);
             this.txttentuasach.TabIndex = 36;
+            this.txttentuasach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmatuasach_KeyDown);
             // 
             // txtmatuasach
             // 
@@ -234,6 +271,7 @@
             this.txtmatuasach.Name = "txtmatuasach";
             this.txtmatuasach.Size = new System.Drawing.Size(47, 20);
             this.txtmatuasach.TabIndex = 33;
+            this.txtmatuasach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmatuasach_KeyDown);
             // 
             // dgvtuasach
             // 
@@ -301,12 +339,48 @@
             this.panel3.Size = new System.Drawing.Size(770, 94);
             this.panel3.TabIndex = 0;
             // 
+            // rbtentuasach2
+            // 
+            this.rbtentuasach2.AutoSize = true;
+            this.rbtentuasach2.Location = new System.Drawing.Point(364, 18);
+            this.rbtentuasach2.Name = "rbtentuasach2";
+            this.rbtentuasach2.Size = new System.Drawing.Size(88, 17);
+            this.rbtentuasach2.TabIndex = 43;
+            this.rbtentuasach2.Text = "Tên tựa sách";
+            this.rbtentuasach2.UseVisualStyleBackColor = true;
+            this.rbtentuasach2.CheckedChanged += new System.EventHandler(this.rbtentuasach2_CheckedChanged);
+            // 
+            // rbmatuasach2
+            // 
+            this.rbmatuasach2.AutoSize = true;
+            this.rbmatuasach2.Location = new System.Drawing.Point(90, 57);
+            this.rbmatuasach2.Name = "rbmatuasach2";
+            this.rbmatuasach2.Size = new System.Drawing.Size(84, 17);
+            this.rbmatuasach2.TabIndex = 42;
+            this.rbmatuasach2.Text = "Mã tựa sách";
+            this.rbmatuasach2.UseVisualStyleBackColor = true;
+            this.rbmatuasach2.CheckedChanged += new System.EventHandler(this.rbmatuasach2_CheckedChanged);
+            // 
+            // rbmadausach
+            // 
+            this.rbmadausach.AutoSize = true;
+            this.rbmadausach.Checked = true;
+            this.rbmadausach.Location = new System.Drawing.Point(90, 18);
+            this.rbmadausach.Name = "rbmadausach";
+            this.rbmadausach.Size = new System.Drawing.Size(88, 17);
+            this.rbmadausach.TabIndex = 41;
+            this.rbmadausach.TabStop = true;
+            this.rbmadausach.Text = "Mã đầu sách";
+            this.rbmadausach.UseVisualStyleBackColor = true;
+            this.rbmadausach.CheckedChanged += new System.EventHandler(this.rbmadausach_CheckedChanged);
+            // 
             // txtmatuasach2
             // 
             this.txtmatuasach2.Location = new System.Drawing.Point(184, 57);
             this.txtmatuasach2.Name = "txtmatuasach2";
             this.txtmatuasach2.Size = new System.Drawing.Size(67, 20);
             this.txtmatuasach2.TabIndex = 39;
+            this.txtmatuasach2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmatuasach_KeyDown);
             // 
             // txttentuasach2
             // 
@@ -314,6 +388,7 @@
             this.txttentuasach2.Name = "txttentuasach2";
             this.txttentuasach2.Size = new System.Drawing.Size(212, 20);
             this.txttentuasach2.TabIndex = 36;
+            this.txttentuasach2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmatuasach_KeyDown);
             // 
             // txtmadausach
             // 
@@ -321,6 +396,7 @@
             this.txtmadausach.Name = "txtmadausach";
             this.txtmadausach.Size = new System.Drawing.Size(67, 20);
             this.txtmadausach.TabIndex = 33;
+            this.txtmadausach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmatuasach_KeyDown);
             // 
             // dgvdausach
             // 
@@ -390,12 +466,59 @@
             this.panel4.Size = new System.Drawing.Size(770, 94);
             this.panel4.TabIndex = 0;
             // 
+            // rbtentuasach3
+            // 
+            this.rbtentuasach3.AutoSize = true;
+            this.rbtentuasach3.Location = new System.Drawing.Point(388, 55);
+            this.rbtentuasach3.Name = "rbtentuasach3";
+            this.rbtentuasach3.Size = new System.Drawing.Size(88, 17);
+            this.rbtentuasach3.TabIndex = 47;
+            this.rbtentuasach3.Text = "Tên tựa sách";
+            this.rbtentuasach3.UseVisualStyleBackColor = true;
+            this.rbtentuasach3.CheckedChanged += new System.EventHandler(this.rbtentuasach3_CheckedChanged);
+            // 
+            // rbmatuasach3
+            // 
+            this.rbmatuasach3.AutoSize = true;
+            this.rbmatuasach3.Location = new System.Drawing.Point(388, 18);
+            this.rbmatuasach3.Name = "rbmatuasach3";
+            this.rbmatuasach3.Size = new System.Drawing.Size(84, 17);
+            this.rbmatuasach3.TabIndex = 46;
+            this.rbmatuasach3.Text = "Mã tựa sách";
+            this.rbmatuasach3.UseVisualStyleBackColor = true;
+            this.rbmatuasach3.CheckedChanged += new System.EventHandler(this.rbmatuasach3_CheckedChanged);
+            // 
+            // rbmadausach2
+            // 
+            this.rbmadausach2.AutoSize = true;
+            this.rbmadausach2.Location = new System.Drawing.Point(68, 56);
+            this.rbmadausach2.Name = "rbmadausach2";
+            this.rbmadausach2.Size = new System.Drawing.Size(88, 17);
+            this.rbmadausach2.TabIndex = 45;
+            this.rbmadausach2.Text = "Mã đầu sách";
+            this.rbmadausach2.UseVisualStyleBackColor = true;
+            this.rbmadausach2.CheckedChanged += new System.EventHandler(this.rbmadausach2_CheckedChanged);
+            // 
+            // rbmacuonsach
+            // 
+            this.rbmacuonsach.AutoSize = true;
+            this.rbmacuonsach.Checked = true;
+            this.rbmacuonsach.Location = new System.Drawing.Point(68, 18);
+            this.rbmacuonsach.Name = "rbmacuonsach";
+            this.rbmacuonsach.Size = new System.Drawing.Size(93, 17);
+            this.rbmacuonsach.TabIndex = 44;
+            this.rbmacuonsach.TabStop = true;
+            this.rbmacuonsach.Text = "Mã cuốn sách";
+            this.rbmacuonsach.UseVisualStyleBackColor = true;
+            this.rbmacuonsach.CheckedChanged += new System.EventHandler(this.rbmacuonsach_CheckedChanged);
+            // 
             // txtmatuasach3
             // 
             this.txtmatuasach3.Location = new System.Drawing.Point(482, 15);
             this.txtmatuasach3.Name = "txtmatuasach3";
             this.txtmatuasach3.Size = new System.Drawing.Size(47, 20);
             this.txtmatuasach3.TabIndex = 42;
+            this.txtmatuasach3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmatuasach_KeyDown);
             // 
             // txtmacuonsach
             // 
@@ -403,6 +526,7 @@
             this.txtmacuonsach.Name = "txtmacuonsach";
             this.txtmacuonsach.Size = new System.Drawing.Size(59, 20);
             this.txtmacuonsach.TabIndex = 39;
+            this.txtmacuonsach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmatuasach_KeyDown);
             // 
             // txttentuasach3
             // 
@@ -410,6 +534,7 @@
             this.txttentuasach3.Name = "txttentuasach3";
             this.txttentuasach3.Size = new System.Drawing.Size(167, 20);
             this.txttentuasach3.TabIndex = 36;
+            this.txttentuasach3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmatuasach_KeyDown);
             // 
             // txtmadausach2
             // 
@@ -417,6 +542,7 @@
             this.txtmadausach2.Name = "txtmadausach2";
             this.txtmadausach2.Size = new System.Drawing.Size(59, 20);
             this.txtmadausach2.TabIndex = 33;
+            this.txtmadausach2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmatuasach_KeyDown);
             // 
             // dgvcuonsach
             // 
@@ -452,38 +578,6 @@
             this.tabControlPanel2.Style.GradientAngle = 90;
             this.tabControlPanel2.TabIndex = 2;
             // 
-            // rbmatuasach
-            // 
-            this.rbmatuasach.AutoSize = true;
-            this.rbmatuasach.Checked = true;
-            this.rbmatuasach.Location = new System.Drawing.Point(93, 18);
-            this.rbmatuasach.Name = "rbmatuasach";
-            this.rbmatuasach.Size = new System.Drawing.Size(84, 17);
-            this.rbmatuasach.TabIndex = 43;
-            this.rbmatuasach.TabStop = true;
-            this.rbmatuasach.Text = "Mã tựa sách";
-            this.rbmatuasach.UseVisualStyleBackColor = true;
-            // 
-            // rbtentuasach
-            // 
-            this.rbtentuasach.AutoSize = true;
-            this.rbtentuasach.Location = new System.Drawing.Point(390, 18);
-            this.rbtentuasach.Name = "rbtentuasach";
-            this.rbtentuasach.Size = new System.Drawing.Size(88, 17);
-            this.rbtentuasach.TabIndex = 44;
-            this.rbtentuasach.Text = "Tên tựa sách";
-            this.rbtentuasach.UseVisualStyleBackColor = true;
-            // 
-            // rbtacgia
-            // 
-            this.rbtacgia.AutoSize = true;
-            this.rbtacgia.Location = new System.Drawing.Point(390, 58);
-            this.rbtacgia.Name = "rbtacgia";
-            this.rbtacgia.Size = new System.Drawing.Size(79, 17);
-            this.rbtacgia.TabIndex = 45;
-            this.rbtacgia.Text = "Tên tác giả";
-            this.rbtacgia.UseVisualStyleBackColor = true;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btntim);
@@ -507,80 +601,6 @@
             this.btntim.UseVisualStyleBackColor = false;
             this.btntim.Click += new System.EventHandler(this.btntim_Click);
             // 
-            // rbmadausach
-            // 
-            this.rbmadausach.AutoSize = true;
-            this.rbmadausach.Checked = true;
-            this.rbmadausach.Location = new System.Drawing.Point(90, 18);
-            this.rbmadausach.Name = "rbmadausach";
-            this.rbmadausach.Size = new System.Drawing.Size(88, 17);
-            this.rbmadausach.TabIndex = 41;
-            this.rbmadausach.TabStop = true;
-            this.rbmadausach.Text = "Mã đầu sách";
-            this.rbmadausach.UseVisualStyleBackColor = true;
-            // 
-            // rbmatuasach2
-            // 
-            this.rbmatuasach2.AutoSize = true;
-            this.rbmatuasach2.Location = new System.Drawing.Point(90, 57);
-            this.rbmatuasach2.Name = "rbmatuasach2";
-            this.rbmatuasach2.Size = new System.Drawing.Size(84, 17);
-            this.rbmatuasach2.TabIndex = 42;
-            this.rbmatuasach2.Text = "Mã tựa sách";
-            this.rbmatuasach2.UseVisualStyleBackColor = true;
-            // 
-            // rbtentuasach2
-            // 
-            this.rbtentuasach2.AutoSize = true;
-            this.rbtentuasach2.Location = new System.Drawing.Point(364, 18);
-            this.rbtentuasach2.Name = "rbtentuasach2";
-            this.rbtentuasach2.Size = new System.Drawing.Size(88, 17);
-            this.rbtentuasach2.TabIndex = 43;
-            this.rbtentuasach2.Text = "Tên tựa sách";
-            this.rbtentuasach2.UseVisualStyleBackColor = true;
-            // 
-            // rbmacuonsach
-            // 
-            this.rbmacuonsach.AutoSize = true;
-            this.rbmacuonsach.Checked = true;
-            this.rbmacuonsach.Location = new System.Drawing.Point(68, 18);
-            this.rbmacuonsach.Name = "rbmacuonsach";
-            this.rbmacuonsach.Size = new System.Drawing.Size(93, 17);
-            this.rbmacuonsach.TabIndex = 44;
-            this.rbmacuonsach.TabStop = true;
-            this.rbmacuonsach.Text = "Mã cuốn sách";
-            this.rbmacuonsach.UseVisualStyleBackColor = true;
-            // 
-            // rbmadausach2
-            // 
-            this.rbmadausach2.AutoSize = true;
-            this.rbmadausach2.Location = new System.Drawing.Point(68, 56);
-            this.rbmadausach2.Name = "rbmadausach2";
-            this.rbmadausach2.Size = new System.Drawing.Size(88, 17);
-            this.rbmadausach2.TabIndex = 45;
-            this.rbmadausach2.Text = "Mã đầu sách";
-            this.rbmadausach2.UseVisualStyleBackColor = true;
-            // 
-            // rbmatuasach3
-            // 
-            this.rbmatuasach3.AutoSize = true;
-            this.rbmatuasach3.Location = new System.Drawing.Point(388, 18);
-            this.rbmatuasach3.Name = "rbmatuasach3";
-            this.rbmatuasach3.Size = new System.Drawing.Size(84, 17);
-            this.rbmatuasach3.TabIndex = 46;
-            this.rbmatuasach3.Text = "Mã tựa sách";
-            this.rbmatuasach3.UseVisualStyleBackColor = true;
-            // 
-            // rbtentuasach3
-            // 
-            this.rbtentuasach3.AutoSize = true;
-            this.rbtentuasach3.Location = new System.Drawing.Point(388, 55);
-            this.rbtentuasach3.Name = "rbtentuasach3";
-            this.rbtentuasach3.Size = new System.Drawing.Size(88, 17);
-            this.rbtentuasach3.TabIndex = 47;
-            this.rbtentuasach3.Text = "Tên tựa sách";
-            this.rbtentuasach3.UseVisualStyleBackColor = true;
-            // 
             // TimSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,8 +608,10 @@
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.KeyPreview = true;
             this.Name = "TimSach";
             this.Text = "Tìm Sách";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TimSach_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

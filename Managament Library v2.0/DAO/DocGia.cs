@@ -97,7 +97,7 @@ namespace Managament_Library_v2._0.DAO
             //nothing to do
         }
 
-        public void xoaDocGia(DOCGIA dg)
+        public void xoaDocGia(string madocgia)
         {
             /*var temp = data.DOCGIAs.Find(dg.madocgia);
 
@@ -106,10 +106,10 @@ namespace Managament_Library_v2._0.DAO
                 data.DOCGIAs.Remove(temp);
                 data.SaveChanges();
             }*/
-            data.Database.ExecuteSqlCommand("delete from DOCGIA where madocgia = '"+dg.madocgia+"'");
+            data.Database.ExecuteSqlCommand("delete from DOCGIA where madocgia = '"+madocgia+"'");
         }
 
-        public void xoaHocSinh(HOCSINH hs)
+        public void xoaHocSinh(string madocgia)
         {
             /*var temp = data.HOCSINHs.Find(hs.madocgia);
 
@@ -118,10 +118,10 @@ namespace Managament_Library_v2._0.DAO
                 data.HOCSINHs.Remove(temp);
                 data.SaveChanges();
             }*/
-            data.Database.ExecuteSqlCommand("delete from HOCSINH where madocgia = '" + hs.madocgia + "'");
+            data.Database.ExecuteSqlCommand("delete from HOCSINH where madocgia = '" + madocgia + "'");
         }
 
-        public void xoaNhanVien(NHANVIEN nv)
+        public void xoaNhanVien(string madocgia)
         {
             /*var temp = data.NHANVIENs.Find(nv.madocgia);
 
@@ -130,7 +130,7 @@ namespace Managament_Library_v2._0.DAO
                 data.NHANVIENs.Remove(temp);
                 data.SaveChanges();
             }*/
-            data.Database.ExecuteSqlCommand("delete from NHANVIEN where madocgia = '" + nv.madocgia + "'");
+            data.Database.ExecuteSqlCommand("delete from NHANVIEN where madocgia = '" + madocgia + "'");
         }
 
         public void xoaTatCa()
@@ -141,19 +141,33 @@ namespace Managament_Library_v2._0.DAO
             data.SaveChanges();
         }
 
-        public DOCGIA timDocGia(DOCGIA dg)
+        //public DOCGIA timDocGia(DOCGIA dg)
+        //{
+        //    return data.DOCGIAs.Find(dg.madocgia);
+        //}
+
+        //public HOCSINH timHocSinh(HOCSINH hs)
+        //{
+        //    return data.HOCSINHs.Find(hs.madocgia);
+        //}
+
+        //public NHANVIEN timNhanVien(NHANVIEN nv)
+        //{
+        //    return data.NHANVIENs.Find(nv.madocgia);
+        //}
+        public DOCGIA timDocGia(string madocgia)
         {
-            return data.DOCGIAs.Find(dg.madocgia);
+            return data.DOCGIAs.Find(madocgia);
         }
 
-        public HOCSINH timHocSinh(HOCSINH hs)
+        public HOCSINH timHocSinh(string madocgia)
         {
-            return data.HOCSINHs.Find(hs.madocgia);
+            return data.HOCSINHs.Find(madocgia);
         }
 
-        public NHANVIEN timNhanVien(NHANVIEN nv)
+        public NHANVIEN timNhanVien(string madocgia)
         {
-            return data.NHANVIENs.Find(nv.madocgia);
+            return data.NHANVIENs.Find(madocgia);
         }
 
         public DataTable timDocGia(DOCGIA dg, int type)

@@ -33,19 +33,10 @@ namespace Managament_Library_v2._0
         public static string mdg = String.Empty;
         private void SuaDocGia_Load(object sender, EventArgs e)
         {
-            DOCGIA temp1 = new DOCGIA();
-            HOCSINH temp2 = new HOCSINH();
-            NHANVIEN temp3 = new NHANVIEN();
 
-            temp1.madocgia = mdg;
-            temp2.madocgia = mdg;
-            temp3.madocgia = mdg;
-
-            DOCGIA dg = data.timDocGia(temp1);
-            HOCSINH hs = data.timHocSinh(temp2);
-            NHANVIEN nv = data.timNhanVien(temp3);
-
-
+            DOCGIA dg = data.timDocGia(mdg);
+            HOCSINH hs = data.timHocSinh(mdg);
+            NHANVIEN nv = data.timNhanVien(mdg);
 
             txtmdg.Text = dg.madocgia;
             txtten.Text = dg.hoten;

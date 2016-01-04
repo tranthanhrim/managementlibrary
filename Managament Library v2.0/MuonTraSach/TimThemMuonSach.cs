@@ -42,5 +42,36 @@ namespace Managament_Library_v2._0
                 dgvmuonsach.DataSource = dataMuon.timMuonTraSach(ms, 3);
             }
         }
+
+        private void TimThemMuonSach_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btntim_Click(null, null);
+            }
+        }
+
+        private void txtmdg_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void txtmdg_TextChanged(object sender, EventArgs e)
+        {
+            txtmdg.Select();
+        }
+
+        private void rbmacuonsach_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmcs.Select();
+        }
+
+        private void rbmdg_CheckedChanged(object sender, EventArgs e)
+        {
+            txtmdg.Select();
+        }
     }
 }
