@@ -19,6 +19,30 @@ namespace Managament_Library_v2._0
             InitializeComponent();
         }
 
+        public int timSTT(DataTable dt, string column)
+        {
+            int STT = 0;
+            while (true)
+            {
+                int temp = STT;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (temp.ToString() == dt.Rows[i][column].ToString())
+                    {
+                        temp++;
+                        break;
+                    }
+                }
+
+                if (temp == STT)
+                {
+                    return STT;
+                }
+                else
+                    STT++;
+            }
+        }
+
         Sach dataSach = new Sach();
         public delegate void OnAddBookHandler();
         public event OnAddBookHandler OnAddBook;
@@ -40,41 +64,15 @@ namespace Managament_Library_v2._0
             DataTable dtDauSach = dataSach.loadDauSachTuaSach();
             DataTable dtCuonSach = dataSach.loadCuonSach();
 
-            int matuasach = 0;
-            int madausach = 0;
-            int macuonsach = 0;
+            int matuasach = timSTT(dtTuaSach, "Mã tựa sách");
+            int madausach = timSTT(dtDauSach, "Mã đầu sách");
+            int macuonsach = timSTT(dtCuonSach, "Mã cuốn sách");
 
             #region Tựa sách
-            for (int i = 0; i < dtTuaSach.Rows.Count; i++)//tab Tựa sách
-            {
-                int temp = Convert.ToInt32(dtTuaSach.Rows[i]["Mã tựa sách"]);
-                if (temp != matuasach)
-                {
-                    break;
-                }
-                else
-                {
-                    matuasach++;
-                }
-
-            }
             txtmatuasach.Text = matuasach.ToString();
             #endregion
 
             #region Đầu sách
-            for (int i = 0; i < dtDauSach.Rows.Count; i++)//tab đầu sách
-            {
-                int temp = Convert.ToInt32(dtDauSach.Rows[i]["Mã đầu sách"]);
-                if (temp != madausach)
-                {
-                    break;
-                }
-                else
-                {
-                    madausach++;
-                }
-
-            }
             txtmadausach.Text = madausach.ToString();
 
             for (int i = 0; i < dtTuaSach.Rows.Count; i++)
@@ -87,7 +85,10 @@ namespace Managament_Library_v2._0
 
             for (int i = 0; i < dtNgonNgu.Rows.Count; i++)
             {
-                cbxngonngu.Items.Add(dtNgonNgu.Rows[i]["Ngôn ngữ"]);
+                item = new ComboboxItem();
+                item.Text = dtNgonNgu.Rows[i]["Ngôn ngữ"].ToString();
+                item.Value = dtNgonNgu.Rows[i]["Ngôn ngữ"].ToString();
+                cbxngonngu.Items.Add(item);
             }
             cbxtuasach.SelectedIndex = 0;
             cbxngonngu.SelectedIndex = 0;
@@ -95,19 +96,6 @@ namespace Managament_Library_v2._0
             #endregion
 
             #region Cuốn sách
-            for (int i = 0; i < dtCuonSach.Rows.Count; i++)
-            {
-                int temp = Convert.ToInt32(dtCuonSach.Rows[i]["Mã cuốn sách"]);
-                if (temp != macuonsach)
-                {
-                    break;
-                }
-                else
-                {
-                    macuonsach++;
-                }
-
-            }
 
             for (int i = 0; i < dtDauSach.Rows.Count; i++)
             {
@@ -132,6 +120,8 @@ namespace Managament_Library_v2._0
                 ts.gioithieu = txtgioithieu.Text;
                 dataSach.themTuaSach(ts);
                 noticeAddBook();
+                Close();
+                MessageBox.Show("Đã thêm");
             }
             else if (tcthemsach.SelectedTabIndex == 1) //thêm đầu sách
             {
@@ -142,6 +132,8 @@ namespace Managament_Library_v2._0
                 ds.ngonngu = (cbxngonngu.SelectedItem as ComboboxItem).Value.ToString();
                 dataSach.themDauSach(ds);
                 noticeAddBook();
+                Close();
+                MessageBox.Show("Đã thêm");
             }
             else
             {
@@ -150,7 +142,16 @@ namespace Managament_Library_v2._0
                 cs.madausach = (cbxmadausach.SelectedItem as ComboboxItem).Value.ToString();
                 cs.tinhtrang = true;
                 dataSach.themCuonSach(cs);
+
+                DAUSACH ds = dataSach.timDauSach(cs.madausach);
+                if (ds.tinhtrang != true)
+                {
+                    ds.tinhtrang = true;
+                    dataSach.suaDauSach(ds);
+                }
                 noticeAddBook();
+                Close();
+                MessageBox.Show("Đã thêm");
             }
         }
     }

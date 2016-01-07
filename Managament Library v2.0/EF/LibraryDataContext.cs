@@ -17,6 +17,7 @@ namespace Managament_Library_v2._0.EF
         public virtual DbSet<DKCHOMUON> DKCHOMUONs { get; set; }
         public virtual DbSet<DOCGIA> DOCGIAs { get; set; }
         public virtual DbSet<HOCSINH> HOCSINHs { get; set; }
+        public virtual DbSet<LOP> LOPs { get; set; }
         public virtual DbSet<MATKHAU> MATKHAUs { get; set; }
         public virtual DbSet<MUONSACH> MUONSACHes { get; set; }
         public virtual DbSet<NGONNGU> NGONNGUs { get; set; }
@@ -93,6 +94,10 @@ namespace Managament_Library_v2._0.EF
 
             modelBuilder.Entity<HOCSINH>()
                 .Property(e => e.lop)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LOP>()
+                .Property(e => e.lop1)
                 .IsUnicode(false);
 
             modelBuilder.Entity<MUONSACH>()

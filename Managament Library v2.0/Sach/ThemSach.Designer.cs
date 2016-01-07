@@ -37,19 +37,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tcthemsach = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.cbxtuasach = new System.Windows.Forms.ComboBox();
             this.cbxngonngu = new System.Windows.Forms.ComboBox();
+            this.cbxtuasach = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtmadausach = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tithemdausach = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
-            this.cbxmadausach = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtmacuonsach = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tithemcuonsach = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtgioithieu = new System.Windows.Forms.TextBox();
@@ -60,6 +54,12 @@
             this.txttentuasach = new System.Windows.Forms.TextBox();
             this.txtmatuasach = new System.Windows.Forms.TextBox();
             this.tithemtuasach = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
+            this.cbxmadausach = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtmacuonsach = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tithemcuonsach = new DevComponents.DotNetBar.TabItem(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnthem = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -69,8 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tcthemsach)).BeginInit();
             this.tcthemsach.SuspendLayout();
             this.tabControlPanel2.SuspendLayout();
-            this.tabControlPanel3.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
+            this.tabControlPanel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,8 +138,8 @@
             // 
             this.tcthemsach.CanReorderTabs = true;
             this.tcthemsach.Controls.Add(this.tabControlPanel3);
-            this.tcthemsach.Controls.Add(this.tabControlPanel1);
             this.tcthemsach.Controls.Add(this.tabControlPanel2);
+            this.tcthemsach.Controls.Add(this.tabControlPanel1);
             this.tcthemsach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcthemsach.Location = new System.Drawing.Point(0, 0);
             this.tcthemsach.Name = "tcthemsach";
@@ -155,8 +155,8 @@
             // 
             // tabControlPanel2
             // 
-            this.tabControlPanel2.Controls.Add(this.cbxtuasach);
             this.tabControlPanel2.Controls.Add(this.cbxngonngu);
+            this.tabControlPanel2.Controls.Add(this.cbxtuasach);
             this.tabControlPanel2.Controls.Add(this.label6);
             this.tabControlPanel2.Controls.Add(this.txtmadausach);
             this.tabControlPanel2.Controls.Add(this.label7);
@@ -176,16 +176,6 @@
             this.tabControlPanel2.TabIndex = 2;
             this.tabControlPanel2.TabItem = this.tithemdausach;
             // 
-            // cbxtuasach
-            // 
-            this.cbxtuasach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxtuasach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxtuasach.FormattingEnabled = true;
-            this.cbxtuasach.Location = new System.Drawing.Point(153, 104);
-            this.cbxtuasach.Name = "cbxtuasach";
-            this.cbxtuasach.Size = new System.Drawing.Size(200, 21);
-            this.cbxtuasach.TabIndex = 40;
-            // 
             // cbxngonngu
             // 
             this.cbxngonngu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -194,7 +184,17 @@
             this.cbxngonngu.Location = new System.Drawing.Point(153, 65);
             this.cbxngonngu.Name = "cbxngonngu";
             this.cbxngonngu.Size = new System.Drawing.Size(121, 21);
-            this.cbxngonngu.TabIndex = 40;
+            this.cbxngonngu.TabIndex = 6;
+            // 
+            // cbxtuasach
+            // 
+            this.cbxtuasach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxtuasach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxtuasach.FormattingEnabled = true;
+            this.cbxtuasach.Location = new System.Drawing.Point(153, 104);
+            this.cbxtuasach.Name = "cbxtuasach";
+            this.cbxtuasach.Size = new System.Drawing.Size(200, 21);
+            this.cbxtuasach.TabIndex = 7;
             // 
             // label6
             // 
@@ -212,7 +212,7 @@
             this.txtmadausach.Name = "txtmadausach";
             this.txtmadausach.ReadOnly = true;
             this.txtmadausach.Size = new System.Drawing.Size(121, 20);
-            this.txtmadausach.TabIndex = 32;
+            this.txtmadausach.TabIndex = 5;
             // 
             // label7
             // 
@@ -239,71 +239,6 @@
             this.tithemdausach.AttachedControl = this.tabControlPanel2;
             this.tithemdausach.Name = "tithemdausach";
             this.tithemdausach.Text = "Đầu sách";
-            // 
-            // tabControlPanel3
-            // 
-            this.tabControlPanel3.Controls.Add(this.cbxmadausach);
-            this.tabControlPanel3.Controls.Add(this.label12);
-            this.tabControlPanel3.Controls.Add(this.txtmacuonsach);
-            this.tabControlPanel3.Controls.Add(this.label11);
-            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel3.Name = "tabControlPanel3";
-            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(478, 219);
-            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel3.Style.GradientAngle = 90;
-            this.tabControlPanel3.TabIndex = 3;
-            this.tabControlPanel3.TabItem = this.tithemcuonsach;
-            // 
-            // cbxmadausach
-            // 
-            this.cbxmadausach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxmadausach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxmadausach.FormattingEnabled = true;
-            this.cbxmadausach.Location = new System.Drawing.Point(213, 110);
-            this.cbxmadausach.Name = "cbxmadausach";
-            this.cbxmadausach.Size = new System.Drawing.Size(200, 21);
-            this.cbxmadausach.TabIndex = 41;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(124, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 13);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Mã cuốn sách";
-            // 
-            // txtmacuonsach
-            // 
-            this.txtmacuonsach.Location = new System.Drawing.Point(213, 69);
-            this.txtmacuonsach.Name = "txtmacuonsach";
-            this.txtmacuonsach.ReadOnly = true;
-            this.txtmacuonsach.Size = new System.Drawing.Size(121, 20);
-            this.txtmacuonsach.TabIndex = 44;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(129, 113);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 13);
-            this.label11.TabIndex = 41;
-            this.label11.Text = "Mã đầu sách";
-            // 
-            // tithemcuonsach
-            // 
-            this.tithemcuonsach.AttachedControl = this.tabControlPanel3;
-            this.tithemcuonsach.Name = "tithemcuonsach";
-            this.tithemcuonsach.Text = "Cuốn sách";
             // 
             // tabControlPanel1
             // 
@@ -346,7 +281,7 @@
             this.txtgioithieu.Multiline = true;
             this.txtgioithieu.Name = "txtgioithieu";
             this.txtgioithieu.Size = new System.Drawing.Size(376, 77);
-            this.txtgioithieu.TabIndex = 32;
+            this.txtgioithieu.TabIndex = 4;
             // 
             // label4
             // 
@@ -363,7 +298,7 @@
             this.txttacgia.Location = new System.Drawing.Point(92, 95);
             this.txttacgia.Name = "txttacgia";
             this.txttacgia.Size = new System.Drawing.Size(100, 20);
-            this.txttacgia.TabIndex = 30;
+            this.txttacgia.TabIndex = 3;
             // 
             // label3
             // 
@@ -390,7 +325,7 @@
             this.txttentuasach.Location = new System.Drawing.Point(92, 59);
             this.txttentuasach.Name = "txttentuasach";
             this.txttentuasach.Size = new System.Drawing.Size(100, 20);
-            this.txttentuasach.TabIndex = 27;
+            this.txttentuasach.TabIndex = 2;
             // 
             // txtmatuasach
             // 
@@ -398,13 +333,78 @@
             this.txtmatuasach.Name = "txtmatuasach";
             this.txtmatuasach.ReadOnly = true;
             this.txtmatuasach.Size = new System.Drawing.Size(100, 20);
-            this.txtmatuasach.TabIndex = 26;
+            this.txtmatuasach.TabIndex = 1;
             // 
             // tithemtuasach
             // 
             this.tithemtuasach.AttachedControl = this.tabControlPanel1;
             this.tithemtuasach.Name = "tithemtuasach";
             this.tithemtuasach.Text = "Tựa sách";
+            // 
+            // tabControlPanel3
+            // 
+            this.tabControlPanel3.Controls.Add(this.cbxmadausach);
+            this.tabControlPanel3.Controls.Add(this.label12);
+            this.tabControlPanel3.Controls.Add(this.txtmacuonsach);
+            this.tabControlPanel3.Controls.Add(this.label11);
+            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel3.Name = "tabControlPanel3";
+            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel3.Size = new System.Drawing.Size(478, 219);
+            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.GradientAngle = 90;
+            this.tabControlPanel3.TabIndex = 3;
+            this.tabControlPanel3.TabItem = this.tithemcuonsach;
+            // 
+            // cbxmadausach
+            // 
+            this.cbxmadausach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxmadausach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxmadausach.FormattingEnabled = true;
+            this.cbxmadausach.Location = new System.Drawing.Point(213, 110);
+            this.cbxmadausach.Name = "cbxmadausach";
+            this.cbxmadausach.Size = new System.Drawing.Size(200, 21);
+            this.cbxmadausach.TabIndex = 9;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Location = new System.Drawing.Point(124, 72);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 13);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Mã cuốn sách";
+            // 
+            // txtmacuonsach
+            // 
+            this.txtmacuonsach.Location = new System.Drawing.Point(213, 69);
+            this.txtmacuonsach.Name = "txtmacuonsach";
+            this.txtmacuonsach.ReadOnly = true;
+            this.txtmacuonsach.Size = new System.Drawing.Size(121, 20);
+            this.txtmacuonsach.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Location = new System.Drawing.Point(129, 113);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 13);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Mã đầu sách";
+            // 
+            // tithemcuonsach
+            // 
+            this.tithemcuonsach.AttachedControl = this.tabControlPanel3;
+            this.tithemcuonsach.Name = "tithemcuonsach";
+            this.tithemcuonsach.Text = "Cuốn sách";
             // 
             // panel4
             // 
@@ -425,7 +425,7 @@
             this.btnthem.Location = new System.Drawing.Point(400, 3);
             this.btnthem.Name = "btnthem";
             this.btnthem.Size = new System.Drawing.Size(74, 30);
-            this.btnthem.TabIndex = 39;
+            this.btnthem.TabIndex = 10;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = false;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
@@ -449,12 +449,14 @@
             this.tcthemsach.ResumeLayout(false);
             this.tabControlPanel2.ResumeLayout(false);
             this.tabControlPanel2.PerformLayout();
-            this.tabControlPanel3.ResumeLayout(false);
-            this.tabControlPanel3.PerformLayout();
             this.tabControlPanel1.ResumeLayout(false);
             this.tabControlPanel1.PerformLayout();
+            this.tabControlPanel3.ResumeLayout(false);
+            this.tabControlPanel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
+
+            
 
         }
 
@@ -482,7 +484,6 @@
         private System.Windows.Forms.TextBox txtgioithieu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txttacgia;
-        private System.Windows.Forms.ComboBox cbxngonngu;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtmadausach;
         private System.Windows.Forms.Label label7;
@@ -492,5 +493,6 @@
         private System.Windows.Forms.TextBox txtmacuonsach;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbxtuasach;
+        private System.Windows.Forms.ComboBox cbxngonngu;
     }
 }

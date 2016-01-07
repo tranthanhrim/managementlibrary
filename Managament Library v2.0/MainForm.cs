@@ -266,6 +266,17 @@ namespace Managament_Library_v2._0
 
         #endregion
 
+        private void customSortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            int a = int.Parse(e.CellValue1.ToString());
+            int b = int.Parse(e.CellValue2.ToString());
+
+            // If the cell value is already an integer, just cast it instead of parsing
+
+            e.SortResult = a.CompareTo(b);
+
+            e.Handled = true;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -283,7 +294,6 @@ namespace Managament_Library_v2._0
             nhapkhau.SetToolTip(btnimport, "Nhập dữ liệu");
             ToolTip ktKhoaTheDg = new ToolTip();
             ktKhoaTheDg.SetToolTip(btnblock, "Kiểm tra khóa thẻ");
-
         }
 
         #region Độc giả
@@ -398,6 +408,13 @@ namespace Managament_Library_v2._0
             TimDocGia formTimDG = new TimDocGia();
             formTimDG.ShowDialog();
         }
+
+        private void btnthemlop_Click(object sender, EventArgs e)
+        {
+            Lop formLop = new Lop();
+            formLop.ShowDialog();
+        }
+
         #endregion
 
         #region Sách
@@ -678,6 +695,7 @@ namespace Managament_Library_v2._0
                 btnxoadg.Enabled = true;
             }
         }
+
 
     }
 }

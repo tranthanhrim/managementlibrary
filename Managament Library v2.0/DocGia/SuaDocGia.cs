@@ -46,6 +46,28 @@ namespace Managament_Library_v2._0
             else
                 cbtinhtrang.Checked = false;
 
+            String[] gioitinh = { "Nam", "Nữ", "Khác" };
+
+            ComboboxItem item;
+            for (int i = 0; i < gioitinh.Count(); i++)
+            {
+                item = new ComboboxItem();
+                item.Text = gioitinh[i];
+                item.Value = gioitinh[i];
+                cbxgioitinh.Items.Add(item);
+            }
+
+            CTL.Lop dataLop = new CTL.Lop();
+            DataTable dtLop = dataLop.loadLop();
+            for (int i = 0; i < dtLop.Rows.Count; i++)
+            {
+                item = new ComboboxItem();
+                item.Text = dtLop.Rows[i]["Lớp"].ToString();
+                item.Value = dtLop.Rows[i]["Lớp"].ToString();
+                cbxlop.Items.Add(item);
+            }
+
+
             for (int i = 0; i < cbxgioitinh.Items.Count; i++)
             {
                 if (cbxgioitinh.Items[i].ToString() == dg.gioitinh)
@@ -61,13 +83,20 @@ namespace Managament_Library_v2._0
             if (hs != null)
             {
                 lbllop.Enabled = true;
-                txtlop.Enabled = true;
-                txtlop.Text = hs.lop;
+                cbxlop.Enabled = true;
+                for (int i = 0; i < cbxlop.Items.Count; i++)
+                {
+                    if (hs.lop == (cbxlop.Items[i] as ComboboxItem).Value.ToString())
+                    {
+                        cbxlop.SelectedIndex = i;
+                        break;
+                    }
+                }
             }
             else if (nv != null)
             {
                 lbllop.Enabled = false;
-                txtlop.Enabled = false;
+                cbxlop.Enabled = false;
             }
         }
 
@@ -82,7 +111,7 @@ namespace Managament_Library_v2._0
                 {
                     hs = new HOCSINH();
                     hs.madocgia = txtmdg.Text;
-                    hs.lop = txtlop.Text;
+                    hs.lop = (cbxlop.SelectedItem as ComboboxItem).Value.ToString();
                     data.suaHocSinh(hs);
                 }
 

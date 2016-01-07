@@ -11,10 +11,35 @@ using System.Windows.Forms;
 using Managament_Library_v2._0.DAO;
 using Managament_Library_v2._0.EF;
 
+
 namespace Managament_Library_v2._0
 {
     public partial class ThemDocGia : Form
     {
+        public int timSTT(DataTable dt, string column)
+        {
+            int STT = 0;
+            while (true)
+            {
+                int temp = STT;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (temp.ToString() == dt.Rows[i][column].ToString())
+                    {
+                        temp++;
+                        break;
+                    }
+                }
+
+                if (temp == STT)
+                {
+                    return STT;
+                }
+                else
+                    STT++;
+            }
+        }
+
         public ThemDocGia()
         {
             InitializeComponent();
@@ -41,21 +66,33 @@ namespace Managament_Library_v2._0
         {
             dt = data.loadDocGia();
 
-            int mdg = 0;
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                int temp = Convert.ToInt32(dt.Rows[i]["Mã độc giả"]);
-                if (temp != mdg)
-                {
-                    break;
-                }
-                else
-                {
-                    mdg++;
-                }
+            int mdg = timSTT(dt, "Mã độc giả");
 
-            }
             txtmdg.Text = mdg.ToString();
+
+            CTL.Lop dataLop = new CTL.Lop();
+            DataTable dtLop = dataLop.loadLop();
+            ComboboxItem item;
+            for (int i = 0; i < dtLop.Rows.Count; i++)
+            {
+                item = new ComboboxItem();
+                item.Text = dtLop.Rows[i]["Lớp"].ToString();
+                item.Value = dtLop.Rows[i]["Lớp"].ToString();
+                cbxlop.Items.Add(item);
+            }
+
+            String[] gioitinh = { "Nam", "Nữ", "Khác" };
+
+            for (int i = 0; i < gioitinh.Count(); i++)
+            {
+                item = new ComboboxItem();
+                item.Text = gioitinh[i];
+                item.Value = gioitinh[i];
+                cbxgioitinh.Items.Add(item);
+            }
+
+            cbxlop.SelectedIndex = 0;
+            cbxgioitinh.SelectedIndex = 0;
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -68,7 +105,7 @@ namespace Managament_Library_v2._0
                     dg = new DOCGIA();
                     dg.madocgia = txtmdg.Text;
                     dg.hoten = txtten.Text;
-                    dg.gioitinh = cbxgioitinh.SelectedItem.ToString();
+                    dg.gioitinh = (cbxgioitinh.SelectedItem as ComboboxItem).Value.ToString();
                     dg.ngaysinh = dngaysinh.Value.Date;
                     dg.ngaylap = dngaylap.Value.Date;
                     dg.tinhtrang = true;
@@ -83,7 +120,7 @@ namespace Managament_Library_v2._0
                     {
                         hs = new HOCSINH();
                         hs.madocgia = txtmdg.Text;
-                        hs.lop = txtlop.Text;
+                        hs.lop = (cbxlop.SelectedItem as ComboboxItem).Value.ToString();
                         data.themHocSinh(hs);
                     }
                     else if (rbnhanvien.Checked == true)
@@ -102,10 +139,10 @@ namespace Managament_Library_v2._0
             {
                 MessageBox.Show("Sai định dạng!");
             }
-            catch (NullReferenceException)
+            /*catch (NullReferenceException)
             {
                 MessageBox.Show("Có giá trị rỗng!");
-            }
+            }*/
         }
 
         private void rbhocsinh_CheckedChanged(object sender, EventArgs e)
@@ -114,7 +151,7 @@ namespace Managament_Library_v2._0
             if (temp.Checked == true)
             {
                 lbllop.Enabled = true;
-                txtlop.Enabled = true;
+                cbxlop.Enabled = true;
             }
         }
 
@@ -124,7 +161,7 @@ namespace Managament_Library_v2._0
             if (temp.Checked == true)
             {
                 lbllop.Enabled = false;
-                txtlop.Enabled = false;
+                cbxlop.Enabled = false;
             }
         }
     }

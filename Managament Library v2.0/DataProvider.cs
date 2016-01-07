@@ -17,7 +17,7 @@ namespace Managament_Library_v2._0
         {
             try
             {
-                string connect = ConfigurationManager.ConnectionStrings["DB_QLTV"].ConnectionString;
+                string connect = ConfigurationManager.ConnectionStrings["LibraryDataContext"].ConnectionString;
                 con = new SqlConnection(connect);
                 con.Open();
                 return true;
@@ -33,7 +33,7 @@ namespace Managament_Library_v2._0
         {
             try
             {
-                string connect = ConfigurationManager.ConnectionStrings["DB_QLTV"].ConnectionString;
+                string connect = ConfigurationManager.ConnectionStrings["LibraryDataContext"].ConnectionString;
                 con = new SqlConnection(connect);
                 con.Close();
             }

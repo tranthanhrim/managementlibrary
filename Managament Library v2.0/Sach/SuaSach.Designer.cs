@@ -36,6 +36,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tcsuasach = new DevComponents.DotNetBar.TabControl();
+            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
+            this.cbcuonsach = new System.Windows.Forms.CheckBox();
+            this.cbxmadausach = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtmacuonsach = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tithemcuonsach = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.cbdausach = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbxmatuasach = new System.Windows.Forms.ComboBox();
+            this.cbxngonngu = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtmadausach = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tithemdausach = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtgioithieu = new System.Windows.Forms.TextBox();
@@ -46,35 +64,17 @@
             this.txttentuasach = new System.Windows.Forms.TextBox();
             this.txtmatuasach = new System.Windows.Forms.TextBox();
             this.tithemtuasach = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
-            this.cbxmadausach = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtmacuonsach = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tithemcuonsach = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.cbxmatuasach = new System.Windows.Forms.ComboBox();
-            this.cbxngonngu = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtmadausach = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tithemdausach = new DevComponents.DotNetBar.TabItem(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnsua = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbdausach = new System.Windows.Forms.CheckBox();
-            this.cbcuonsach = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcsuasach)).BeginInit();
             this.tcsuasach.SuspendLayout();
-            this.tabControlPanel1.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
             this.tabControlPanel2.SuspendLayout();
+            this.tabControlPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -157,108 +157,6 @@
             this.tcsuasach.Tabs.Add(this.tithemcuonsach);
             this.tcsuasach.Text = "tabControl1";
             // 
-            // tabControlPanel1
-            // 
-            this.tabControlPanel1.Controls.Add(this.label5);
-            this.tabControlPanel1.Controls.Add(this.txtgioithieu);
-            this.tabControlPanel1.Controls.Add(this.label4);
-            this.tabControlPanel1.Controls.Add(this.txttacgia);
-            this.tabControlPanel1.Controls.Add(this.label3);
-            this.tabControlPanel1.Controls.Add(this.label2);
-            this.tabControlPanel1.Controls.Add(this.txttentuasach);
-            this.tabControlPanel1.Controls.Add(this.txtmatuasach);
-            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel1.Name = "tabControlPanel1";
-            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(478, 219);
-            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel1.Style.GradientAngle = 90;
-            this.tabControlPanel1.TabIndex = 1;
-            this.tabControlPanel1.TabItem = this.tithemtuasach;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(35, 159);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Giới thiệu";
-            // 
-            // txtgioithieu
-            // 
-            this.txtgioithieu.Location = new System.Drawing.Point(92, 130);
-            this.txtgioithieu.Multiline = true;
-            this.txtgioithieu.Name = "txtgioithieu";
-            this.txtgioithieu.Size = new System.Drawing.Size(376, 77);
-            this.txtgioithieu.TabIndex = 32;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(35, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Tác giả";
-            // 
-            // txttacgia
-            // 
-            this.txttacgia.Location = new System.Drawing.Point(92, 95);
-            this.txttacgia.Name = "txttacgia";
-            this.txttacgia.Size = new System.Drawing.Size(100, 20);
-            this.txttacgia.TabIndex = 30;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(8, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Tên tựa sách";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(12, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Mã tựa sách";
-            // 
-            // txttentuasach
-            // 
-            this.txttentuasach.Location = new System.Drawing.Point(92, 59);
-            this.txttentuasach.Name = "txttentuasach";
-            this.txttentuasach.Size = new System.Drawing.Size(100, 20);
-            this.txttentuasach.TabIndex = 27;
-            // 
-            // txtmatuasach
-            // 
-            this.txtmatuasach.Location = new System.Drawing.Point(92, 22);
-            this.txtmatuasach.Name = "txtmatuasach";
-            this.txtmatuasach.ReadOnly = true;
-            this.txtmatuasach.Size = new System.Drawing.Size(100, 20);
-            this.txtmatuasach.TabIndex = 26;
-            // 
-            // tithemtuasach
-            // 
-            this.tithemtuasach.AttachedControl = this.tabControlPanel1;
-            this.tithemtuasach.Name = "tithemtuasach";
-            this.tithemtuasach.Text = "Tựa sách";
-            this.tithemtuasach.Visible = false;
-            // 
             // tabControlPanel3
             // 
             this.tabControlPanel3.Controls.Add(this.cbcuonsach);
@@ -282,13 +180,34 @@
             this.tabControlPanel3.TabIndex = 3;
             this.tabControlPanel3.TabItem = this.tithemcuonsach;
             // 
+            // cbcuonsach
+            // 
+            this.cbcuonsach.AutoSize = true;
+            this.cbcuonsach.BackColor = System.Drawing.Color.Transparent;
+            this.cbcuonsach.Location = new System.Drawing.Point(219, 133);
+            this.cbcuonsach.Name = "cbcuonsach";
+            this.cbcuonsach.Size = new System.Drawing.Size(45, 17);
+            this.cbcuonsach.TabIndex = 11;
+            this.cbcuonsach.Text = "Còn";
+            this.cbcuonsach.UseVisualStyleBackColor = false;
+            // 
             // cbxmadausach
             // 
             this.cbxmadausach.FormattingEnabled = true;
             this.cbxmadausach.Location = new System.Drawing.Point(219, 91);
             this.cbxmadausach.Name = "cbxmadausach";
-            this.cbxmadausach.Size = new System.Drawing.Size(121, 21);
-            this.cbxmadausach.TabIndex = 41;
+            this.cbxmadausach.Size = new System.Drawing.Size(173, 21);
+            this.cbxmadausach.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Location = new System.Drawing.Point(150, 134);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 13);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "Tình trạng";
             // 
             // label12
             // 
@@ -306,7 +225,7 @@
             this.txtmacuonsach.Name = "txtmacuonsach";
             this.txtmacuonsach.ReadOnly = true;
             this.txtmacuonsach.Size = new System.Drawing.Size(121, 20);
-            this.txtmacuonsach.TabIndex = 44;
+            this.txtmacuonsach.TabIndex = 9;
             // 
             // label11
             // 
@@ -350,13 +269,34 @@
             this.tabControlPanel2.TabIndex = 2;
             this.tabControlPanel2.TabItem = this.tithemdausach;
             // 
+            // cbdausach
+            // 
+            this.cbdausach.AutoSize = true;
+            this.cbdausach.BackColor = System.Drawing.Color.Transparent;
+            this.cbdausach.Location = new System.Drawing.Point(205, 141);
+            this.cbdausach.Name = "cbdausach";
+            this.cbdausach.Size = new System.Drawing.Size(45, 17);
+            this.cbdausach.TabIndex = 8;
+            this.cbdausach.Text = "Còn";
+            this.cbdausach.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Location = new System.Drawing.Point(136, 142);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 42;
+            this.label9.Text = "Tình trạng";
+            // 
             // cbxmatuasach
             // 
             this.cbxmatuasach.FormattingEnabled = true;
             this.cbxmatuasach.Location = new System.Drawing.Point(205, 99);
             this.cbxmatuasach.Name = "cbxmatuasach";
-            this.cbxmatuasach.Size = new System.Drawing.Size(121, 21);
-            this.cbxmatuasach.TabIndex = 41;
+            this.cbxmatuasach.Size = new System.Drawing.Size(200, 21);
+            this.cbxmatuasach.TabIndex = 7;
             // 
             // cbxngonngu
             // 
@@ -364,7 +304,7 @@
             this.cbxngonngu.Location = new System.Drawing.Point(205, 63);
             this.cbxngonngu.Name = "cbxngonngu";
             this.cbxngonngu.Size = new System.Drawing.Size(121, 21);
-            this.cbxngonngu.TabIndex = 40;
+            this.cbxngonngu.TabIndex = 6;
             // 
             // label6
             // 
@@ -382,7 +322,7 @@
             this.txtmadausach.Name = "txtmadausach";
             this.txtmadausach.ReadOnly = true;
             this.txtmadausach.Size = new System.Drawing.Size(121, 20);
-            this.txtmadausach.TabIndex = 32;
+            this.txtmadausach.TabIndex = 5;
             // 
             // label7
             // 
@@ -411,6 +351,108 @@
             this.tithemdausach.Text = "Đầu sách";
             this.tithemdausach.Visible = false;
             // 
+            // tabControlPanel1
+            // 
+            this.tabControlPanel1.Controls.Add(this.label5);
+            this.tabControlPanel1.Controls.Add(this.txtgioithieu);
+            this.tabControlPanel1.Controls.Add(this.label4);
+            this.tabControlPanel1.Controls.Add(this.txttacgia);
+            this.tabControlPanel1.Controls.Add(this.label3);
+            this.tabControlPanel1.Controls.Add(this.label2);
+            this.tabControlPanel1.Controls.Add(this.txttentuasach);
+            this.tabControlPanel1.Controls.Add(this.txtmatuasach);
+            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel1.Name = "tabControlPanel1";
+            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel1.Size = new System.Drawing.Size(478, 219);
+            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.GradientAngle = 90;
+            this.tabControlPanel1.TabIndex = 1;
+            this.tabControlPanel1.TabItem = this.tithemtuasach;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(35, 159);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Giới thiệu";
+            // 
+            // txtgioithieu
+            // 
+            this.txtgioithieu.Location = new System.Drawing.Point(92, 130);
+            this.txtgioithieu.Multiline = true;
+            this.txtgioithieu.Name = "txtgioithieu";
+            this.txtgioithieu.Size = new System.Drawing.Size(376, 77);
+            this.txtgioithieu.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(35, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Tác giả";
+            // 
+            // txttacgia
+            // 
+            this.txttacgia.Location = new System.Drawing.Point(92, 95);
+            this.txttacgia.Name = "txttacgia";
+            this.txttacgia.Size = new System.Drawing.Size(165, 20);
+            this.txttacgia.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(8, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Tên tựa sách";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(12, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Mã tựa sách";
+            // 
+            // txttentuasach
+            // 
+            this.txttentuasach.Location = new System.Drawing.Point(92, 59);
+            this.txttentuasach.Name = "txttentuasach";
+            this.txttentuasach.Size = new System.Drawing.Size(165, 20);
+            this.txttentuasach.TabIndex = 2;
+            // 
+            // txtmatuasach
+            // 
+            this.txtmatuasach.Location = new System.Drawing.Point(92, 22);
+            this.txtmatuasach.Name = "txtmatuasach";
+            this.txtmatuasach.ReadOnly = true;
+            this.txtmatuasach.Size = new System.Drawing.Size(100, 20);
+            this.txtmatuasach.TabIndex = 1;
+            // 
+            // tithemtuasach
+            // 
+            this.tithemtuasach.AttachedControl = this.tabControlPanel1;
+            this.tithemtuasach.Name = "tithemtuasach";
+            this.tithemtuasach.Text = "Tựa sách";
+            this.tithemtuasach.Visible = false;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.AliceBlue;
@@ -430,52 +472,10 @@
             this.btnsua.Location = new System.Drawing.Point(400, 3);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(74, 30);
-            this.btnsua.TabIndex = 39;
+            this.btnsua.TabIndex = 12;
             this.btnsua.Text = "Lưu";
             this.btnsua.UseVisualStyleBackColor = false;
             this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(136, 142);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "Tình trạng";
-            // 
-            // cbdausach
-            // 
-            this.cbdausach.AutoSize = true;
-            this.cbdausach.BackColor = System.Drawing.Color.Transparent;
-            this.cbdausach.Location = new System.Drawing.Point(205, 141);
-            this.cbdausach.Name = "cbdausach";
-            this.cbdausach.Size = new System.Drawing.Size(45, 17);
-            this.cbdausach.TabIndex = 43;
-            this.cbdausach.Text = "Còn";
-            this.cbdausach.UseVisualStyleBackColor = false;
-            // 
-            // cbcuonsach
-            // 
-            this.cbcuonsach.AutoSize = true;
-            this.cbcuonsach.BackColor = System.Drawing.Color.Transparent;
-            this.cbcuonsach.Location = new System.Drawing.Point(219, 133);
-            this.cbcuonsach.Name = "cbcuonsach";
-            this.cbcuonsach.Size = new System.Drawing.Size(45, 17);
-            this.cbcuonsach.TabIndex = 45;
-            this.cbcuonsach.Text = "Còn";
-            this.cbcuonsach.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(150, 134);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 13);
-            this.label10.TabIndex = 44;
-            this.label10.Text = "Tình trạng";
             // 
             // SuaSach
             // 
@@ -494,12 +494,12 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tcsuasach)).EndInit();
             this.tcsuasach.ResumeLayout(false);
-            this.tabControlPanel1.ResumeLayout(false);
-            this.tabControlPanel1.PerformLayout();
             this.tabControlPanel3.ResumeLayout(false);
             this.tabControlPanel3.PerformLayout();
             this.tabControlPanel2.ResumeLayout(false);
             this.tabControlPanel2.PerformLayout();
+            this.tabControlPanel1.ResumeLayout(false);
+            this.tabControlPanel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 

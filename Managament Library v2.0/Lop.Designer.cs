@@ -1,6 +1,6 @@
 ﻿namespace Managament_Library_v2._0
 {
-    partial class NgonNgu
+    partial class Lop
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NgonNgu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lop));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -37,12 +37,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
-            this.txtngonngu = new System.Windows.Forms.TextBox();
+            this.txtlop = new System.Windows.Forms.TextBox();
             this.ribbonBar7 = new DevComponents.DotNetBar.RibbonBar();
             this.btnxoa = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar8 = new DevComponents.DotNetBar.RibbonBar();
             this.btnthem = new DevComponents.DotNetBar.ButtonItem();
-            this.dgvngonngu = new System.Windows.Forms.DataGridView();
+            this.dgvlop = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -50,7 +50,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvngonngu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlop)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -59,7 +59,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dgvngonngu, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgvlop, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -68,7 +68,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(309, 361);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel1
             // 
@@ -98,9 +98,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(65, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 37);
+            this.label1.Size = new System.Drawing.Size(220, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "NGÔN NGỮ";
+            this.label1.Text = "DANH SÁCH LỚP";
             // 
             // pictureBox1
             // 
@@ -133,7 +133,7 @@
             // ribbonPanel2
             // 
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel2.Controls.Add(this.txtngonngu);
+            this.ribbonPanel2.Controls.Add(this.txtlop);
             this.ribbonPanel2.Controls.Add(this.ribbonBar7);
             this.ribbonPanel2.Controls.Add(this.ribbonBar8);
             this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -158,12 +158,12 @@
             this.ribbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel2.TabIndex = 3;
             // 
-            // txtngonngu
+            // txtlop
             // 
-            this.txtngonngu.Location = new System.Drawing.Point(209, 4);
-            this.txtngonngu.Name = "txtngonngu";
-            this.txtngonngu.Size = new System.Drawing.Size(85, 20);
-            this.txtngonngu.TabIndex = 3;
+            this.txtlop.Location = new System.Drawing.Point(209, 4);
+            this.txtlop.Name = "txtlop";
+            this.txtlop.Size = new System.Drawing.Size(85, 20);
+            this.txtlop.TabIndex = 3;
             // 
             // ribbonBar7
             // 
@@ -250,28 +250,28 @@
             this.btnthem.SubItemsExpandWidth = 14;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
-            // dgvngonngu
+            // dgvlop
             // 
-            this.dgvngonngu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvngonngu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvngonngu.Location = new System.Drawing.Point(3, 133);
-            this.dgvngonngu.MultiSelect = false;
-            this.dgvngonngu.Name = "dgvngonngu";
-            this.dgvngonngu.ReadOnly = true;
-            this.dgvngonngu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvngonngu.Size = new System.Drawing.Size(303, 225);
-            this.dgvngonngu.TabIndex = 2;
+            this.dgvlop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvlop.Location = new System.Drawing.Point(3, 133);
+            this.dgvlop.MultiSelect = false;
+            this.dgvlop.Name = "dgvlop";
+            this.dgvlop.ReadOnly = true;
+            this.dgvlop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvlop.Size = new System.Drawing.Size(303, 225);
+            this.dgvlop.TabIndex = 2;
             // 
-            // NgonNgu
+            // Lop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(309, 361);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "NgonNgu";
-            this.Text = "Ngôn Ngữ";
-            this.Load += new System.EventHandler(this.NgonNgu_Load);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Name = "Lop";
+            this.Text = "Lớp";
+            this.Load += new System.EventHandler(this.Lop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -281,7 +281,7 @@
             this.panel4.ResumeLayout(false);
             this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvngonngu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlop)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,13 +294,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvngonngu;
         private System.Windows.Forms.Panel panel4;
         private DevComponents.DotNetBar.RibbonPanel ribbonPanel2;
-        private System.Windows.Forms.TextBox txtngonngu;
+        private System.Windows.Forms.TextBox txtlop;
         private DevComponents.DotNetBar.RibbonBar ribbonBar7;
         private DevComponents.DotNetBar.ButtonItem btnxoa;
         private DevComponents.DotNetBar.RibbonBar ribbonBar8;
         private DevComponents.DotNetBar.ButtonItem btnthem;
+        private System.Windows.Forms.DataGridView dgvlop;
     }
 }

@@ -85,7 +85,10 @@ namespace Managament_Library_v2._0
 
                 for (int i = 0; i < dtNgonNgu.Rows.Count; i++)
                 {
-                    cbxngonngu.Items.Add(dtNgonNgu.Rows[i]["Ngôn ngữ"]);
+                    item = new ComboboxItem();
+                    item.Text = dtNgonNgu.Rows[i]["Ngôn ngữ"].ToString();
+                    item.Value = dtNgonNgu.Rows[i]["Ngôn ngữ"].ToString();
+                    cbxngonngu.Items.Add(item);
                 }
 
                 for (int i = 0; i < cbxmatuasach.Items.Count; i++)
@@ -99,7 +102,7 @@ namespace Managament_Library_v2._0
 
                 for (int i = 0; i < cbxngonngu.Items.Count; i++)
                 {
-                    if (cbxngonngu.Items[i].ToString() == ds.ngonngu)
+                    if ((cbxngonngu.Items[i] as ComboboxItem).Value.ToString() == ds.ngonngu)
                     {
                         cbxngonngu.SelectedIndex = i;
                         break;

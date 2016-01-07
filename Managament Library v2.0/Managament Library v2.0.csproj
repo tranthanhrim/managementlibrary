@@ -74,6 +74,7 @@
     <Compile Include="ComboboxItem.cs" />
     <Compile Include="CTL\DangKyCho.cs" />
     <Compile Include="CTL\DocGia.cs" />
+    <Compile Include="CTL\Lop.cs" />
     <Compile Include="CTL\MatKhau.cs" />
     <Compile Include="CTL\MuonTraSach.cs" />
     <Compile Include="CTL\NgonNgu.cs" />
@@ -88,6 +89,7 @@
     </Compile>
     <Compile Include="DAO\DangKyCho.cs" />
     <Compile Include="DAO\DocGia.cs" />
+    <Compile Include="DAO\Lop.cs" />
     <Compile Include="DAO\MatKhau.cs" />
     <Compile Include="DAO\MuonTraSach.cs" />
     <Compile Include="DAO\NgonNgu.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="EF\DOCGIA.cs" />
     <Compile Include="EF\HOCSINH.cs" />
     <Compile Include="EF\LibraryDataContext.cs" />
+    <Compile Include="EF\LOP.cs" />
     <Compile Include="EF\MATKHAU.cs" />
     <Compile Include="EF\MUONSACH.cs" />
     <Compile Include="EF\NGONNGU.cs" />
@@ -108,6 +111,12 @@
     <Compile Include="EF\THAMSO.cs" />
     <Compile Include="EF\TUASACH.cs" />
     <Compile Include="EF\VIPHAM.cs" />
+    <Compile Include="Lop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lop.Designer.cs">
+      <DependentUpon>Lop.cs</DependentUpon>
+    </Compile>
     <Compile Include="XuatDuLieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lop.resx">
+      <DependentUpon>Lop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XuatDuLieu.resx">
       <DependentUpon>XuatDuLieu.cs</DependentUpon>
