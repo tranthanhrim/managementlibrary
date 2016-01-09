@@ -13,40 +13,38 @@ namespace Managament_Library_v2._0.DAO
     public class DocGia
     {
         LibraryDataContext data = new LibraryDataContext();
+
         public DataTable loadDocGia()
         {
-            DataProvider.openConnect();
-            SqlDataAdapter da = new SqlDataAdapter("select* from DOCGIA", DataProvider.con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = DataProvider.getDataTable("select* from DOCGIA");
             dt.Columns["madocgia"].ColumnName = "Mã độc giả";
             dt.Columns["hoten"].ColumnName = "Họ tên";
             dt.Columns["gioitinh"].ColumnName = "Giới tính";
             dt.Columns["ngaysinh"].ColumnName = "Ngày sinh";
             dt.Columns["ngaylap"].ColumnName = "Ngày lập";
             dt.Columns["tinhtrang"].ColumnName = "Tình trạng";
-            return dt;
+
+            DataTable dtCloned = DataProvider.changeTypeData(dt, 0);
+            return dtCloned;
         }
 
         public DataTable loadHocSinh()
         {
-            DataProvider.openConnect();
-            SqlDataAdapter da = new SqlDataAdapter("select* from HOCSINH", DataProvider.con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = DataProvider.getDataTable("select* from HOCSINH");
             dt.Columns["madocgia"].ColumnName = "Mã độc giả";
             dt.Columns["lop"].ColumnName = "Lớp";
-            return dt;
+
+            DataTable dtCloned = DataProvider.changeTypeData(dt, 0);
+            return dtCloned;
         }
 
         public DataTable loadNhanVien()
         {
-            DataProvider.openConnect();
-            SqlDataAdapter da = new SqlDataAdapter("select* from NHANVIEN", DataProvider.con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = DataProvider.getDataTable("select* from NHANVIEN");
             dt.Columns["madocgia"].ColumnName = "Mã độc giả";
-            return dt;
+
+            DataTable dtCloned = DataProvider.changeTypeData(dt, 0);
+            return dtCloned;
         }
 
         public void themDocGia(DOCGIA dg)

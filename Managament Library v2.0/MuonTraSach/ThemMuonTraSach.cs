@@ -41,22 +41,36 @@ namespace Managament_Library_v2._0
 
         private void btnthem_Click(object sender, EventArgs e)
         {
-            inf = new MUONSACH();
-            inf.madocgia = cbxmdg.SelectedItem.ToString();
-            inf.macuonsach = cbxmacuonsach.SelectedItem.ToString();
-            inf.ngaygiomuon = dtngaygiomuon.Value.Date;
-            
-            int result = data.themMuonTraSach(inf);
-            if (result == 0)
+            try
             {
-                MessageBox.Show("Mượn sách vượt quá số lượng cho phép!");
+                if (cbxmdg.SelectedItem == null || cbxmacuonsach.SelectedItem == null)
+                    throw new ArgumentNullException();
+
+                inf = new MUONSACH();
+                inf.madocgia = cbxmdg.SelectedItem.ToString();
+                inf.macuonsach = cbxmacuonsach.SelectedItem.ToString();
+                inf.ngaygiomuon = dtngaygiomuon.Value;
+
+                int result = data.themMuonTraSach(inf);
+                if (result == 0)
+                {
+                    MessageBox.Show("Mượn sách vượt quá số lượng cho phép!");
+                }
+                else if (result == -1)
+                {
+                    MessageBox.Show("Dữ liệu không hợp lệ!");
+                }
+                else
+                {
+                    MessageBox.Show("Đã thêm!");
+                    Close();
+                    noticeBorrowBook(inf.macuonsach);
+                }          
             }
-            else
+            catch (ArgumentNullException)
             {
-                MessageBox.Show("Đã thêm!");
-                Close();
-                noticeBorrowBook(inf.macuonsach);
-            }          
+                MessageBox.Show("Dữ liệu không hợp lệ!");
+            }
         }
 
         private void ThemMuonTraSach_Load(object sender, EventArgs e)
@@ -76,8 +90,10 @@ namespace Managament_Library_v2._0
                     cbxmacuonsach.Items.Add(Convert.ToInt32(dtCuonSach.Rows[i]["Mã cuốn sách"].ToString()));
             }
 
-            cbxmdg.SelectedIndex = 0;
-            cbxmacuonsach.SelectedIndex = 0;
+            if (cbxmdg.Items.Count > 0)
+                cbxmdg.SelectedIndex = 0;
+            if (cbxmacuonsach.Items.Count > 0)
+                cbxmacuonsach.SelectedIndex = 0;
         }
     }
 }

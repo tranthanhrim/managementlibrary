@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbxmdg = new System.Windows.Forms.ComboBox();
             this.cbxmadausach = new System.Windows.Forms.ComboBox();
             this.cbdamuon = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbxmdg = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -126,12 +126,20 @@
             this.panel3.Size = new System.Drawing.Size(428, 205);
             this.panel3.TabIndex = 1;
             // 
+            // cbxmdg
+            // 
+            this.cbxmdg.FormattingEnabled = true;
+            this.cbxmdg.Location = new System.Drawing.Point(175, 17);
+            this.cbxmdg.Name = "cbxmdg";
+            this.cbxmdg.Size = new System.Drawing.Size(100, 21);
+            this.cbxmdg.TabIndex = 42;
+            // 
             // cbxmadausach
             // 
             this.cbxmadausach.FormattingEnabled = true;
             this.cbxmadausach.Location = new System.Drawing.Point(175, 54);
             this.cbxmadausach.Name = "cbxmadausach";
-            this.cbxmadausach.Size = new System.Drawing.Size(100, 21);
+            this.cbxmadausach.Size = new System.Drawing.Size(200, 21);
             this.cbxmadausach.TabIndex = 41;
             // 
             // cbdamuon
@@ -207,14 +215,6 @@
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 28;
             this.label2.Text = "Mã độc giả";
-            // 
-            // cbxmdg
-            // 
-            this.cbxmdg.FormattingEnabled = true;
-            this.cbxmdg.Location = new System.Drawing.Point(175, 17);
-            this.cbxmdg.Name = "cbxmdg";
-            this.cbxmdg.Size = new System.Drawing.Size(100, 21);
-            this.cbxmdg.TabIndex = 42;
             // 
             // SuaDangKyCho
             // 

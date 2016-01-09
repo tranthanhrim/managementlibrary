@@ -90,8 +90,12 @@ namespace Managament_Library_v2._0
                 item.Value = dtNgonNgu.Rows[i]["Ngôn ngữ"].ToString();
                 cbxngonngu.Items.Add(item);
             }
-            cbxtuasach.SelectedIndex = 0;
-            cbxngonngu.SelectedIndex = 0;
+            
+            if (cbxtuasach.Items.Count > 0)
+                cbxtuasach.SelectedIndex = 0;
+
+            if (cbxngonngu.Items.Count > 0)
+                cbxngonngu.SelectedIndex = 0;
 
             #endregion
 
@@ -104,7 +108,9 @@ namespace Managament_Library_v2._0
                 item.Value = dtDauSach.Rows[i]["Mã đầu sách"].ToString();
                 cbxmadausach.Items.Add(item);
             }
-            cbxmadausach.SelectedIndex = 0;
+
+            if (cbxmadausach.Items.Count > 0)
+                cbxmadausach.SelectedIndex = 0;
             txtmacuonsach.Text = macuonsach.ToString();
             #endregion
         }
@@ -128,8 +134,13 @@ namespace Managament_Library_v2._0
                 DAUSACH ds = new DAUSACH();
                 ds.madausach = txtmadausach.Text;
                 ds.tinhtrang = false;
-                ds.matuasach = (cbxtuasach.SelectedItem as ComboboxItem).Value.ToString();
-                ds.ngonngu = (cbxngonngu.SelectedItem as ComboboxItem).Value.ToString();
+                
+                if (cbxtuasach.SelectedItem != null)
+                    ds.matuasach = (cbxtuasach.SelectedItem as ComboboxItem).Value.ToString();
+
+                if (cbxngonngu.SelectedItem != null)
+                    ds.ngonngu = (cbxngonngu.SelectedItem as ComboboxItem).Value.ToString();
+
                 dataSach.themDauSach(ds);
                 noticeAddBook();
                 Close();
@@ -139,7 +150,10 @@ namespace Managament_Library_v2._0
             {
                 CUONSACH cs = new CUONSACH();
                 cs.macuonsach = txtmacuonsach.Text;
-                cs.madausach = (cbxmadausach.SelectedItem as ComboboxItem).Value.ToString();
+
+                if (cbxmadausach.SelectedItem != null)
+                    cs.madausach = (cbxmadausach.SelectedItem as ComboboxItem).Value.ToString();
+
                 cs.tinhtrang = true;
                 dataSach.themCuonSach(cs);
 
@@ -150,7 +164,10 @@ namespace Managament_Library_v2._0
                     dataSach.suaDauSach(ds);
                 }
                 noticeAddBook();
-                Close();
+
+                int macuonsach = Convert.ToInt32(txtmacuonsach.Text);
+                txtmacuonsach.Clear();
+                txtmacuonsach.Text = (++macuonsach).ToString();
                 MessageBox.Show("Đã thêm");
             }
         }

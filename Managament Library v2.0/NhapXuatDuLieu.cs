@@ -62,7 +62,8 @@ namespace Managament_Library_v2._0
             sheetMuonSach = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
             sheetMuonSach.Name = "Mượn sách";
 
-            sheetDkChoMuon = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(2);
+            xlWorkBook.Worksheets.Add();
+            sheetDkChoMuon = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
             sheetDkChoMuon.Name = "ĐK chờ mượn";
 
             //SqlDataAdapter da = new SqlDataAdapter("select* from DOCGIA", DataProvider.con);

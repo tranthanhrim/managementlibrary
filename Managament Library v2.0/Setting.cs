@@ -59,6 +59,7 @@ namespace Managament_Library_v2._0
                 solantrehen = data.timThamSo(solantrehen);
                 if (cbsolantrehen.Checked == true)
                 {
+                    solantrehen.tinhtrang = true;
                     solantrehen.giatri = txtsolantrehen.Text;
                 }
                 else
@@ -73,6 +74,7 @@ namespace Managament_Library_v2._0
                 songaykhoathe = data.timThamSo(songaykhoathe);
                 if (cbsolantrehen.Checked == true)
                 {
+                    songaykhoathe.tinhtrang = true;
                     songaykhoathe.giatri = txtsongaykhoathe.Text;
                 }
                 else

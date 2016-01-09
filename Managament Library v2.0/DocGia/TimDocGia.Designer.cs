@@ -108,7 +108,7 @@
             this.rbten.Location = new System.Drawing.Point(417, 18);
             this.rbten.Name = "rbten";
             this.rbten.Size = new System.Drawing.Size(83, 17);
-            this.rbten.TabIndex = 35;
+            this.rbten.TabIndex = 2;
             this.rbten.TabStop = true;
             this.rbten.Text = "Tên độc giả";
             this.rbten.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             this.rblop.Location = new System.Drawing.Point(156, 59);
             this.rblop.Name = "rblop";
             this.rblop.Size = new System.Drawing.Size(43, 17);
-            this.rblop.TabIndex = 34;
+            this.rblop.TabIndex = 1;
             this.rblop.TabStop = true;
             this.rblop.Text = "Lớp";
             this.rblop.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             this.rbmdg.Location = new System.Drawing.Point(156, 17);
             this.rbmdg.Name = "rbmdg";
             this.rbmdg.Size = new System.Drawing.Size(79, 17);
-            this.rbmdg.TabIndex = 33;
+            this.rbmdg.TabIndex = 0;
             this.rbmdg.TabStop = true;
             this.rbmdg.Text = "Mã độc giả";
             this.rbmdg.UseVisualStyleBackColor = true;

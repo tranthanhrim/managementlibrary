@@ -14,14 +14,15 @@ namespace Managament_Library_v2._0.DAO
         LibraryDataContext data = new LibraryDataContext();
         public DataTable loadDangKyCho()
         {
-            SqlDataAdapter da = new SqlDataAdapter("select* from DKCHOMUON", DataProvider.con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = DataProvider.getDataTable("select* from DKCHOMUON");
             dt.Columns["madocgia"].ColumnName = "Mã độc giả";
             dt.Columns["madausach"].ColumnName = "Mã đầu sách";
             dt.Columns["ngaygiodk"].ColumnName = "Ngày đăng ký";
             dt.Columns["tinhtrang"].ColumnName = "Tình trạng";
-            return dt;
+
+            DataTable dtCloned = DataProvider.changeTypeData(dt, 0);
+            DataTable dtCloned2 = DataProvider.changeTypeData(dtCloned, 1);
+            return dtCloned2;
         }
 
         public void themDangKyCho(DKCHOMUON inf)

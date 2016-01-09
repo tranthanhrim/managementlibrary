@@ -14,14 +14,13 @@ namespace Managament_Library_v2._0.DAO
         LibraryDataContext data = new LibraryDataContext();
         public DataTable loadViPham()
         {
-            DataProvider.openConnect();
-            SqlDataAdapter da = new SqlDataAdapter("select* from VIPHAM", DataProvider.con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = DataProvider.getDataTable("select* from VIPHAM");
             dt.Columns["madocgia"].ColumnName = "Mã độc giả";
             dt.Columns["vipham"].ColumnName = "Số lần vi phạm";
             dt.Columns["ngayhethan"].ColumnName = "Ngày hết hạn phạt";
-            return dt;
+
+            DataTable dtCloned = DataProvider.changeTypeData(dt, 0);
+            return dtCloned;
         }
 
         public void themViPham(VIPHAM inf)

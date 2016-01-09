@@ -51,14 +51,14 @@ namespace Managament_Library_v2._0
 
             for (int i = 0; i < dtDauSach.Rows.Count; i++)
             {
-                if (dtDauSach.Rows[i]["Tình trạng"].ToString() == String.Empty || (bool)dtDauSach.Rows[i]["Tình trạng"] == false)//== String.Empty                  
-                {
+                //if (dtDauSach.Rows[i]["Tình trạng"].ToString() == String.Empty || (bool)dtDauSach.Rows[i]["Tình trạng"] == false)//== String.Empty                  
+                //{
                     //cbxmadausach.Items.Add(Convert.ToInt32(dtDauSach.Rows[i]["Mã đầu sách"].ToString()));
                     item = new ComboboxItem();
                     item.Text = dtDauSach.Rows[i]["Mã đầu sách"].ToString() + " - " + dtDauSach.Rows[i]["Tên tựa sách"].ToString() + " - " + dtDauSach.Rows[i]["Ngôn ngữ"].ToString();
                     item.Value = Convert.ToInt32(dtDauSach.Rows[i]["Mã đầu sách"]);
                     cbxmadausach.Items.Add(item);
-                }
+                //}
             }
 
             //cbxmadausach.SelectedIndex = inf.ma;
@@ -91,15 +91,22 @@ namespace Managament_Library_v2._0
 
         private void btnluu_Click(object sender, EventArgs e)
         {
-            DKCHOMUON after = new DKCHOMUON();
-            after.madocgia = cbxmdg.SelectedItem.ToString();
-            after.madausach = (cbxmadausach.SelectedItem as ComboboxItem).Value.ToString();
-            after.ngaygiodk = dtngaygiodk.Value.Date;
-            after.tinhtrang = cbdamuon.Checked;
-            dataDangKyCho.suaDangKyCho(inf, after);
-            MessageBox.Show("Đã lưu!");
-            Close();
-            OnUpdate();
+            try
+            {
+                DKCHOMUON after = new DKCHOMUON();
+                after.madocgia = cbxmdg.SelectedItem.ToString();
+                after.madausach = (cbxmadausach.SelectedItem as ComboboxItem).Value.ToString();
+                after.ngaygiodk = dtngaygiodk.Value.Date;
+                after.tinhtrang = cbdamuon.Checked;
+                dataDangKyCho.suaDangKyCho(inf, after);
+                MessageBox.Show("Đã lưu!");
+                Close();
+                OnUpdate();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ!");
+            }
         }
     }
 }

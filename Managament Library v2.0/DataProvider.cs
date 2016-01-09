@@ -49,5 +49,17 @@ namespace Managament_Library_v2._0
             da.Fill(dt);
             return dt;
         }
+
+        static public DataTable changeTypeData(DataTable dt, int index)
+        {
+            DataTable dtCloned = dt.Clone();
+            dtCloned.Columns[index].DataType = typeof(Int32);
+            foreach (DataRow row in dt.Rows)
+            {
+                dtCloned.ImportRow(row);
+            }
+            //dtCloned.DefaultView.Sort = dtCloned.Columns[index].ColumnName;
+            return dtCloned;
+        }
     }
 }

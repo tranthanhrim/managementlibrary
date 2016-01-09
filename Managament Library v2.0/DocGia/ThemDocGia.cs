@@ -91,7 +91,8 @@ namespace Managament_Library_v2._0
                 cbxgioitinh.Items.Add(item);
             }
 
-            cbxlop.SelectedIndex = 0;
+            if (cbxlop.Items.Count > 0)
+                cbxlop.SelectedIndex = 0;
             cbxgioitinh.SelectedIndex = 0;
         }
 
@@ -120,7 +121,8 @@ namespace Managament_Library_v2._0
                     {
                         hs = new HOCSINH();
                         hs.madocgia = txtmdg.Text;
-                        hs.lop = (cbxlop.SelectedItem as ComboboxItem).Value.ToString();
+                        if (cbxlop.SelectedItem != null)
+                            hs.lop = (cbxlop.SelectedItem as ComboboxItem).Value.ToString();
                         data.themHocSinh(hs);
                     }
                     else if (rbnhanvien.Checked == true)

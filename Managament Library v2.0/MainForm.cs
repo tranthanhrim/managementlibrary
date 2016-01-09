@@ -35,7 +35,10 @@ namespace Managament_Library_v2._0
             dgvdocgia.DataSource = dataDocGia.loadDocGia();
             dgvhocsinh.DataSource = dataDocGia.loadHocSinh();
             dgvnhanvien.DataSource = dataDocGia.loadNhanVien();
-            dgvvipham.DataSource = dataViPham.loadViPham();           
+            dgvvipham.DataSource = dataViPham.loadViPham();
+            //dgvdocgia.Columns[0].ValueType = typeof(Int32);
+            //dgvdocgia.Sort(dgvdocgia.Columns[0], System.ComponentModel.ListSortDirection.Ascending);
+            
         }
 
         void updateDgvSach()//load lại DataGridView sách
@@ -278,6 +281,36 @@ namespace Managament_Library_v2._0
             e.Handled = true;
         }
 
+        private void dataGridView1_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            //Suppose your interested column has index 1
+            if (e.Column.Index == 0)
+            {
+                e.SortResult = int.Parse(e.CellValue1.ToString()).CompareTo(int.Parse(e.CellValue2.ToString()));
+                e.Handled = true;//pass by the default sorting
+            }
+        }
+
+        private void dataGridView2_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            if (e.Column.Index == 0)
+            {
+                if (double.Parse(e.CellValue1.ToString()) > double.Parse(e.CellValue2.ToString()))
+                {
+                    e.SortResult = 1;
+                }
+                else if (double.Parse(e.CellValue1.ToString()) < double.Parse(e.CellValue2.ToString()))
+                {
+                    e.SortResult = -1;
+                }
+                else
+                {
+                    e.SortResult = 0;
+                }
+                e.Handled = true;
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             DataProvider.openConnect();
@@ -294,6 +327,11 @@ namespace Managament_Library_v2._0
             nhapkhau.SetToolTip(btnimport, "Nhập dữ liệu");
             ToolTip ktKhoaTheDg = new ToolTip();
             ktKhoaTheDg.SetToolTip(btnblock, "Kiểm tra khóa thẻ");
+
+            //dgvdocgia.Columns[0].ValueType = typeof(double);
+            //dgvdocgia.Columns[0].DefaultCellStyle.Format = double;
+            //dgvdocgia.SortCompare += new DataGridViewSortCompareEventHandler(dataGridView2_SortCompare);
+            //dgvcuonsach.SortCompare += new DataGridViewSortCompareEventHandler(dataGridView1_SortCompare);
         }
 
         #region Độc giả
@@ -568,9 +606,19 @@ namespace Managament_Library_v2._0
             inf.madocgia = dgvchomuonsach.SelectedRows[0].Cells[0].Value.ToString();
             inf.madausach = dgvchomuonsach.SelectedRows[0].Cells[1].Value.ToString();
             inf.ngaygiodk = (DateTime)dgvchomuonsach.SelectedRows[0].Cells[2].Value;
-            inf.tinhtrang = true;
-            dataDangKy.suaDangKyCho(inf, inf);
-            dgvchomuonsach.DataSource = dataDangKy.loadDangKyCho();
+            inf = dataDangKy.timDangKyCho(inf);
+            if (inf.tinhtrang == true)
+            {
+                MessageBox.Show("Đã đánh dấu trước đó!");
+            }
+            else
+            {
+                inf.tinhtrang = true;
+                dataDangKy.suaDangKyCho(inf, inf);
+                dgvchomuonsach.DataSource = dataDangKy.loadDangKyCho();
+                MessageBox.Show("Đã đánh dấu!");
+            }
+            
         }
         private void btntimcho_Click(object sender, EventArgs e)
         {

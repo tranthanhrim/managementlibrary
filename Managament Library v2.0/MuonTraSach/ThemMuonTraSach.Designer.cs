@@ -167,7 +167,7 @@
             this.dtngaygiomuon.Name = "dtngaygiomuon";
             this.dtngaygiomuon.Size = new System.Drawing.Size(200, 20);
             this.dtngaygiomuon.TabIndex = 35;
-            this.dtngaygiomuon.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.dtngaygiomuon.Value = new System.DateTime(1990, 1, 1, 12, 12, 12, 0);
             // 
             // label5
             // 

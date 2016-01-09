@@ -78,7 +78,9 @@ namespace Managament_Library_v2._0
             inf.ngaygiodk = dtngaygiodk.Value.Date;
             inf.tinhtrang = false;
             dataDangKyCho.themDangKyCho(inf);
-            OnSign();
+            OnSign();          
+            Close();
+            MessageBox.Show("Hoàn thành!");
         }
     }
 }

@@ -158,6 +158,8 @@ namespace Managament_Library_v2._0
                     ts.gioithieu = txtgioithieu.Text;
                     dataSach.suaTuaSach(ts);
                     noticeUpdateBook();
+                    Close();
+                    MessageBox.Show("Đã lưu!");
                 }
                 else if (selectedTab == 1)
                 {
@@ -167,22 +169,31 @@ namespace Managament_Library_v2._0
                         ds.tinhtrang = true;
                     else
                         ds.tinhtrang = false;
-                    ds.matuasach = (cbxmatuasach.SelectedItem as ComboboxItem).Value.ToString();
-                    ds.ngonngu = (cbxngonngu.SelectedItem as ComboboxItem).Value.ToString();
+
+                    if (cbxmatuasach.SelectedItem != null)
+                        ds.matuasach = (cbxmatuasach.SelectedItem as ComboboxItem).Value.ToString();
+
+                    if(cbxngonngu.SelectedItem != null)
+                        ds.ngonngu = (cbxngonngu.SelectedItem as ComboboxItem).Value.ToString();
                     dataSach.suaDauSach(ds);
                     noticeUpdateBook();
+                    Close();
+                    MessageBox.Show("Đã lưu!");
                 }
                 else if (selectedTab == 2)
                 {
                     cs = new CUONSACH();
                     cs.macuonsach = txtmacuonsach.Text;
-                    cs.madausach = (cbxmadausach.SelectedItem as ComboboxItem).Value.ToString();
+                    if (cbxmadausach.SelectedItem != null)
+                        cs.madausach = (cbxmadausach.SelectedItem as ComboboxItem).Value.ToString();
                     if (cbcuonsach.Checked == true)
                         cs.tinhtrang = true;
                     else
                         cs.tinhtrang = false;
                     dataSach.suaCuonSach(cs);
                     noticeUpdateBook();
+                    Close();
+                    MessageBox.Show("Đã lưu!");
                 }
                 cbxmadausach.Items.Clear();
                 cbxngonngu.Items.Clear();

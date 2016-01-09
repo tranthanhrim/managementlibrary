@@ -14,42 +14,43 @@ namespace Managament_Library_v2._0.DAO
         LibraryDataContext data = new LibraryDataContext();
         public DataTable loadTuaSach()
         {
-            DataProvider.openConnect();
-            SqlDataAdapter da = new SqlDataAdapter("select* from TUASACH", DataProvider.con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = DataProvider.getDataTable("select* from TUASACH");
             dt.Columns["matuasach"].ColumnName = "Mã tựa sách";
             dt.Columns["tentuasach"].ColumnName = "Tên tựa sách";
             dt.Columns["tacgia"].ColumnName = "Tác giả";
             dt.Columns["gioithieu"].ColumnName = "Giới thiệu";
-            return dt;
+
+            DataTable dtCloned = DataProvider.changeTypeData(dt, 0);
+            return dtCloned;
         }
 
         public DataTable loadDauSach()
         {
-            DataProvider.openConnect();
-            SqlDataAdapter da = new SqlDataAdapter("select* from DAUSACH", DataProvider.con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = DataProvider.getDataTable("select* from DAUSACH");
             dt.Columns["madausach"].ColumnName = "Mã đầu sách";
             dt.Columns["matuasach"].ColumnName = "Mã tựa sách";
             dt.Columns["ngonngu"].ColumnName = "Ngôn ngữ";
             dt.Columns["tinhtrang"].ColumnName = "Tình trạng";
             dt.DefaultView.Sort = "Mã tựa sách";
-            return dt;
+
+            DataTable dtCloned = DataProvider.changeTypeData(dt, 0);
+            DataTable dtCloned2 = DataProvider.changeTypeData(dtCloned, 1);
+
+            return dtCloned2;
         }
 
         public DataTable loadCuonSach()
         {
-            DataProvider.openConnect();
-            SqlDataAdapter da = new SqlDataAdapter("select* from CUONSACH", DataProvider.con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = DataProvider.getDataTable("select* from CUONSACH");
             dt.Columns["macuonsach"].ColumnName = "Mã cuốn sách";
             dt.Columns["madausach"].ColumnName = "Mã đầu sách";
             dt.Columns["tinhtrang"].ColumnName = "Tình trạng";
             dt.DefaultView.Sort = "Mã đầu sách";
-            return dt;
+
+            DataTable dtCloned = DataProvider.changeTypeData(dt, 0);
+            DataTable dtCloned2 = DataProvider.changeTypeData(dtCloned, 1);
+
+            return dtCloned2;
         }
 
         public DataTable loadDauSachTuaSach()

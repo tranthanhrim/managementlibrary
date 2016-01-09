@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Managament_Library_v2._0.EF;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.Entity.Infrastructure;
 
 namespace Managament_Library_v2._0.DAO
 {
@@ -15,17 +16,18 @@ namespace Managament_Library_v2._0.DAO
         ThamSo dataThamSo = new ThamSo();
         public DataTable loadMuonTraSach()
         {
-            DataProvider.openConnect();
-            SqlDataAdapter da = new SqlDataAdapter("select* from MUONSACH", DataProvider.con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            DataTable dt = DataProvider.getDataTable("select* from MUONSACH");
             dt.Columns["madocgia"].ColumnName = "Mã độc giả";
             dt.Columns["macuonsach"].ColumnName = "Mã cuốn sách";
             dt.Columns["ngaygiomuon"].ColumnName = "Ngày giờ mượn";
             dt.Columns["ngayhethan"].ColumnName = "Ngày hết hạn";
             dt.Columns["ngaygiotra"].ColumnName = "Ngày giờ trả";
             dt.DefaultView.Sort = "Mã độc giả";
-            return dt;
+
+            DataTable dtCloned = DataProvider.changeTypeData(dt, 0);
+            DataTable dtCloned2 = DataProvider.changeTypeData(dtCloned, 1);
+
+            return dtCloned2;
         }
 
         public int themMuonTraSach(MUONSACH inf)
@@ -65,15 +67,27 @@ namespace Managament_Library_v2._0.DAO
 
             if (sosachmuon.tinhtrang == true)
             {
-                if (chuaTra > Convert.ToInt32(sosachmuon.giatri))
+                if (chuaTra >= Convert.ToInt32(sosachmuon.giatri))
                 {
                     return 0;
                 }
             }
 
-            inf.ngayhethan = inf.ngaygiomuon.AddDays(Convert.ToInt32(songaymuon.giatri));
-            data.MUONSACHes.Add(inf);
-            data.SaveChanges();
+            DateTime hethan = new DateTime();
+            hethan = inf.ngaygiomuon.AddDays(Convert.ToInt32(songaymuon.giatri));
+            hethan = hethan.Date.AddHours(0).AddMinutes(0).AddSeconds(0);
+            /*inf.ngayhethan = inf.ngaygiomuon.AddDays(Convert.ToInt32(songaymuon.giatri));
+            inf.ngayhethan.*/
+            inf.ngayhethan = hethan;
+            try
+            {
+                data.MUONSACHes.Add(inf);
+                data.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                return -1;
+            }        
             return 1;
         }
 

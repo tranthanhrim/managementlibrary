@@ -35,8 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtmacuonsach = new System.Windows.Forms.TextBox();
-            this.txtmdg = new System.Windows.Forms.TextBox();
             this.dtngaygiotra = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.btnluu = new System.Windows.Forms.Button();
@@ -44,6 +42,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbxmacuonsach = new System.Windows.Forms.ComboBox();
+            this.cbxmdg = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -111,8 +111,8 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txtmacuonsach);
-            this.panel3.Controls.Add(this.txtmdg);
+            this.panel3.Controls.Add(this.cbxmacuonsach);
+            this.panel3.Controls.Add(this.cbxmdg);
             this.panel3.Controls.Add(this.dtngaygiotra);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.btnluu);
@@ -125,20 +125,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(428, 255);
             this.panel3.TabIndex = 1;
-            // 
-            // txtmacuonsach
-            // 
-            this.txtmacuonsach.Location = new System.Drawing.Point(151, 65);
-            this.txtmacuonsach.Name = "txtmacuonsach";
-            this.txtmacuonsach.Size = new System.Drawing.Size(100, 20);
-            this.txtmacuonsach.TabIndex = 44;
-            // 
-            // txtmdg
-            // 
-            this.txtmdg.Location = new System.Drawing.Point(151, 28);
-            this.txtmdg.Name = "txtmdg";
-            this.txtmdg.Size = new System.Drawing.Size(100, 20);
-            this.txtmdg.TabIndex = 43;
             // 
             // dtngaygiotra
             // 
@@ -216,6 +202,28 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Mã độc giả";
             // 
+            // cbxmacuonsach
+            // 
+            this.cbxmacuonsach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxmacuonsach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxmacuonsach.FormattingEnabled = true;
+            this.cbxmacuonsach.Location = new System.Drawing.Point(151, 65);
+            this.cbxmacuonsach.Name = "cbxmacuonsach";
+            this.cbxmacuonsach.Size = new System.Drawing.Size(121, 21);
+            this.cbxmacuonsach.Sorted = true;
+            this.cbxmacuonsach.TabIndex = 46;
+            // 
+            // cbxmdg
+            // 
+            this.cbxmdg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxmdg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxmdg.FormattingEnabled = true;
+            this.cbxmdg.Location = new System.Drawing.Point(151, 28);
+            this.cbxmdg.Name = "cbxmdg";
+            this.cbxmdg.Size = new System.Drawing.Size(121, 21);
+            this.cbxmdg.Sorted = true;
+            this.cbxmdg.TabIndex = 45;
+            // 
             // SuaMuonTraSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,7 +260,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtngaygiotra;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtmacuonsach;
-        private System.Windows.Forms.TextBox txtmdg;
+        private System.Windows.Forms.ComboBox cbxmacuonsach;
+        private System.Windows.Forms.ComboBox cbxmdg;
     }
 }

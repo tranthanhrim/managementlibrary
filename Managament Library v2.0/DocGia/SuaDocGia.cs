@@ -111,13 +111,14 @@ namespace Managament_Library_v2._0
                 {
                     hs = new HOCSINH();
                     hs.madocgia = txtmdg.Text;
-                    hs.lop = (cbxlop.SelectedItem as ComboboxItem).Value.ToString();
+                    if (cbxlop.SelectedItem != null)
+                        hs.lop = (cbxlop.SelectedItem as ComboboxItem).Value.ToString();
                     data.suaHocSinh(hs);
                 }
 
                 dg.madocgia = txtmdg.Text;
                 dg.hoten = txtten.Text;
-                dg.gioitinh = cbxgioitinh.SelectedItem.ToString();
+                dg.gioitinh = (cbxgioitinh.SelectedItem as ComboboxItem).Value.ToString();
                 dg.ngaysinh = dngaysinh.Value.Date;
                 dg.ngaylap = dngaylap.Value.Date;
                 if (cbtinhtrang.Checked == true)
