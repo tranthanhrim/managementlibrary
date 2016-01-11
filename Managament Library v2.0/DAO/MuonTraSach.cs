@@ -153,9 +153,9 @@ namespace Managament_Library_v2._0.DAO
                 da.SelectCommand.Parameters.AddWithValue("@sach", inf.macuonsach);    
                 da.Fill(dt);
             }
-            else if (type == 3)
+            else if (type == 3)//tìm theo ngày mượn
             {
-                SqlDataAdapter da = new SqlDataAdapter("select* from MUONSACH where ngaygiomuon = @ngay", DataProvider.con);
+                SqlDataAdapter da = new SqlDataAdapter("select* from MUONSACH where cast(ngaygiomuon AS DATE) = @ngay", DataProvider.con);
                 da.SelectCommand.Parameters.AddWithValue("@ngay", inf.ngaygiomuon.Date);
                 da.Fill(dt);
             }

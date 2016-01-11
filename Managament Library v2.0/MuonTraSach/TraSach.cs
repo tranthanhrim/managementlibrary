@@ -55,7 +55,7 @@ namespace Managament_Library_v2._0
             temp.ngaygiotra = dtngaygiotra.Value.Date;
             data.suaMuonTraSach(temp, temp);
 
-            if (temp.ngaygiotra > temp.ngaygiomuon)
+            if (temp.ngaygiotra > temp.ngayhethan)
             {
                 noticeIllegal(temp.madocgia);
             }

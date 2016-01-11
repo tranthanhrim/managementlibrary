@@ -88,8 +88,8 @@ namespace Managament_Library_v2._0
                     after.madocgia = cbxmdg.SelectedItem.ToString();
                 if (cbxmacuonsach.SelectedItem != null)
                     after.macuonsach = cbxmacuonsach.SelectedItem.ToString();
-                after.ngaygiomuon = dtngaygiomuon.Value.Date;
-                after.ngayhethan = after.ngaygiomuon.AddDays(Convert.ToInt32(songaymuon.giatri));
+                after.ngaygiomuon = dtngaygiomuon.Value;
+                after.ngayhethan = after.ngaygiomuon.Date.AddDays(Convert.ToInt32(songaymuon.giatri));
                 if (dtngaygiotra.Enabled == true)
                     after.ngaygiotra = dtngaygiotra.Value.Date;
                 data.suaMuonTraSach(temp, after);
